@@ -17,3 +17,7 @@ exports.setSB = function(player, scoreboard) {
 exports.setPlayerScore = function (player, scoreboard, score) {
 	scoreboard.getObjective(bkDisplaySlot.SIDEBAR).getScore(player).setScore(score);
 }
+
+exports.clearSB = function(scoreboard) {
+        scoreboard.clearSlot(bkDisplaySlot.SIDEBAR);
+}
