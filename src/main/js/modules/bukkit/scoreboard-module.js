@@ -13,6 +13,26 @@ exports.newSB = function(displayNames, objectives, displaySlots) {
 	return sb;
 }
 
+exports.addTeamToSB = function(team, scoreboard) {
+    return scoreboard.registerNewTeam(team);
+}
+
+exports.addPlayerToTeam = function(player, team) {
+    team.addPlayer(player);
+}
+
+exports.getTeam = function(teamName, scoreboard) {
+    return scoreboard.getTeam(teamName);
+}
+
+exports.setTeamPrefix = function(team, prefix) {
+    team.setPrefix(prefix);
+}
+
+exports.setTeamDisplayName = function(team, displayName) {
+    team.setDisplayName(displayName);
+}
+
 exports.setSB = function(player, scoreboard) {
 	player.setScoreboard(scoreboard);
 }
