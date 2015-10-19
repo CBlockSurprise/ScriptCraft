@@ -75,7 +75,7 @@ function effect(type, dur, str) {
 			effectType = bkPotionEffectType.WITHER;
 			break;
 		default:
-			console.log("must be a valid bukkit PotionEffectType");
+			console.log("must be a valid PotionEffectType: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html");
 	}
 	return new bkPotionEffect(effectType, dur*20, str-1); // dur (seconds) * 20 (ticks/sec)
 }
