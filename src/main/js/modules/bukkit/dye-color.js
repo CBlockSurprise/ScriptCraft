@@ -1,6 +1,6 @@
 var bkDyeColor = org.bukkit.DyeColor;
 
-// returns bukkit Color object of given color
+// returns bukkit DyeColor object of given color
 exports.black = bkDyeColor.BLACK;
 exports.blue = bkDyeColor.BLUE;
 exports.brown = bkDyeColor.BROWN;
