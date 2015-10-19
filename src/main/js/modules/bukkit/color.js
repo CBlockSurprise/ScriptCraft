@@ -15,6 +15,6 @@ exports.orange = bkColor.ORANGE;
 exports.purple = bkColor.PURPLE;
 exports.red = bkColor.RED;
 exports.silver = bkColor.SILVER;
-exports.tea = bkColor.TEAL;
+exports.teal = bkColor.TEAL;
 exports.white = bkColor.WHITE;
 exports.yellow = bkColor.YELLOW;
