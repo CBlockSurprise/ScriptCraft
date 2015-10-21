@@ -1,0 +1,13 @@
+var scoreboard = require('scoreboard');
+var teleport = require('teleport');
+var items = require('items');
+var inventory = require('inventory');
+var location = require('location');
+var bukkit = require('bukkit-core');
+var effect = require('effect');
+var color = require('color');
+var dyeColor = require('dye-color');
+var material = require('material');
+var gameMode = require('game-mode');
+var blockFace = require('block-face');
+load("scriptcraft/modules/bukkit/entity-type-check.js");
