@@ -10,4 +10,5 @@ var dyeColor = require('dye-color');
 var material = require('material');
 var gameMode = require('game-mode');
 var blockFace = require('block-face');
+var action = require('action');
 load("scriptcraft/modules/bukkit/entity-type-check.js");
