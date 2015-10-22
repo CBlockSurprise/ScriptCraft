@@ -11,4 +11,5 @@ var material = require('material');
 var gameMode = require('game-mode');
 var blockFace = require('block-face');
 var action = require('action');
+var entity = require('entity');
 load("scriptcraft/modules/bukkit/entity-type-check.js");
