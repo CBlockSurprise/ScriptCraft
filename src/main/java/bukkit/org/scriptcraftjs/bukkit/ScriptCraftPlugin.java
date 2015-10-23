@@ -5,7 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import sun.org.mozilla.javascript.internal.Context;
+import org.mozilla.javascript.Context;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;

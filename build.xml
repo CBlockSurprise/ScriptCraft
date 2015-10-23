@@ -9,11 +9,12 @@
   -->
   <property name="src.canary" location="src/main/java/canary"/>
   <property name="src.bukkit" location="src/main/java/bukkit"/>
+  <property name="src.rhino" location="src/main/java/rhino"/>
 
   <!-- compiles against these libraries -->
   <property name="lib.canary" location="lib/canarymod-1.8.0.jar"/>
   <property name="lib.bukkit" location="lib/spigot-1.8.8.jar"/>
-  <property name="lib.rt" location="lib/rt.jar"/>
+  <property name="lib.rhino" location="lib/js.jar"/>
 
   <property name="build" location="target/classes"/>
   <property name="dist" location="target/" />
@@ -32,7 +33,6 @@
           <pathelement path="${build}"/>      
 	  <pathelement path="${lib.canary}"/>
 	  <pathelement path="${lib.bukkit}"/>
-    <pathelement path="${lib.rt}" />
 	</classpath>
       <arg value="@{src}"/>
       <js-args/>
@@ -62,15 +62,15 @@
     <javac includeantruntime="false" 
            source="1.6" 
            target="1.6" 
-           bootclasspath="${lib.rt}"
            destdir="${build}" 
            debug="true">
       <src path="${src.canary}"/>
       <src path="${src.bukkit}"/>
+      <src path="${src.rhino}"/>
       <classpath>
 	<pathelement path="${lib.canary}" />
 	<pathelement path="${lib.bukkit}" />
-  <pathelement path="${lib.rt}" />
+  <pathelement path="${lib.rhino}" />
       </classpath>
     </javac>
   </target>
