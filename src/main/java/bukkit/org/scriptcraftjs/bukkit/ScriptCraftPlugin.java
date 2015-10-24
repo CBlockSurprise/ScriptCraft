@@ -5,7 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import org.mozilla.javascript.Context;
+//import org.mozilla.javascript.Context;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -45,8 +45,8 @@ public class ScriptCraftPlugin extends JavaPlugin implements Listener
 		} finally {
 			currentThread.setContextClassLoader(previousClassLoader);
 		}
-        Context ctx = Context.enter();
-        ctx.getWrapFactory().setJavaPrimitiveWrap(false);
+        //Context ctx = Context.enter();
+        //ctx.getWrapFactory().setJavaPrimitiveWrap(false);
     }
 
     public List<String> onTabComplete(CommandSender sender, Command cmd,
