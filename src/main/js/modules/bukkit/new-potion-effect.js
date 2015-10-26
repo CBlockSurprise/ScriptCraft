@@ -1,8 +1,8 @@
 var bkPotionEffectType = org.bukkit.potion.PotionEffectType;
 var bkPotionEffect = org.bukkit.potion.PotionEffect;
 
-// create a new effect of the given type with duration "dur" (seconds) and strength "str" (effect level)
-function effect(type, dur, str) {
+// create a new potion effect of the given type with duration "dur" (seconds) and strength "str" (effect level)
+function newPotionEffect(type, dur, str) {
 	var effectType;
 	switch (type.toUpperCase()) {
 		case "ABSORPTION":
@@ -80,4 +80,4 @@ function effect(type, dur, str) {
 	return new bkPotionEffect(effectType, dur*20, str-1); // dur (seconds) * 20 (ticks/sec)
 }
 
-module.exports = effect;
+module.exports = newPotionEffect;
