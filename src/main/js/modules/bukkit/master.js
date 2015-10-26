@@ -5,6 +5,7 @@ var inventory = require('inventory');
 var location = require('location');
 var bukkit = require('bukkit-core');
 var newPotionEffect = require('new-potion-effect');
+var effect = require('effect');
 var color = require('color');
 var dyeColor = require('dye-color');
 var material = require('material');
