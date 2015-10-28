@@ -1,0 +1,27 @@
+var bkEnchantment = org.bukkit.enchantments.Enchantment;
+
+exports["arrowDamage"] = bkEnchantment.ARROW_DAMAGE;
+exports["arrowFire"] = bkEnchantment.ARROW_FIRE;
+exports["arrowInfinite"] = bkEnchantment.ARROW_INFINITE;
+exports["arrowKnockback"] = bkEnchantment.ARROW_KNOCKBACK;
+exports["damageAll"] = bkEnchantment.DAMAGE_ALL;
+exports["damageArthropods"] = bkEnchantment.DAMAGE_ARTHROPODS;
+exports["damageUndead"] = bkEnchantment.DAMAGE_UNDEAD;
+exports["depthStrider"] = bkEnchantment.DEPTH_STRIDER;
+exports["digSpeed"] = bkEnchantment.DIG_SPEED;
+exports["durability"] = bkEnchantment.DURABILITY;
+exports["fireAspect"] = bkEnchantment.FIRE_ASPECT;
+exports["knockback"] = bkEnchantment.KNOCKBACK;
+exports["lootBonusBlocks"] = bkEnchantment.LOOT_BONUS_BLOCKS;
+exports["lootBonusMobs"] = bkEnchantment.LOOT_BONUS_MOBS;
+exports["luck"] = bkEnchantment.LUCK;
+exports["lure"] = bkEnchantment.LURE;
+exports["oxygen"] = bkEnchantment.OXYGEN;
+exports["protectionEnvironmental"] = bkEnchantment.PROTECTION_ENVIRONMENTAL;
+exports["protectionExplosions"] = bkEnchantment.PROTECTION_EXPLOSIONS;
+exports["protectionFall"] = bkEnchantment.PROTECTION_FALL;
+exports["protectionFire"] = bkEnchantment.PROTECTION_FIRE;
+exports["protectionProjectile"] = bkEnchantment.PROTECTION_PROJECTILE;
+exports["silkTouch"] = bkEnchantment.SILK_TOUCH;
+exports["thorns"] = bkEnchantment.THORNS;
+exports["waterWorker"] = bkEnchantment.WATER_WORKER;

@@ -15,4 +15,6 @@ var action = require('action');
 var entity = require('entity');
 var recipes = require('recipes');
 var damageCause = require('damage-cause');
+var enchantment = require('enchantment');
+var itemFlag = require('item-flag');
 load("scriptcraft/modules/bukkit/entity-type-check.js");
