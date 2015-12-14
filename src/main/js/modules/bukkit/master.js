@@ -1,3 +1,4 @@
+load("scriptcraft/modules/bukkit/entity-type-check.js");
 var scoreboard = require('scoreboard');
 var teleport = require('teleport');
 var items = require('items');
@@ -17,4 +18,5 @@ var recipes = require('recipes');
 var damageCause = require('damage-cause');
 var enchantment = require('enchantment');
 var itemFlag = require('item-flag');
-load("scriptcraft/modules/bukkit/entity-type-check.js");
+var utils = require('utils/utils');
+var stringExt = require('utils/string-exts');
