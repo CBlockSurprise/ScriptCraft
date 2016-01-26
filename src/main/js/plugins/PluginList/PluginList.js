@@ -1,3 +1,5 @@
+load("scriptcraft/modules/bukkit/master.js");
+
 exports.plugins = function() {
     var curDir = java.lang.System.getProperty("user.dir");
     var path = "/home/" + curDir.split("/")[5] + "/server/scriptcraft/plugins";
