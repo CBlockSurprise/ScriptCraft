@@ -1,4 +1,5 @@
 load("scriptcraft/modules/bukkit/entity-type-check.js");
+var at = require('at');
 var scoreboard = require('scoreboard');
 var teleport = require('teleport');
 var items = require('items');
