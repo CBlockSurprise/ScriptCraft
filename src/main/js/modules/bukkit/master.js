@@ -22,3 +22,4 @@ var itemFlag = require('item-flag');
 var utils = require('utils/utils');
 var stringExt = require('utils/string-exts');
 var entityType = require('entity-type');
+var fireworkEffect = require('firework-effect');
