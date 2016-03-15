@@ -77,7 +77,11 @@ function newPotionEffect(type, dur, str) {
 		default:
 			console.log("must be a valid PotionEffectType: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html");
 	}
-	return new bkPotionEffect(effectType, dur*20, str-1); // dur (seconds) * 20 (ticks/sec)
+	if (dur == "max") {
+		return new bkPotionEffect(effectType, 2147483647, str-1); // dur (seconds) * 20 (ticks/sec)
+	} else {
+		return new bkPotionEffect(effectType, dur*20, str-1); // dur (seconds) * 20 (ticks/sec)
+	}
 }
 
 module.exports = newPotionEffect;
