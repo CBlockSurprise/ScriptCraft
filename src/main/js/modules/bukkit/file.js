@@ -1,6 +1,4 @@
 
-
-
 exports.writeFile = function(filename, obj) {
 
 	var mc_path = java.lang.System.getenv("MC_PATH");
@@ -24,5 +22,7 @@ exports.loadFile = function(filename) {
 
 	var data = new java.lang.String(reader);
 
-	return JSON.parse(data);
+	var result = JSON.parse(data);
+
+	return result[0];
 }
