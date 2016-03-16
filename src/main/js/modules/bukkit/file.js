@@ -1,19 +1,23 @@
 
-exports.writeFile = function(filename, obj) {
+exports.write = function(filename, string) {
 
 	var mc_path = java.lang.System.getenv("MC_PATH");
 
+	var path = java.nio.file.Paths.get(mc_path + "/plugin_data/" + filename);
 
-	var writer = new java.io.PrintWriter(mc_path + "/plugin_data/" + filename, "UTF-8");
+	var outStream = new java.io.FileOutputStream(path, false);
 
+	var writer = new java.io.PrintWriter(outStream);
 
-	writer.println(JSON.stringify(obj));
+	writer.println(string);
+
 	writer.close();
 
 }
 
 
-exports.loadFile = function(filename) {
+exports.load = function(filename) {
+
 	var mc_path = java.lang.System.getenv("MC_PATH");
 
 	var path = java.nio.file.Paths.get(mc_path + "/plugin_data/" + filename);
@@ -22,7 +26,5 @@ exports.loadFile = function(filename) {
 
 	var data = new java.lang.String(reader);
 
-	var result = JSON.parse(data);
-
-	return result[0];
+	return data;
 }
