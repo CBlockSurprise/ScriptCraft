@@ -1,0 +1,1 @@
+This directory will be used to store data generated and used by the file.js module
