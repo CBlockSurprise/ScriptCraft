@@ -1,0 +1,1 @@
+load("scriptcraft/modules/bukkit/master.js");
