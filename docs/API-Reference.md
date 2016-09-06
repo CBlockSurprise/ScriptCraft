@@ -18,7 +18,8 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [setInterval() function](#setinterval-function)
    * [clearInterval() function](#clearinterval-function)
    * [isOp() function](#isop-function)
- * [Events](#events)
+ * [Events](#events) 
+   * [Registering Events](#registering-events)
    * [events.weatherChange()](#eventsweatherchange-1)
    * [events.lightningStrike()](#eventslightningstrike-1)
    * [events.thunderChange()](#eventsthunderchange)
@@ -404,7 +405,7 @@ Events are how the server tells your plugin that something has happened in the w
 
 If we want our plugin to do something specific when one of these events occurs, we need to **register a callback function for that event**. This will cause the function we registered to be called by the server whenever the specified event occurs.
 
-### Usage
+### Registering Events
 
 ```javascript
 /*  This will register the function onBlockBreak() to be called
