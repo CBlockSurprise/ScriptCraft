@@ -19,8 +19,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [clearInterval() function](#clearinterval-function)
    * [isOp() function](#isop-function)
  * [events Module](#events-module)
-   * [events.on() static method](#eventson-static-method)
- * [Events Helper Module](#events-helper-module)
    * [events.weatherChange()](#eventsweatherchange-1)
    * [events.lightningStrike()](#eventslightningstrike-1)
    * [events.thunderChange()](#eventsthunderchange)
