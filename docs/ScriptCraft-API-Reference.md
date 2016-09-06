@@ -1696,7 +1696,7 @@ events.blockBreak(onBlockBreak);
 
 ## String Colors
 -----------------------
-The following chat-formatting methods are added to the javascript String class..
+The following string formatting methods are available:
 
     * aqua()
     * black()
@@ -1730,10 +1730,12 @@ The following chat-formatting methods are added to the javascript String class..
 Example
 -------
 
-    /js var boldGoldText = "Hello World".bold().gold();
-    /js echo(self, boldGoldText );
+```javascript
+var redText = "Hello World".red();
+echo(self, redText);
+```
 
-<p style="color:gold;font-weight:bold">Hello World</p>    
+<p style="color:red">Hello World</p>    
 
 ## Items module
 The Items module provides a suite of functions - one for each possible item.
