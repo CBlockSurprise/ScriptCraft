@@ -8,10 +8,8 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
 
 ## Table of Contents
  * [Global variables](#global-variables)
-   * [__plugin variable](#__plugin-variable)
    * [server variable](#server-variable)
    * [self variable](#self-variable)
-   * [config variable](#config-variable)
    * [events variable](#events-variable)
  * [Global functions](#global-functions)
    * [echo function](#echo-function)
@@ -351,136 +349,9 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
  * [Entities module](#entities-module)
    * [Usage](#usage-14)
 
-## Modules in Scriptcraft
+## Global Variables
 
-ScriptCraft has a simple module loading system. In ScriptCraft, files
-and modules are in one-to-one correspondence. As an example, foo.js
-loads the module circle.js in the same directory. 
-*ScriptCraft now uses the same module system as Node.js - see [Node.js Modules][njsmod] for more details.*
-
-[njsmod]: http://nodejs.org/api/modules.html
-
-The contents of foo.js:
-
-```javascript
-var circle = require('./circle.js');
-console.log( 'The area of a circle of radius 4 is '
-             + circle.area(4));
-```
-
-The contents of circle.js:
-
-```javascript
-var PI = Math.PI;
-exports.area = function (r) {
-    return PI * r * r;
-};
-exports.circumference = function (r) {
-    return 2 * PI * r;
-};
-```
-
-The module circle.js has exported the functions area() and
-circumference(). To add functions and objects to the root of your
-module, you can add them to the special exports object.
-
-Variables local to the module will be private, as though the module
-was wrapped in a function. In this example the variable PI is private
-to circle.js.
-
-If you want the root of your module's export to be a function (such as
-a constructor) or if you want to export a complete object in one
-assignment instead of building it one property at a time, assign it to
-module.exports instead of exports.
-
-## Module Loading
-
-When the ScriptCraft Java plugin is first installed, a new
-`scriptcraft` subdirectory is created. If your minecraft server
-directory is called 'mcserver' then the new subdirectories will be ...
-
- * mcserver/scriptcraft/
- * mcserver/scriptcraft/plugins
- * mcserver/scriptcraft/modules
- * mcserver/scriptcraft/lib
-
-... The `plugins`, `modules` and `lib` directories each serve a different purpose.
-
-### The plugins directory
-
-At server startup the ScriptCraft Java plugin is loaded and begins
-automatically loading and executing all of the modules (javascript
-files with the extension `.js`) it finds in the `scriptcraft/plugins`
-directory. All modules in the plugins directory are automatically
-loaded into the `global` namespace. What this means is that anything a
-module in the `plugins` directory exports becomes a global
-variable. For example, if you have a module greeting.js in the plugins
-directory....
-
-```javascript
-exports.greet = function(player) {
-    echo(player, 'Hello ' + player.name);
-};
-```
-
-... then `greet` becomes a global function and can be used at the
-in-game (or server) command prompt like so...
-
-    /js greet(self)
-
-... This differs from how modules (in NodeJS and commonJS
-environments) normally work. If you want your module to be exported
-globally, put it in the `plugins` directory. If you don't want your
-module to be exported globally but only want it to be used by other
-modules, then put it in the `modules` directory instead. If you've
-used previous versions of ScriptCraft and have put your custom
-javascript modules in the `js-plugins` directory, then put them in the
-`scriptcraft/plugins` directory. To summarise, modules in this directory are ...
-
- * Automatically loaded and run at server startup.
- * Anything exported by modules becomes a global variable.
-
-### The modules directory
-
-The module directory is where you should place your modules if you
-don't want to export globally. In javascript, it's considered best
-practice not to have too many global variables, so if you want to
-develop modules for others to use, or want to develop more complex
-mods then your modules should be placed in the `modules` directory.
-*Modules in the `modules` directory are not automatically loaded at
-startup*, instead, they are loaded and used by other modules/plugins
-using the standard `require()` function.  This is the key difference
-between modules in the `plugins` directory and modules in the
-`modules` directory. Modules in the `plugins` directory are
-automatically loaded and exported in to the global namespace at server
-startup, modules in the `modules` directory are not.
-
-### The lib directory
-
-Modules in the `lib` directory are for use by ScriptCraft and some
-core functions for use by module and plugin developers are also
-provided. The `lib` directory is for internal use by ScriptCraft.
-Modules in this directory are not automatically loaded nor are they
-globally exported.
-
-### plugins sub-directories
-
-As of December 24 2013, the `scriptcraft/plugins` directory has the following sub-directories...
-
- * drone - Contains the drone module and drone extensions. Drone was the first scriptcraft module.
- * mini-games - Contains mini-games 
- * arrows - The arrows module - Changes the behaviour of Arrows: Explosive, Fireworks, Teleportation etc.
- * signs - The signs module (includes example signs) - create interactive signs.
- * chat - The chat plugin/module 
- * alias - The alias plugin/module - for creating custom aliases for commonly-used commands.
- * home - The home module - for setting homes and visiting other homes.
-
-## Global variables
-
-There are a couple of special javascript variables available in ScriptCraft...
- 
-### __plugin variable
-The ScriptCraft JavaPlugin object.
+There are a few special javascript variables available in ScriptCraft
 
 ### server variable
 The Minecraft Server object
@@ -494,20 +365,8 @@ The current player. (Note - this value should not be used in multi-threaded scri
 event handling code. `self` is a temporary short-lived variable which
 only exists in the context of the in-game or server command prompts.
 
-### config variable
-ScriptCraft configuration - this object is loaded and saved at startup/shutdown.
-
 ### events variable
 The events object is used to add new event handlers to Minecraft.
-
-## Module variables
-The following variables are available only within the context of Modules. (not available at in-game prompt).
-
-### &#95;&#95;filename variable
-The current file - this variable is only relevant from within the context of a Javascript module.
-
-### &#95;&#95;dirname variable
-The current directory - this variable is only relevant from within the context of a Javascript module.
 
 ## Global functions
 
