@@ -1732,9 +1732,9 @@ Example
 -------
 
 ```javascript
-echo(self, "Hello World".aqua());
+echo(self, "Hello Minecraft!".aqua());
 ```
-![Hello World](https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/004/661/original/temp1450223230.png)
+![Hello Minecraft!](https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/004/661/original/temp1450223230.png)
 
 ## Items module
 The Items module provides a suite of functions - one for each possible item.
