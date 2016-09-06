@@ -195,6 +195,7 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
  * [Recipes Module](#the-recipes-module)
  * [Fireworks Module](#fireworks-module)
  * [Inventory Module](#inventory-module)
+ * [Action Module](#action-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone.box() method](#dronebox-method)
@@ -2476,6 +2477,36 @@ The inventory module exposes a single function which when passed a player or NPC
 * add : Adds items to the inventory
 * remove : removes items from the inventory
 * contains : checks to see if there is the specified type and amount of item in the inventory
+
+## Action Module
+
+The action module can be used to reference the 5 different action types players can perform.
+
+## Usage
+
+```javascript
+action.leftClickAir       // refers to org.bukkit.event.block.Action.LEFT_CLICK_AIR
+```
+
+Possible actions:
+
+* leftClickAir
+* leftClickBlock
+* rightClickAir
+* rightClickBlock
+* physical                      <--- physical action occurs when a player steps on a pressure plate
+
+## Example
+
+```javascript
+// Sends player a message if they right-click on a block
+var onPlayerInteract = function(event) {
+  if (event.action == action.rightClickBlock) {
+    echo(event.player, "You right-clicked on a block!")
+  }
+}
+events.playerInteract(onPlayerInteract);
+```
 
 ## Drone Module
 
