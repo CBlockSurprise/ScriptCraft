@@ -188,7 +188,11 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [events.chunkPopulate()](#eventschunkpopulate)
    * [events.portalCreate()](#eventsportalcreate-1)
    * [events.chunkLoad()](#eventschunkload)
- * [Modules] (#modules)
+ * [Items Module](#items-module)
+ * [Entities Module](#entities-module)
+ * [Blocks Module](#blocks-module)
+ * [Fireworks Module](#fireworks-module)
+ * [Inventory Module](#inventory-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone.box() method](#dronebox-method)
@@ -243,12 +247,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [Drone.rainbow() method](#dronerainbow-method)
    * [Drone.spiral_stairs() method](#dronespiral_stairs-method)
    * [Drone.temple() method](#dronetemple-method)
- * [Blocks Module](#blocks-module)
-   * [Examples](#examples)
- * [Fireworks Module](#fireworks-module)
-   * [Examples](#examples-1)
- * [Inventory Module](#inventory-module)
-   * [Usage](#usage-2)
  * [Classroom Plugin](#classroom-plugin)
    * [jsp classroom command](#jsp-classroom-command)
    * [classroom.allowScripting() function](#classroomallowscripting-function)
@@ -290,10 +288,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [utils.players() function](#utilsplayers-function)
    * [utils.playerNames() function](#utilsplayernames-function)
    * [utils.stat() function](#utilsstat-function)
- * [Items module](#items-module)
-   * [Usage](#usage-13)
- * [Entities module](#entities-module)
-   * [Usage](#usage-14)
 
 ## Global Variables
 
@@ -1722,8 +1716,720 @@ events.blockBreak(onBlockBreak);
  * callback - A function which is called whenever the [world.ChunkLoadEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/ChunkLoadEvent.html) is fired
 
 
-## Modules
+## Items module
+The Items module provides a suite of functions - one for each possible item.
+See https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/api/inventory/ItemType.html for a list of possible items
 
+### Usage
+
+    items.book(); // returns net.canarymod.api.inventory.ItemType.Book
+    items.book(2); // returns a new net.canarymod.api.inventory.Item object with an amount 2 (2 books)
+    items.book( itemType ); // compares itemType parameter to ItemType.Book or an Item of type book
+
+The following functions are provided:
+
+ * acaciaDoor()
+ * acaciaFence()
+ * acaciaFenceGate()
+ * acaciaLeaves()
+ * acaciaLog()
+ * acaciaSapling()
+ * acaciaStairs()
+ * acaciaWood()
+ * acaciaWoodSlab()
+ * activatorRail()
+ * allium()
+ * andesite()
+ * anvil()
+ * apple()
+ * armorStand()
+ * arrow()
+ * azureBluet()
+ * bakedPotato()
+ * banner()
+ * beacon()
+ * bed()
+ * bedrock()
+ * birchDoor()
+ * birchFence()
+ * birchFenceGate()
+ * birchLeaves()
+ * birchLog()
+ * birchSapling()
+ * birchWood()
+ * birchWoodSlab()
+ * birchWoodStairs()
+ * blackCarpet()
+ * blackGlass()
+ * blackGlassPane()
+ * blackStainedClay()
+ * blazePowder()
+ * blazeRod()
+ * blocksRecord()
+ * blueCarpet()
+ * blueGlass()
+ * blueGlassPane()
+ * blueOrchid()
+ * blueStainedClay()
+ * boat()
+ * bone()
+ * bonemeal()
+ * book()
+ * bookAndQuill()
+ * bookshelf()
+ * bottleOEnchanting()
+ * bow()
+ * bowl()
+ * bread()
+ * brewingStand()
+ * brickBlock()
+ * brickSlab()
+ * brickStairs()
+ * brownCarpet()
+ * brownGlass()
+ * brownGlassPane()
+ * brownMushroom()
+ * brownStainedClay()
+ * bucket()
+ * burningFurnace()
+ * cactus()
+ * cactusGreen()
+ * cake()
+ * carrot()
+ * carrotOnAStick()
+ * carrots()
+ * cauldron()
+ * chainmailBoots()
+ * chainmailChestplate()
+ * chainmailHelmet()
+ * chainmailLeggings()
+ * charcoal()
+ * chest()
+ * chirpRecord()
+ * clay()
+ * clayBall()
+ * clayBrick()
+ * clownFish()
+ * coal()
+ * coalBlock()
+ * coalOre()
+ * coarseDirt()
+ * cobble()
+ * cobbleSilverFishBlock()
+ * cobbleSlab()
+ * cobbleStairs()
+ * cobblestoneWall()
+ * cocoaBeans()
+ * cocoaPlant()
+ * commandBlock()
+ * compass()
+ * cookedChicken()
+ * cookedClownFish()
+ * cookedFish()
+ * cookedMutton()
+ * cookedPufferFish()
+ * cookedRabbit()
+ * cookedSalmon()
+ * cookie()
+ * crackedSilverFishBlock()
+ * crackedStoneBrick()
+ * creeperHead()
+ * cyanCarpet()
+ * cyanDye()
+ * cyanGlass()
+ * cyanGlassPane()
+ * cyanStainedClay()
+ * dandelionYellow()
+ * darkOakDoor()
+ * darkOakFence()
+ * darkOakFenceGate()
+ * darkOakLeaves()
+ * darkOakLog()
+ * darkOakSapling()
+ * darkOakStairs()
+ * darkOakWood()
+ * darkOakWoodSlab()
+ * daylightSensor()
+ * deadBush()
+ * detectorRail()
+ * diamond()
+ * diamondAxe()
+ * diamondBlock()
+ * diamondBoots()
+ * diamondChestplate()
+ * diamondHelmet()
+ * diamondHoe()
+ * diamondHorseArmor()
+ * diamondLeggings()
+ * diamondOre()
+ * diamondPickaxe()
+ * diamondSpade()
+ * diamondSword()
+ * diorite()
+ * dirt()
+ * dispenser()
+ * doubleAcaciaWoodSlab()
+ * doubleBirchWoodSlab()
+ * doubleBrickBlockSlab()
+ * doubleCobbleSlab()
+ * doubleDarkOakWoodSlab()
+ * doubleGrass()
+ * doubleJungleWoodSlab()
+ * doubleNetherBrickSlab()
+ * doubleOakWoodSlab()
+ * doubleOrnateStoneSlab()
+ * doubleQuartzSlab()
+ * doubleRedSandstoneSlab()
+ * doubleSandStoneTrimSlab()
+ * doubleSandstoneSlab()
+ * doubleSpruceWoodSlab()
+ * doubleStoneBricksSlab()
+ * doubleStoneSlab()
+ * doubleWoodSlab()
+ * dropper()
+ * egg()
+ * elevenRecord()
+ * emerald()
+ * emeraldBlock()
+ * emeraldOre()
+ * emptyMap()
+ * enchantedBook()
+ * enchantmentTable()
+ * endPortal()
+ * endPortalFrame()
+ * endStone()
+ * enderChest()
+ * enderDragonEgg()
+ * enderPearl()
+ * eyeofEnder()
+ * farRecord()
+ * feather()
+ * fence()
+ * fenceGate()
+ * fermentedSpiderEye()
+ * fireBlock()
+ * fireCharge()
+ * fireworkRocket()
+ * fireworkStar()
+ * fishingRod()
+ * flint()
+ * flintAndSteel()
+ * flowerPot()
+ * furnace()
+ * ghastTear()
+ * glass()
+ * glassBottle()
+ * glassPane()
+ * glisteringMelon()
+ * glowStone()
+ * glowstoneDust()
+ * goldAxe()
+ * goldBlock()
+ * goldBoots()
+ * goldChestplate()
+ * goldHelmet()
+ * goldHoe()
+ * goldHorseArmor()
+ * goldIngot()
+ * goldLeggings()
+ * goldNugget()
+ * goldOre()
+ * goldPickaxe()
+ * goldRecord()
+ * goldSpade()
+ * goldSword()
+ * goldenApple()
+ * goldenCarrot()
+ * granite()
+ * grass()
+ * gravel()
+ * grayCarpet()
+ * grayDye()
+ * grayGlass()
+ * grayGlassPane()
+ * grayStainedClay()
+ * greenCarpet()
+ * greenGlass()
+ * greenGlassPane()
+ * greenRecord()
+ * greenStainedClay()
+ * grilledPork()
+ * gunpowder()
+ * hardenedClay()
+ * hayBale()
+ * heavyWeightedPressurePlate()
+ * hopper()
+ * hugeBrownMushroom()
+ * hugeRedMushroom()
+ * humanHead()
+ * ice()
+ * inkSack()
+ * ironAxe()
+ * ironBars()
+ * ironBlock()
+ * ironBoots()
+ * ironChestplate()
+ * ironDoor()
+ * ironHelmet()
+ * ironHoe()
+ * ironHorseArmor()
+ * ironIngot()
+ * ironLeggings()
+ * ironOre()
+ * ironPickaxe()
+ * ironSpade()
+ * ironSword()
+ * itemFrame()
+ * jackOLantern()
+ * jukebox()
+ * jungleDoor()
+ * jungleFence()
+ * jungleFenceGate()
+ * jungleLeaves()
+ * jungleLog()
+ * jungleSapling()
+ * jungleWood()
+ * jungleWoodSlab()
+ * jungleWoodStairs()
+ * ladder()
+ * lapisBlock()
+ * lapisLazuli()
+ * lapislazuliOre()
+ * largeFern()
+ * lava()
+ * lavaBucket()
+ * lavaFlowing()
+ * lead()
+ * leather()
+ * leatherBoots()
+ * leatherChestplate()
+ * leatherHelmet()
+ * leatherLeggings()
+ * lever()
+ * lightBlueCarpet()
+ * lightBlueDye()
+ * lightBlueGlass()
+ * lightBlueGlassPane()
+ * lightBlueStainedClay()
+ * lightGrayCarpet()
+ * lightGrayDye()
+ * lightGrayGlass()
+ * lightGrayGlassPane()
+ * lightGrayStainedClay()
+ * lightWeightedPressurePlate()
+ * lilac()
+ * lilypad()
+ * limeCarpet()
+ * limeDye()
+ * limeGlass()
+ * limeGlassPane()
+ * limeStainedClay()
+ * magentaCarpet()
+ * magentaDye()
+ * magentaGlass()
+ * magentaGlassPane()
+ * magentaStainedClay()
+ * magmaCream()
+ * mallRecord()
+ * map()
+ * mellohiRecord()
+ * melon()
+ * melonSeeds()
+ * melonSlice()
+ * milkBucket()
+ * minecart()
+ * minecartCommandBlock()
+ * minecartHopper()
+ * minecartTNT()
+ * mobSpawner()
+ * mossyBrickSilverFishBlock()
+ * mossyCobble()
+ * mossyCobbleWall()
+ * mossyStoneBrick()
+ * mushroomSoup()
+ * mycelium()
+ * nameTag()
+ * netherBrick()
+ * netherBrickFence()
+ * netherBrickStairs()
+ * netherBricks()
+ * netherBricksSlab()
+ * netherQuartz()
+ * netherQuartzOre()
+ * netherStar()
+ * netherWart()
+ * netherrack()
+ * noteBlock()
+ * oakLeaves()
+ * oakLog()
+ * oakSapling()
+ * oakWood()
+ * oakWoodSlab()
+ * obsidian()
+ * orangeCarpet()
+ * orangeDye()
+ * orangeGlass()
+ * orangeGlassPane()
+ * orangeStainedClay()
+ * orangeTulip()
+ * ornateQuartzBlock()
+ * ornateSilverFishBlock()
+ * ornateStoneBrick()
+ * ornateStoneSlab()
+ * oxeyeDaisy()
+ * packedIce()
+ * painting()
+ * paper()
+ * peony()
+ * pineLeaves()
+ * pineLog()
+ * pineWoodStairs()
+ * pinkCarpet()
+ * pinkDye()
+ * pinkGlass()
+ * pinkGlassPane()
+ * pinkStainedClay()
+ * pinkTulip()
+ * piston()
+ * podzol()
+ * poisonousPotato()
+ * polishedAndesite()
+ * polishedDiorite()
+ * polishedGranite()
+ * poppy()
+ * pork()
+ * portal()
+ * potato()
+ * potatoes()
+ * potion()
+ * poweredMinecart()
+ * poweredRail()
+ * prismarineCrystals()
+ * prismarineShard()
+ * pufferFish()
+ * pumpkin()
+ * pumpkinPie()
+ * pumpkinSeeds()
+ * purpleCarpet()
+ * purpleDye()
+ * purpleGlass()
+ * purpleGlassPane()
+ * purpleStainedClay()
+ * quartzBlock()
+ * quartzPillarCap()
+ * quartzPillarHorizontal()
+ * quartzPillarVertical()
+ * quartzSlab()
+ * quartzStairs()
+ * rabbitFoot()
+ * rabbitHide()
+ * rabbitStew()
+ * rail()
+ * rawBeef()
+ * rawChicken()
+ * rawFish()
+ * rawMutton()
+ * rawRabbit()
+ * rawSalmon()
+ * redCarpet()
+ * redGlass()
+ * redGlassPane()
+ * redMushroom()
+ * redSandstone()
+ * redSandstoneBlank()
+ * redSandstoneOrnate()
+ * redSandstoneSlab()
+ * redSandstoneStairs()
+ * redStainedClay()
+ * redStone()
+ * redTulip()
+ * redstoneBlock()
+ * redstoneComparator()
+ * redstoneLampOff()
+ * redstoneOre()
+ * redstoneRepeater()
+ * redstoneTorchOn()
+ * reed()
+ * roseBush()
+ * roseRed()
+ * rottenFlesh()
+ * saddle()
+ * sand()
+ * sandStoneTrimSlab()
+ * sandstone()
+ * sandstoneBlank()
+ * sandstoneOrnate()
+ * sandstoneSlab()
+ * sandstoneStairs()
+ * seeds()
+ * shears()
+ * shrub()
+ * sign()
+ * skeletonHead()
+ * slimeBall()
+ * snow()
+ * snowBall()
+ * snowBlock()
+ * soil()
+ * soulSand()
+ * spawnEgg()
+ * spiderEye()
+ * spiderWeb()
+ * sponge()
+ * spruceDoor()
+ * spruceFence()
+ * spruceFenceGate()
+ * spruceSapling()
+ * spruceWood()
+ * spruceWoodSlab()
+ * stalRecord()
+ * steak()
+ * stick()
+ * stickyPiston()
+ * stone()
+ * stoneAxe()
+ * stoneBrick()
+ * stoneBrickSilverFishBlock()
+ * stoneBrickStairs()
+ * stoneBricksSlab()
+ * stoneButton()
+ * stoneHoe()
+ * stonePickaxe()
+ * stonePlate()
+ * stoneSilverFishBlock()
+ * stoneSlab()
+ * stoneSpade()
+ * stoneSword()
+ * storageMinecart()
+ * stradRecord()
+ * string()
+ * sugar()
+ * sunflower()
+ * tallFern()
+ * tallGrass()
+ * tnt()
+ * torch()
+ * trapdoor()
+ * trappedChest()
+ * tripwireHook()
+ * vines()
+ * waitRecord()
+ * wardRecord()
+ * watch()
+ * water()
+ * waterBucket()
+ * waterFlowing()
+ * wheat()
+ * whiteCarpet()
+ * whiteGlass()
+ * whiteGlassPane()
+ * whiteStainedClay()
+ * whiteTulip()
+ * witherSkeletonHead()
+ * woodAxe()
+ * woodDoor()
+ * woodHoe()
+ * woodPickaxe()
+ * woodPlate()
+ * woodSlab()
+ * woodSpade()
+ * woodSword()
+ * woodenButton()
+ * woodenStairs()
+ * woolBlack()
+ * woolBlue()
+ * woolBrown()
+ * woolCyan()
+ * woolDarkGreen()
+ * woolGray()
+ * woolLightBlue()
+ * woolLightGray()
+ * woolLightGreen()
+ * woolMagenta()
+ * woolOrange()
+ * woolPink()
+ * woolPurple()
+ * woolRed()
+ * woolWhite()
+ * woolYellow()
+ * workbench()
+ * writtenBook()
+ * yellowCarpet()
+ * yellowFlower()
+ * yellowGlass()
+ * yellowGlassPane()
+ * yellowStainedClay()
+ * zombieHead()
+
+
+## Entities module
+The Entities module provides a suite of functions - one for each possible entity type.
+
+### Usage
+
+    entities.zombie      // returns a Bukkit EntityType.ZOMBIE enum value
+
+The following functions are provided:
+
+ * area_effect_cloud
+ * armor_stand
+ * arrow
+ * bat
+ * blaze
+ * boat
+ * cave_spider
+ * chicken
+ * complex_part
+ * cow
+ * creeper
+ * dragon_fireball
+ * dropped_item
+ * egg
+ * ender_crystal
+ * ender_dragon
+ * ender_pearl
+ * ender_signal
+ * enderman
+ * endermite
+ * experience_orb
+ * falling_block
+ * fireball
+ * firework
+ * fishing_hook
+ * ghast
+ * giant
+ * guardian
+ * horse
+ * iron_golem
+ * item_frame
+ * leash_hitch
+ * lightning
+ * lingering_potion
+ * magma_cube
+ * minecart
+ * minecart_chest
+ * minecart_command
+ * minecart_furnace
+ * minecart_hopper
+ * minecart_mob_spawner
+ * minecart_tnt
+ * mushroom_cow
+ * ocelot
+ * painting
+ * pig
+ * pig_zombie
+ * player
+ * primed_tnt
+ * rabbit
+ * sheep
+ * shulker
+ * shulker_bullet
+ * silverfish
+ * skeleton
+ * slime
+ * small_fireball
+ * snowball
+ * snowman
+ * spectral_arrow
+ * spider
+ * splash_potion
+ * squid
+ * thrown_exp_bottle
+ * tipped_arrow
+ * unknown
+ * villager
+ * weather
+ * witch
+ * wither
+ * wither_skull
+ * wolf
+ * zombie
+
+## Blocks Module
+
+You hate having to lookup [Data Values][dv] when you use ScriptCraft's
+Drone() functions. So do I.  So I created this blocks object which is
+a helper object for use in construction.
+
+### Examples
+
+    box( blocks.oak ); // creates a single oak wood block
+    box( blocks.sand, 3, 2, 1 ); // creates a block of sand 3 wide x 2 high x 1 long
+    box( blocks.wool.green, 2 ); // creates a block of green wool 2 blocks wide
+
+Color aliased properties that were a direct descendant of the blocks
+object are no longer used to avoid confusion with carpet and stained
+clay blocks. In addition, there's a convenience array `blocks.rainbow`
+which is an array of the 7 colors of the rainbow (or closest
+approximations).
+
+The blocks module is globally exported by the Drone module.
+
+## Fireworks Module
+
+The fireworks module makes it easy to create fireworks using
+ScriptCraft.  The module has a single function `firework` which takes
+a `org.bukkit.Location` as its 1 and only parameter.
+
+### Examples
+
+The module also extends the `Drone` object adding a `firework` method
+so that fireworks can be created as a part of a Drone chain. For
+Example....
+
+    /js firework()
+
+... creates a single firework, while ....
+
+    /js firework().fwd(3).times(5) 
+
+... creates 5 fireworks in a row. Fireworks have also been added as a
+possible option for the `arrow` module. To have a firework launch
+where an arrow strikes...
+
+    /js arrows.firework()
+
+To call the fireworks.firework() function directly, you must provide a
+location. For example...
+
+    /js var fireworks = require('fireworks');
+    /js fireworks.firework( self.location );
+
+![firework example](img/firework.png)
+
+## Inventory Module
+This module provides functions to add items to, remove items from and check the 
+contents of a player or NPC's inventory. 
+
+### Usage
+The inventory module is best used in conjunction with the items module. See below for examples of usage.
+
+```javascript
+// gives every player a cookie and a baked potato
+utils.players(function(player){
+  inventory(player)
+    .add( items.cookie(1) )
+    .add( items.bakedPotato(1) )
+});
+
+// give a player 6 cookies then take away 4 of them
+
+inventory(player)
+  .add( items.cookie(6) )
+  .remove ( items.cookie(4) )
+
+// check if a player has any cookies
+
+var hasCookies = inventory(player).contains( items.cookie(1) );
+
+```
+The inventory module exposes a single function which when passed a player or NPC will return an object with 3 methods:
+    *NOTE: all methods expect a parameter of the type `org.bukkit.inventory.ItemStack`
+            so use the `items` module to construct items to pass into these methods
+
+* add : Adds items to the inventory
+* remove : removes items from the inventory
+* contains : checks to see if there is the specified type and amount of item in the inventory
 
 ## Drone Module
 
@@ -2906,94 +3612,6 @@ d.temple();
 ```
 ![temple example](img/templeex1.png)
 
-## Blocks Module
-
-You hate having to lookup [Data Values][dv] when you use ScriptCraft's
-Drone() functions. So do I.  So I created this blocks object which is
-a helper object for use in construction.
-
-### Examples
-
-    box( blocks.oak ); // creates a single oak wood block
-    box( blocks.sand, 3, 2, 1 ); // creates a block of sand 3 wide x 2 high x 1 long
-    box( blocks.wool.green, 2 ); // creates a block of green wool 2 blocks wide
-
-Color aliased properties that were a direct descendant of the blocks
-object are no longer used to avoid confusion with carpet and stained
-clay blocks. In addition, there's a convenience array `blocks.rainbow`
-which is an array of the 7 colors of the rainbow (or closest
-approximations).
-
-The blocks module is globally exported by the Drone module.
-
-## Fireworks Module
-
-The fireworks module makes it easy to create fireworks using
-ScriptCraft.  The module has a single function `firework` which takes
-a `org.bukkit.Location` as its 1 and only parameter.
-
-### Examples
-
-The module also extends the `Drone` object adding a `firework` method
-so that fireworks can be created as a part of a Drone chain. For
-Example....
-
-    /js firework()
-
-... creates a single firework, while ....
-
-    /js firework().fwd(3).times(5) 
-
-... creates 5 fireworks in a row. Fireworks have also been added as a
-possible option for the `arrow` module. To have a firework launch
-where an arrow strikes...
-
-    /js arrows.firework()
-
-To call the fireworks.firework() function directly, you must provide a
-location. For example...
-
-    /js var fireworks = require('fireworks');
-    /js fireworks.firework( self.location );
-
-![firework example](img/firework.png)
-
-## Inventory Module
-This module provides functions to add items to, remove items from and check the 
-contents of a player or NPC's inventory. 
-
-### Usage
-The inventory module is best used in conjunction with the items module. See below for examples of usage.
-
-```javascript
-var inventory = require('inventory');
-var items = require('items');
-var utils = require('utils');
-
-// gives every player a cookie and a baked potatoe
-utils.players(function(player){
-  inventory(player)
-    .add( items.cookie(1) )
-    .add( items.bakedPotato(1) )
-});
-
-// give a player 6 cookies then take away 4 of them
-
-inventory(player)
-  .add( items.cookie(6) )
-  .remove ( items.cookie(4) )
-
-// check if a player has any cookies
-
-var hasCookies = inventory(player).contains( items.cookie(1) );
-
-```
-The inventory module exposes a single function which when passed a player or NPC will return an object with 3 methods:
-
-* add : Adds items to the inventory (Expects parameters of type `net.canarymod.api.inventory.Item` - I strongly recommend using the `items` module for constructing items)
-* remove : removes items from the inventory (Expects parameters of type `net.canarymod.api.inventory.Item` - I strongly recommend using the `items` module for constructing items)
-* contains : checks to see if there is the specified type and amount of item in the inventory (Expects parameters of type `net.canarymod.api.inventory.Item` - I strongly recommend using the `items` module for constructing items)
-
 ## Classroom Plugin
 
 The `classroom` object contains a couple of utility functions for use
@@ -3869,632 +4487,4 @@ This function also contains values for each possible stat so you can get at stat
     var JUMPSTAT = utils.stat.JUMP; // Accessing the value
     var jumpCount = player.getStat ( JUMPSTAT ); // canary-specific code
 
-## Items module
-The Items module provides a suite of functions - one for each possible item.
-See https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/api/inventory/ItemType.html for a list of possible items
-
-### Usage
-
-    items.book(); // returns net.canarymod.api.inventory.ItemType.Book
-    items.book(2); // returns a new net.canarymod.api.inventory.Item object with an amount 2 (2 books)
-    items.book( itemType ); // compares itemType parameter to ItemType.Book or an Item of type book
-
-The following functions are provided:
-
- * acaciaDoor()
- * acaciaFence()
- * acaciaFenceGate()
- * acaciaLeaves()
- * acaciaLog()
- * acaciaSapling()
- * acaciaStairs()
- * acaciaWood()
- * acaciaWoodSlab()
- * activatorRail()
- * allium()
- * andesite()
- * anvil()
- * apple()
- * armorStand()
- * arrow()
- * azureBluet()
- * bakedPotato()
- * banner()
- * beacon()
- * bed()
- * bedrock()
- * birchDoor()
- * birchFence()
- * birchFenceGate()
- * birchLeaves()
- * birchLog()
- * birchSapling()
- * birchWood()
- * birchWoodSlab()
- * birchWoodStairs()
- * blackCarpet()
- * blackGlass()
- * blackGlassPane()
- * blackStainedClay()
- * blazePowder()
- * blazeRod()
- * blocksRecord()
- * blueCarpet()
- * blueGlass()
- * blueGlassPane()
- * blueOrchid()
- * blueStainedClay()
- * boat()
- * bone()
- * bonemeal()
- * book()
- * bookAndQuill()
- * bookshelf()
- * bottleOEnchanting()
- * bow()
- * bowl()
- * bread()
- * brewingStand()
- * brickBlock()
- * brickSlab()
- * brickStairs()
- * brownCarpet()
- * brownGlass()
- * brownGlassPane()
- * brownMushroom()
- * brownStainedClay()
- * bucket()
- * burningFurnace()
- * cactus()
- * cactusGreen()
- * cake()
- * carrot()
- * carrotOnAStick()
- * carrots()
- * cauldron()
- * chainmailBoots()
- * chainmailChestplate()
- * chainmailHelmet()
- * chainmailLeggings()
- * charcoal()
- * chest()
- * chirpRecord()
- * clay()
- * clayBall()
- * clayBrick()
- * clownFish()
- * coal()
- * coalBlock()
- * coalOre()
- * coarseDirt()
- * cobble()
- * cobbleSilverFishBlock()
- * cobbleSlab()
- * cobbleStairs()
- * cobblestoneWall()
- * cocoaBeans()
- * cocoaPlant()
- * commandBlock()
- * compass()
- * cookedChicken()
- * cookedClownFish()
- * cookedFish()
- * cookedMutton()
- * cookedPufferFish()
- * cookedRabbit()
- * cookedSalmon()
- * cookie()
- * crackedSilverFishBlock()
- * crackedStoneBrick()
- * creeperHead()
- * cyanCarpet()
- * cyanDye()
- * cyanGlass()
- * cyanGlassPane()
- * cyanStainedClay()
- * dandelionYellow()
- * darkOakDoor()
- * darkOakFence()
- * darkOakFenceGate()
- * darkOakLeaves()
- * darkOakLog()
- * darkOakSapling()
- * darkOakStairs()
- * darkOakWood()
- * darkOakWoodSlab()
- * daylightSensor()
- * deadBush()
- * detectorRail()
- * diamond()
- * diamondAxe()
- * diamondBlock()
- * diamondBoots()
- * diamondChestplate()
- * diamondHelmet()
- * diamondHoe()
- * diamondHorseArmor()
- * diamondLeggings()
- * diamondOre()
- * diamondPickaxe()
- * diamondSpade()
- * diamondSword()
- * diorite()
- * dirt()
- * dispenser()
- * doubleAcaciaWoodSlab()
- * doubleBirchWoodSlab()
- * doubleBrickBlockSlab()
- * doubleCobbleSlab()
- * doubleDarkOakWoodSlab()
- * doubleGrass()
- * doubleJungleWoodSlab()
- * doubleNetherBrickSlab()
- * doubleOakWoodSlab()
- * doubleOrnateStoneSlab()
- * doubleQuartzSlab()
- * doubleRedSandstoneSlab()
- * doubleSandStoneTrimSlab()
- * doubleSandstoneSlab()
- * doubleSpruceWoodSlab()
- * doubleStoneBricksSlab()
- * doubleStoneSlab()
- * doubleWoodSlab()
- * dropper()
- * egg()
- * elevenRecord()
- * emerald()
- * emeraldBlock()
- * emeraldOre()
- * emptyMap()
- * enchantedBook()
- * enchantmentTable()
- * endPortal()
- * endPortalFrame()
- * endStone()
- * enderChest()
- * enderDragonEgg()
- * enderPearl()
- * eyeofEnder()
- * farRecord()
- * feather()
- * fence()
- * fenceGate()
- * fermentedSpiderEye()
- * fireBlock()
- * fireCharge()
- * fireworkRocket()
- * fireworkStar()
- * fishingRod()
- * flint()
- * flintAndSteel()
- * flowerPot()
- * furnace()
- * ghastTear()
- * glass()
- * glassBottle()
- * glassPane()
- * glisteringMelon()
- * glowStone()
- * glowstoneDust()
- * goldAxe()
- * goldBlock()
- * goldBoots()
- * goldChestplate()
- * goldHelmet()
- * goldHoe()
- * goldHorseArmor()
- * goldIngot()
- * goldLeggings()
- * goldNugget()
- * goldOre()
- * goldPickaxe()
- * goldRecord()
- * goldSpade()
- * goldSword()
- * goldenApple()
- * goldenCarrot()
- * granite()
- * grass()
- * gravel()
- * grayCarpet()
- * grayDye()
- * grayGlass()
- * grayGlassPane()
- * grayStainedClay()
- * greenCarpet()
- * greenGlass()
- * greenGlassPane()
- * greenRecord()
- * greenStainedClay()
- * grilledPork()
- * gunpowder()
- * hardenedClay()
- * hayBale()
- * heavyWeightedPressurePlate()
- * hopper()
- * hugeBrownMushroom()
- * hugeRedMushroom()
- * humanHead()
- * ice()
- * inkSack()
- * ironAxe()
- * ironBars()
- * ironBlock()
- * ironBoots()
- * ironChestplate()
- * ironDoor()
- * ironHelmet()
- * ironHoe()
- * ironHorseArmor()
- * ironIngot()
- * ironLeggings()
- * ironOre()
- * ironPickaxe()
- * ironSpade()
- * ironSword()
- * itemFrame()
- * jackOLantern()
- * jukebox()
- * jungleDoor()
- * jungleFence()
- * jungleFenceGate()
- * jungleLeaves()
- * jungleLog()
- * jungleSapling()
- * jungleWood()
- * jungleWoodSlab()
- * jungleWoodStairs()
- * ladder()
- * lapisBlock()
- * lapisLazuli()
- * lapislazuliOre()
- * largeFern()
- * lava()
- * lavaBucket()
- * lavaFlowing()
- * lead()
- * leather()
- * leatherBoots()
- * leatherChestplate()
- * leatherHelmet()
- * leatherLeggings()
- * lever()
- * lightBlueCarpet()
- * lightBlueDye()
- * lightBlueGlass()
- * lightBlueGlassPane()
- * lightBlueStainedClay()
- * lightGrayCarpet()
- * lightGrayDye()
- * lightGrayGlass()
- * lightGrayGlassPane()
- * lightGrayStainedClay()
- * lightWeightedPressurePlate()
- * lilac()
- * lilypad()
- * limeCarpet()
- * limeDye()
- * limeGlass()
- * limeGlassPane()
- * limeStainedClay()
- * magentaCarpet()
- * magentaDye()
- * magentaGlass()
- * magentaGlassPane()
- * magentaStainedClay()
- * magmaCream()
- * mallRecord()
- * map()
- * mellohiRecord()
- * melon()
- * melonSeeds()
- * melonSlice()
- * milkBucket()
- * minecart()
- * minecartCommandBlock()
- * minecartHopper()
- * minecartTNT()
- * mobSpawner()
- * mossyBrickSilverFishBlock()
- * mossyCobble()
- * mossyCobbleWall()
- * mossyStoneBrick()
- * mushroomSoup()
- * mycelium()
- * nameTag()
- * netherBrick()
- * netherBrickFence()
- * netherBrickStairs()
- * netherBricks()
- * netherBricksSlab()
- * netherQuartz()
- * netherQuartzOre()
- * netherStar()
- * netherWart()
- * netherrack()
- * noteBlock()
- * oakLeaves()
- * oakLog()
- * oakSapling()
- * oakWood()
- * oakWoodSlab()
- * obsidian()
- * orangeCarpet()
- * orangeDye()
- * orangeGlass()
- * orangeGlassPane()
- * orangeStainedClay()
- * orangeTulip()
- * ornateQuartzBlock()
- * ornateSilverFishBlock()
- * ornateStoneBrick()
- * ornateStoneSlab()
- * oxeyeDaisy()
- * packedIce()
- * painting()
- * paper()
- * peony()
- * pineLeaves()
- * pineLog()
- * pineWoodStairs()
- * pinkCarpet()
- * pinkDye()
- * pinkGlass()
- * pinkGlassPane()
- * pinkStainedClay()
- * pinkTulip()
- * piston()
- * podzol()
- * poisonousPotato()
- * polishedAndesite()
- * polishedDiorite()
- * polishedGranite()
- * poppy()
- * pork()
- * portal()
- * potato()
- * potatoes()
- * potion()
- * poweredMinecart()
- * poweredRail()
- * prismarineCrystals()
- * prismarineShard()
- * pufferFish()
- * pumpkin()
- * pumpkinPie()
- * pumpkinSeeds()
- * purpleCarpet()
- * purpleDye()
- * purpleGlass()
- * purpleGlassPane()
- * purpleStainedClay()
- * quartzBlock()
- * quartzPillarCap()
- * quartzPillarHorizontal()
- * quartzPillarVertical()
- * quartzSlab()
- * quartzStairs()
- * rabbitFoot()
- * rabbitHide()
- * rabbitStew()
- * rail()
- * rawBeef()
- * rawChicken()
- * rawFish()
- * rawMutton()
- * rawRabbit()
- * rawSalmon()
- * redCarpet()
- * redGlass()
- * redGlassPane()
- * redMushroom()
- * redSandstone()
- * redSandstoneBlank()
- * redSandstoneOrnate()
- * redSandstoneSlab()
- * redSandstoneStairs()
- * redStainedClay()
- * redStone()
- * redTulip()
- * redstoneBlock()
- * redstoneComparator()
- * redstoneLampOff()
- * redstoneOre()
- * redstoneRepeater()
- * redstoneTorchOn()
- * reed()
- * roseBush()
- * roseRed()
- * rottenFlesh()
- * saddle()
- * sand()
- * sandStoneTrimSlab()
- * sandstone()
- * sandstoneBlank()
- * sandstoneOrnate()
- * sandstoneSlab()
- * sandstoneStairs()
- * seeds()
- * shears()
- * shrub()
- * sign()
- * skeletonHead()
- * slimeBall()
- * snow()
- * snowBall()
- * snowBlock()
- * soil()
- * soulSand()
- * spawnEgg()
- * spiderEye()
- * spiderWeb()
- * sponge()
- * spruceDoor()
- * spruceFence()
- * spruceFenceGate()
- * spruceSapling()
- * spruceWood()
- * spruceWoodSlab()
- * stalRecord()
- * steak()
- * stick()
- * stickyPiston()
- * stone()
- * stoneAxe()
- * stoneBrick()
- * stoneBrickSilverFishBlock()
- * stoneBrickStairs()
- * stoneBricksSlab()
- * stoneButton()
- * stoneHoe()
- * stonePickaxe()
- * stonePlate()
- * stoneSilverFishBlock()
- * stoneSlab()
- * stoneSpade()
- * stoneSword()
- * storageMinecart()
- * stradRecord()
- * string()
- * sugar()
- * sunflower()
- * tallFern()
- * tallGrass()
- * tnt()
- * torch()
- * trapdoor()
- * trappedChest()
- * tripwireHook()
- * vines()
- * waitRecord()
- * wardRecord()
- * watch()
- * water()
- * waterBucket()
- * waterFlowing()
- * wheat()
- * whiteCarpet()
- * whiteGlass()
- * whiteGlassPane()
- * whiteStainedClay()
- * whiteTulip()
- * witherSkeletonHead()
- * woodAxe()
- * woodDoor()
- * woodHoe()
- * woodPickaxe()
- * woodPlate()
- * woodSlab()
- * woodSpade()
- * woodSword()
- * woodenButton()
- * woodenStairs()
- * woolBlack()
- * woolBlue()
- * woolBrown()
- * woolCyan()
- * woolDarkGreen()
- * woolGray()
- * woolLightBlue()
- * woolLightGray()
- * woolLightGreen()
- * woolMagenta()
- * woolOrange()
- * woolPink()
- * woolPurple()
- * woolRed()
- * woolWhite()
- * woolYellow()
- * workbench()
- * writtenBook()
- * yellowCarpet()
- * yellowFlower()
- * yellowGlass()
- * yellowGlassPane()
- * yellowStainedClay()
- * zombieHead()
-
-
-## Entities module
-The Entities module provides a suite of functions - one for each possible entity type.
-
-### Usage
-
-    entities.zombie      // returns a Bukkit EntityType.ZOMBIE enum value
-
-The following functions are provided:
-
- * area_effect_cloud
- * armor_stand
- * arrow
- * bat
- * blaze
- * boat
- * cave_spider
- * chicken
- * complex_part
- * cow
- * creeper
- * dragon_fireball
- * dropped_item
- * egg
- * ender_crystal
- * ender_dragon
- * ender_pearl
- * ender_signal
- * enderman
- * endermite
- * experience_orb
- * falling_block
- * fireball
- * firework
- * fishing_hook
- * ghast
- * giant
- * guardian
- * horse
- * iron_golem
- * item_frame
- * leash_hitch
- * lightning
- * lingering_potion
- * magma_cube
- * minecart
- * minecart_chest
- * minecart_command
- * minecart_furnace
- * minecart_hopper
- * minecart_mob_spawner
- * minecart_tnt
- * mushroom_cow
- * ocelot
- * painting
- * pig
- * pig_zombie
- * player
- * primed_tnt
- * rabbit
- * sheep
- * shulker
- * shulker_bullet
- * silverfish
- * skeleton
- * slime
- * small_fireball
- * snowball
- * snowman
- * spectral_arrow
- * spider
- * splash_potion
- * squid
- * thrown_exp_bottle
- * tipped_arrow
- * unknown
- * villager
- * weather
- * witch
- * wither
- * wither_skull
- * wolf
- * zombie
 
