@@ -189,10 +189,7 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [events.chunkPopulate()](#eventschunkpopulate)
    * [events.portalCreate()](#eventsportalcreate-1)
    * [events.chunkLoad()](#eventschunkload)
- * [console global variable](#console-global-variable)
-   * [Example](#example)
-   * [Using string substitutions](#using-string-substitutions)
- * [Drone Plugin](#drone-plugin)
+ * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone.box() method](#dronebox-method)
    * [Drone.box0() method](#dronebox0-method)
@@ -246,8 +243,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [Drone.rainbow() method](#dronerainbow-method)
    * [Drone.spiral_stairs() method](#dronespiral_stairs-method)
    * [Drone.temple() method](#dronetemple-method)
- * [The at Module](#the-at-module)
-   * [at() function](#at-function)
  * [Blocks Module](#blocks-module)
    * [Examples](#examples)
  * [Fireworks Module](#fireworks-module)
@@ -1768,44 +1763,9 @@ events.blockBreak(onBlockBreak);
 
 
 
-## console global variable
+## Drone Module
 
-ScriptCraft provides a `console` global variable with the followng methods...
-
- * log()  
- * info() 
- * warn()
- * error()
-
-The ScriptCraft console methods work like the [Web API implementation][webcons].
-
-### Example 
-
-    console.log('Hello %s', 'world');
-
-Basic variable substitution is supported (ScriptCraft's implementation
-of console uses the Bukkit Plugin [Logger][lgr] or Canary Plugin [Logman][cmlgr] under the hood and
-uses [java.lang.String.format()][strfmt] for variable
-substitution. All output will be sent to the server console (not
-in-game).
-
-### Using string substitutions
-
-ScriptCraft uses Java's [String.format()][strfmt] so any string substitution identifiers supported by 
-`java.lang.String.format()` are supported (e.g. %s , %d etc).
-
-    for (var i=0; i<5; i++) {
-      console.log("Hello, %s. You've called me %d times.", "Bob", i+1);
-    }
-
-[lgr]: http://jd.bukkit.org/beta/apidocs/org/bukkit/plugin/PluginLogger.html
-[cmlgr]: https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/logger/Logman.html
-[strfmt]: http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#format(java.lang.String, java.lang.Object...)
-[webcons]: https://developer.mozilla.org/en-US/docs/Web/API/console
-
-## Drone Plugin
-
-The Drone is a convenience class for building.
+The Drone object can be used to build things in Minecraft using JavaScript!
 
 It uses a fluent interface which means all of the Drone's methods return `this` and can be chained together like so...
 
@@ -2983,50 +2943,6 @@ var d = new Drone(player);
 d.temple();
 ```
 ![temple example](img/templeex1.png)
-
-## The at Module
-
-The at module provides a single function `at()` which can be used to schedule
-repeating (or non-repeating) tasks to be done at a particular time. 
-
-### at() function
-
-The utils.at() function will perform a given task at a given time in the 
-(minecraft) day.
-
-#### Parameters
-
- * time24hr : The time in 24hr form - e.g. 9:30 in the morning is '09:30' while
-   9:30 pm is '21:30', midnight is '00:00' and midday is '12:00'
- * callback : A javascript function which will be invoked at the given time.
- * worlds : (optional) An array of worlds. Each world has its own clock. If no array of worlds is specified, all the server's worlds are used.
- * repeat : (optional) true or false, default is true (repeat the task every day)
-
-#### Example
-
-To warn players when night is approaching:
-
-```javascript
-var utils = require('utils'),
-    at = require('at');
-function warning(){
-  utils.players(function( player ) {
-    echo( player, 'The night is dark and full of terrors!' );
-  });
-}
-at('19:00', warning);
-```
-To run a task only once at the next given time:
-```javascript
-var utils = require('utils'),
-    at = require('at');
-function wakeup(){
-  utils.players(function( player ) {
-    echo( player, "Wake Up Folks!" );
-  });
-}
-at('06:00', wakeup, null, false);
-```
 
 ## Blocks Module
 
