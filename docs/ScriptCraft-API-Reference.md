@@ -6,6 +6,8 @@ Original content by [Walter Higgins](https://github.com/walterhiggins)
 
 Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.com)
 
+NOTE: **Work in Progress**
+
 ## Table of Contents
  * [Global Variables](#global-variables)
    * [server variable](#server-variable)
@@ -1736,15 +1738,21 @@ echo(self, "Hello Minecraft!".aqua());
 ```
 ![Hello Minecraft!](https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/004/661/original/temp1450223230.png)
 
-## Items module
-The Items module provides a suite of functions - one for each possible item.
-See https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/api/inventory/ItemType.html for a list of possible items
+## Items Module
+
+The items module provides a function for each possible item in Minecraft
+See https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html for a list of possible items
 
 ### Usage
 
-    items.book(); // returns net.canarymod.api.inventory.ItemType.Book
-    items.book(2); // returns a new net.canarymod.api.inventory.Item object with an amount 2 (2 books)
-    items.book( itemType ); // compares itemType parameter to ItemType.Book or an Item of type book
+    items.book(); // returns an ItemStack with one book in it
+    items.book(2); // returns an ItemStack with two books in it
+
+Items with names that are longer than one word are written in [camelCase](https://en.wikipedia.org/wiki/CamelCase) which means the first word is lowercase and each subsquent word is capitalized, with all spaces removed.
+
+### Example
+
+If we want an item with the type `ACACIA_FENCE_GATE` we would write `items.acaciaFenceGate()`
 
 The following functions are provided:
 
