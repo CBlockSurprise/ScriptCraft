@@ -4,7 +4,7 @@ Original content by Walter Higgins: walter.higgins@gmail.com
 
 Additions and modifications by Aaron Powell @ MVCode
 
-[![MVCode](d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/553/original/new-logo.png)](https://www.mvcodeclub.com/)
+[![MVCode](https://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/553/original/new-logo.png)](https://www.mvcodeclub.com/)
 
 ## Table of Contents
  * [Modules in Scriptcraft](#modules-in-scriptcraft)
