@@ -1,18 +1,13 @@
-<!-- 
-IMPORTANT NOTE FOR CONTRIBUTORS
--------------------------------
-Contributors: This file is generated from comments in javascript source files src/main/js/*
-If you would like to make changes, change the comments in the src/main/js/* files instead.
--->
 # ScriptCraft API Reference
 
 Original content by Walter Higgins
+
 [walter.higgins@gmail.com][email]
+[email]: mailto:walter.higgins@gmail.com?subject=ScriptCraft_API_Reference
 
 Additions and modifications by Aaron Powell @ MVCode
-[MVCode](https://www.mvcodeclub.com/)
 
-[email]: mailto:walter.higgins@gmail.com?subject=ScriptCraft_API_Reference
+[![MVCode](d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/553/original/new-logo.png)](https://www.mvcodeclub.com/)
 
 ## Table of Contents
  * [Modules in Scriptcraft](#modules-in-scriptcraft)
