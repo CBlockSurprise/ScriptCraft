@@ -424,15 +424,13 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [weather.WeatherChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/weather/WeatherChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
-
 ### events.lightningStrike()
 
 #### Parameters 
 
  * callback - A function which is called whenever the [weather.LightningStrikeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/weather/LightningStrikeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.thunderChange()
 
@@ -440,7 +438,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [weather.ThunderChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/weather/ThunderChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleMove()
 
@@ -448,7 +446,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleMoveEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleMoveEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleDestroy()
 
@@ -456,7 +454,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleDestroyEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleDestroyEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleExit()
 
@@ -464,7 +462,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleExitEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleExitEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleEntityCollision()
 
@@ -472,7 +470,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleEntityCollisionEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleEntityCollisionEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleBlockCollision()
 
@@ -480,7 +478,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleBlockCollisionEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleBlockCollisionEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleEnter()
 
@@ -488,7 +486,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleEnterEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleEnterEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleDamage()
 
@@ -496,7 +494,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleDamageEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleDamageEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleUpdate()
 
@@ -504,7 +502,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleUpdateEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleUpdateEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.vehicleCreate()
 
@@ -512,7 +510,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [vehicle.VehicleCreateEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/vehicle/VehicleCreateEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.enchantItem()
 
@@ -520,7 +518,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [enchantment.EnchantItemEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/enchantment/EnchantItemEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.prepareItemEnchant()
 
@@ -528,7 +526,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [enchantment.PrepareItemEnchantEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/enchantment/PrepareItemEnchantEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerInteractEntity()
 
@@ -536,7 +534,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerInteractEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerInteractEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerEggThrow()
 
@@ -544,7 +542,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerEggThrowEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerEggThrowEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerUnleashEntity()
 
@@ -552,7 +550,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerUnleashEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerUnleashEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerInventory()
 
@@ -560,7 +558,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerInventoryEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerInventoryEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerLevelChange()
 
@@ -568,7 +566,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerLevelChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerLevelChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerPortal()
 
@@ -576,7 +574,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerPortalEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerPortalEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerItemConsume()
 
@@ -584,7 +582,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerItemConsumeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerItemConsumeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerTeleport()
 
@@ -592,7 +590,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerTeleportEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerTeleportEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerBedEnter()
 
@@ -600,7 +598,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerBedEnterEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerBedEnterEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerUnregisterChannel()
 
@@ -608,7 +606,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerUnregisterChannelEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerUnregisterChannelEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerArmorStandManipulate()
 
@@ -616,7 +614,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerArmorStandManipulateEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerArmorStandManipulateEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerChat()
 
@@ -624,7 +622,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerChatEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerChatEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerShearEntity()
 
@@ -632,7 +630,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerShearEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerShearEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerItemDamage()
 
@@ -640,7 +638,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerItemDamageEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerItemDamageEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.asyncPlayerChat()
 
@@ -648,7 +646,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.AsyncPlayerChatEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/AsyncPlayerChatEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerDropItem()
 
@@ -656,7 +654,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerDropItemEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerDropItemEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerRegisterChannel()
 
@@ -664,7 +662,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerRegisterChannelEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerRegisterChannelEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerMove()
 
@@ -672,7 +670,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerMoveEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerMoveEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerItemBreak()
 
@@ -680,7 +678,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerItemBreakEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerItemBreakEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerBucketEmpty()
 
@@ -688,7 +686,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerBucketEmptyEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerBucketEmptyEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerStatisticIncrement()
 
@@ -696,7 +694,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerStatisticIncrementEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerStatisticIncrementEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerToggleFlight()
 
@@ -704,7 +702,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerToggleFlightEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerToggleFlightEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerItemHeld()
 
@@ -712,7 +710,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerItemHeldEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerItemHeldEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerAchievementAwarded()
 
@@ -720,7 +718,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerAchievementAwardedEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerAchievementAwardedEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerToggleSneak()
 
@@ -728,7 +726,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerToggleSneakEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerToggleSneakEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerExpChange()
 
@@ -736,7 +734,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerExpChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerExpChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerResourcePackStatus()
 
@@ -744,7 +742,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerResourcePackStatusEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerResourcePackStatusEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerPreLogin()
 
@@ -752,7 +750,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerPreLoginEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerPreLoginEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerJoin()
 
@@ -760,7 +758,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerJoinEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerJoinEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerAnimation()
 
@@ -768,7 +766,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerAnimationEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerAnimationEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerEditBook()
 
@@ -776,7 +774,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerEditBookEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerEditBookEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerPickupItem()
 
@@ -784,7 +782,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerPickupItemEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerPickupItemEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerInteractAtEntity()
 
@@ -792,7 +790,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerInteractAtEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerInteractAtEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerChangedWorld()
 
@@ -800,7 +798,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerChangedWorldEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerChangedWorldEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerFish()
 
@@ -808,7 +806,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerFishEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerFishEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerChatTabComplete()
 
@@ -816,7 +814,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerChatTabCompleteEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerChatTabCompleteEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerRespawn()
 
@@ -824,7 +822,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerRespawnEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerRespawnEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerBedLeave()
 
@@ -832,7 +830,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerBedLeaveEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerBedLeaveEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.asyncPlayerPreLogin()
 
@@ -840,7 +838,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.AsyncPlayerPreLoginEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/AsyncPlayerPreLoginEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerInteract()
 
@@ -848,7 +846,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerInteractEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerInteractEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerBucketFill()
 
@@ -856,7 +854,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerBucketFillEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerBucketFillEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerVelocity()
 
@@ -864,7 +862,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerVelocityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerVelocityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerQuit()
 
@@ -872,7 +870,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerQuitEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerQuitEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerLogin()
 
@@ -880,7 +878,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerLoginEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerLoginEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerSwapHandItems()
 
@@ -888,7 +886,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerSwapHandItemsEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerSwapHandItemsEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerKick()
 
@@ -896,7 +894,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerKickEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerKickEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerToggleSprint()
 
@@ -904,7 +902,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerToggleSprintEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerToggleSprintEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerCommandPreprocess()
 
@@ -912,7 +910,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerCommandPreprocessEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerCommandPreprocessEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerGameModeChange()
 
@@ -920,7 +918,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [player.PlayerGameModeChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerGameModeChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.furnaceSmelt()
 
@@ -928,7 +926,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.FurnaceSmeltEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/FurnaceSmeltEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.prepareAnvil()
 
@@ -936,7 +934,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.PrepareAnvilEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/PrepareAnvilEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.inventoryDrag()
 
@@ -944,7 +942,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.InventoryDragEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryDragEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.craftItem()
 
@@ -952,7 +950,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.CraftItemEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/CraftItemEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.furnaceBurn()
 
@@ -960,7 +958,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.FurnaceBurnEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/FurnaceBurnEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.inventoryOpen()
 
@@ -968,7 +966,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.InventoryOpenEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryOpenEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.inventoryPickupItem()
 
@@ -976,7 +974,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.InventoryPickupItemEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryPickupItemEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.inventoryMoveItem()
 
@@ -984,7 +982,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.InventoryMoveItemEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryMoveItemEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.inventoryClick()
 
@@ -992,7 +990,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.InventoryClickEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryClickEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.inventoryClose()
 
@@ -1000,7 +998,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.InventoryCloseEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryCloseEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.inventoryCreative()
 
@@ -1008,7 +1006,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.InventoryCreativeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryCreativeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.inventory()
 
@@ -1016,7 +1014,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.InventoryEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.prepareItemCraft()
 
@@ -1024,7 +1022,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.PrepareItemCraftEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/PrepareItemCraftEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.furnaceExtract()
 
@@ -1032,7 +1030,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.FurnaceExtractEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/FurnaceExtractEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.brew()
 
@@ -1040,7 +1038,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [inventory.BrewEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/BrewEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.serverCommand()
 
@@ -1048,7 +1046,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [server.ServerCommandEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/server/ServerCommandEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.serverListPing()
 
@@ -1056,7 +1054,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [server.ServerListPingEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/server/ServerListPingEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.serviceRegister()
 
@@ -1064,7 +1062,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [server.ServiceRegisterEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/server/ServiceRegisterEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.pluginDisable()
 
@@ -1072,7 +1070,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [server.PluginDisableEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/server/PluginDisableEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.remoteServerCommand()
 
@@ -1080,7 +1078,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [server.RemoteServerCommandEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/server/RemoteServerCommandEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.mapInitialize()
 
@@ -1088,7 +1086,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [server.MapInitializeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/server/MapInitializeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.serviceUnregister()
 
@@ -1096,7 +1094,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [server.ServiceUnregisterEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/server/ServiceUnregisterEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.pluginEnable()
 
@@ -1104,7 +1102,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [server.PluginEnableEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/server/PluginEnableEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.villagerAcquireTrade()
 
@@ -1112,7 +1110,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.VillagerAcquireTradeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/VillagerAcquireTradeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerDeath()
 
@@ -1120,7 +1118,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.PlayerDeathEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/PlayerDeathEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityCreatePortal()
 
@@ -1128,7 +1126,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityCreatePortalEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityCreatePortalEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityCombust()
 
@@ -1136,7 +1134,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityCombustEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityCombustEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.sheepDyeWool()
 
@@ -1144,7 +1142,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.SheepDyeWoolEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/SheepDyeWoolEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.expBottle()
 
@@ -1152,7 +1150,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.ExpBottleEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/ExpBottleEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityTame()
 
@@ -1160,7 +1158,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityTameEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityTameEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.projectileLaunch()
 
@@ -1168,7 +1166,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.ProjectileLaunchEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/ProjectileLaunchEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityDamage()
 
@@ -1176,7 +1174,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityDamageEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.itemSpawn()
 
@@ -1184,7 +1182,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.ItemSpawnEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/ItemSpawnEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.projectileHit()
 
@@ -1192,7 +1190,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.ProjectileHitEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/ProjectileHitEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.foodLevelChange()
 
@@ -1200,7 +1198,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.FoodLevelChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/FoodLevelChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.itemDespawn()
 
@@ -1208,7 +1206,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.ItemDespawnEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/ItemDespawnEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.villagerReplenishTrade()
 
@@ -1216,7 +1214,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.VillagerReplenishTradeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/VillagerReplenishTradeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityPortalEnter()
 
@@ -1224,7 +1222,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityPortalEnterEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityPortalEnterEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityPortal()
 
@@ -1232,7 +1230,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityPortalEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityPortalEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityTarget()
 
@@ -1240,7 +1238,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityTargetEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityTargetEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityDeath()
 
@@ -1248,7 +1246,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityDeathEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDeathEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entitySpawn()
 
@@ -1256,7 +1254,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntitySpawnEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntitySpawnEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.sheepRegrowWool()
 
@@ -1264,7 +1262,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.SheepRegrowWoolEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/SheepRegrowWoolEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityShootBow()
 
@@ -1272,7 +1270,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityShootBowEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityShootBowEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.creeperPower()
 
@@ -1280,7 +1278,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.CreeperPowerEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/CreeperPowerEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityCombustByBlock()
 
@@ -1288,7 +1286,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityCombustByBlockEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityCombustByBlockEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityBreakDoor()
 
@@ -1296,7 +1294,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityBreakDoorEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityBreakDoorEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityDamageByEntity()
 
@@ -1304,7 +1302,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityDamageByEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageByEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityUnleash()
 
@@ -1312,7 +1310,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityUnleashEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityUnleashEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityExplode()
 
@@ -1320,7 +1318,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityExplodeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityExplodeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityInteract()
 
@@ -1328,7 +1326,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityInteractEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityInteractEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityToggleGlide()
 
@@ -1336,7 +1334,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityToggleGlideEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityToggleGlideEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.explosionPrime()
 
@@ -1344,7 +1342,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.ExplosionPrimeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/ExplosionPrimeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.horseJump()
 
@@ -1352,7 +1350,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.HorseJumpEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/HorseJumpEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.creatureSpawn()
 
@@ -1360,7 +1358,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.CreatureSpawnEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/CreatureSpawnEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityCombustByEntity()
 
@@ -1368,7 +1366,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityCombustByEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityCombustByEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityDamageByBlock()
 
@@ -1376,7 +1374,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityDamageByBlockEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageByBlockEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityTargetLivingEntity()
 
@@ -1384,7 +1382,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityTargetLivingEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityTargetLivingEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityTeleport()
 
@@ -1392,7 +1390,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityTeleportEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityTeleportEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.playerLeashEntity()
 
@@ -1400,7 +1398,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.PlayerLeashEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/PlayerLeashEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.spawnerSpawn()
 
@@ -1408,7 +1406,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.SpawnerSpawnEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/SpawnerSpawnEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.itemMerge()
 
@@ -1416,7 +1414,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.ItemMergeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/ItemMergeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.slimeSplit()
 
@@ -1424,7 +1422,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.SlimeSplitEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/SlimeSplitEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.pigZap()
 
@@ -1432,7 +1430,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.PigZapEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/PigZapEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.fireworkExplode()
 
@@ -1440,7 +1438,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.FireworkExplodeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/FireworkExplodeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.potionSplash()
 
@@ -1448,7 +1446,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.PotionSplashEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/PotionSplashEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityChangeBlock()
 
@@ -1456,7 +1454,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityChangeBlockEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityChangeBlockEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityPortalExit()
 
@@ -1464,7 +1462,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityPortalExitEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityPortalExitEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityRegainHealth()
 
@@ -1472,7 +1470,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [entity.EntityRegainHealthEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityRegainHealthEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.entityBlockForm()
 
@@ -1480,7 +1478,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.EntityBlockFormEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/EntityBlockFormEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockSpread()
 
@@ -1488,7 +1486,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockSpreadEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockSpreadEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockMultiPlace()
 
@@ -1496,7 +1494,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockMultiPlaceEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockMultiPlaceEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockExplode()
 
@@ -1504,7 +1502,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockExplodeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockExplodeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.notePlay()
 
@@ -1512,7 +1510,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.NotePlayEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/NotePlayEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.cauldronLevelChange()
 
@@ -1520,7 +1518,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.CauldronLevelChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/CauldronLevelChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockFade()
 
@@ -1528,7 +1526,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockFadeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockFadeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockPlace()
 
@@ -1536,7 +1534,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockPlaceEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockPlaceEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockPhysics()
 
@@ -1544,7 +1542,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockPhysicsEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockPhysicsEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockIgnite()
 
@@ -1552,7 +1550,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockIgniteEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockIgniteEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockBreak()
 
@@ -1560,7 +1558,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockBreakEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockBreakEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockBurn()
 
@@ -1568,7 +1566,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockBurnEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockBurnEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockFromTo()
 
@@ -1576,7 +1574,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockFromToEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockFromToEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockRedstone()
 
@@ -1584,7 +1582,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockRedstoneEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockRedstoneEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockPistonRetract()
 
@@ -1592,7 +1590,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockPistonRetractEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockPistonRetractEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockDispense()
 
@@ -1600,7 +1598,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockDispenseEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockDispenseEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.signChange()
 
@@ -1608,7 +1606,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.SignChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/SignChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockPistonExtend()
 
@@ -1616,7 +1614,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockPistonExtendEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockPistonExtendEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockCanBuild()
 
@@ -1624,7 +1622,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockCanBuildEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockCanBuildEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockGrow()
 
@@ -1632,7 +1630,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockGrowEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockGrowEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.leavesDecay()
 
@@ -1640,7 +1638,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.LeavesDecayEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/LeavesDecayEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockExp()
 
@@ -1648,7 +1646,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockExpEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockExpEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockForm()
 
@@ -1656,7 +1654,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockFormEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockFormEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.blockDamage()
 
@@ -1664,7 +1662,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [block.BlockDamageEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/BlockDamageEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.hangingPlace()
 
@@ -1672,7 +1670,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [hanging.HangingPlaceEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/hanging/HangingPlaceEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.hangingBreakByEntity()
 
@@ -1680,7 +1678,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [hanging.HangingBreakByEntityEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/hanging/HangingBreakByEntityEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.hangingBreak()
 
@@ -1688,7 +1686,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [hanging.HangingBreakEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/hanging/HangingBreakEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.structureGrow()
 
@@ -1696,7 +1694,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.StructureGrowEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/StructureGrowEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.spawnChange()
 
@@ -1704,7 +1702,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.SpawnChangeEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/SpawnChangeEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.worldLoad()
 
@@ -1712,7 +1710,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.WorldLoadEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/WorldLoadEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.worldInit()
 
@@ -1720,7 +1718,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.WorldInitEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/WorldInitEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.worldUnload()
 
@@ -1728,7 +1726,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.WorldUnloadEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/WorldUnloadEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.worldSave()
 
@@ -1736,7 +1734,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.WorldSaveEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/WorldSaveEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.chunkUnload()
 
@@ -1744,7 +1742,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.ChunkUnloadEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/ChunkUnloadEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.chunkPopulate()
 
@@ -1752,7 +1750,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.ChunkPopulateEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/ChunkPopulateEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.portalCreate()
 
@@ -1760,7 +1758,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.PortalCreateEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/PortalCreateEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ### events.chunkLoad()
 
@@ -1768,7 +1766,7 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.ChunkLoadEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/ChunkLoadEvent.html) is fired
 
- * priority - optional - see events.on() for more information.
+
 
 ## console global variable
 
