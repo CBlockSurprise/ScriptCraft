@@ -1731,11 +1731,9 @@ Example
 -------
 
 ```javascript
-var redText = "Hello World".red();
-echo(self, redText);
+echo(self, "Hello World".aqua());
 ```
-
-<p style="color:red">Hello World</p>    
+![Hello World](https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/004/661/original/temp1450223230.png)
 
 ## Items module
 The Items module provides a suite of functions - one for each possible item.
