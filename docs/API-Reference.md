@@ -1,9 +1,6 @@
 # ScriptCraft API Reference
 
-Original content by Walter Higgins
-
-[walter.higgins@gmail.com][email]
-[email]: mailto:walter.higgins@gmail.com?subject=ScriptCraft_API_Reference
+Original content by Walter Higgins: walter.higgins@gmail.com
 
 Additions and modifications by Aaron Powell @ MVCode
 
