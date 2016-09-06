@@ -1,10 +1,10 @@
 # ScriptCraft API Reference
 
-Original content by Walter Higgins: walter.higgins@gmail.com
+Original content by [Walter Higgins](https://github.com/walterhiggins)
 
 Additions and modifications by Aaron Powell @ MVCode
 
-[![MVCode](https://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/553/original/new-logo.png)](https://www.mvcodeclub.com/)
+[![MVCode](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/553/original/new-logo.png)](https://www.mvcodeclub.com)
 
 ## Table of Contents
  * [Modules in Scriptcraft](#modules-in-scriptcraft)
