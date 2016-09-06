@@ -17,7 +17,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [clearTimeout() function](#cleartimeout-function)
    * [setInterval() function](#setinterval-function)
    * [clearInterval() function](#clearinterval-function)
-   * [isOp() function](#isop-function)
  * [Events](#events) 
    * [Registering Events](#registering-events)
    * [events.weatherChange()](#eventsweatherchange-1)
@@ -189,6 +188,7 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [events.chunkPopulate()](#eventschunkpopulate)
    * [events.portalCreate()](#eventsportalcreate-1)
    * [events.chunkLoad()](#eventschunkload)
+ * [Modules] (#modules)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone.box() method](#dronebox-method)
@@ -290,11 +290,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [utils.players() function](#utilsplayers-function)
    * [utils.playerNames() function](#utilsplayernames-function)
    * [utils.stat() function](#utilsstat-function)
- * [The watcher Module](#the-watcher-module)
-   * [watcher.watchFile() function](#watcherwatchfile-function)
-   * [watcher.watchDir() function](#watcherwatchdir-function)
-   * [watcher.unwatchFile() function](#watcherunwatchfile-function)
-   * [watcher.unwatchDir() function](#watcherunwatchdir-function)
  * [Example Plugin #1 - A simple extension to Minecraft.](#example-plugin-1---a-simple-extension-to-minecraft)
    * [Usage:](#usage-5)
  * [Example Plugin #2 - Making extensions available for all players.](#example-plugin-2---making-extensions-available-for-all-players)
@@ -1761,6 +1756,8 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.ChunkLoadEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/ChunkLoadEvent.html) is fired
 
+
+## Modules
 
 
 ## Drone Module
@@ -3906,76 +3903,6 @@ This function also contains values for each possible stat so you can get at stat
     var utils = require('utils');
     var JUMPSTAT = utils.stat.JUMP; // Accessing the value
     var jumpCount = player.getStat ( JUMPSTAT ); // canary-specific code
-## The watcher Module
-
-This module exposes functions for watching for changes to files or directories.
-
-### watcher.watchFile() function
-
-Watches for changes to the given file or directory and calls the function provided
-when the file changes.
-
-#### Parameters
- 
- * File - the file to watch (can be a file or directory)
- * Callback - The callback to invoke when the file has changed. The callback takes the 
-   changed file as a parameter.
-
-#### Example
-
-```javascript
-var watcher = require('watcher');
-watcher.watchFile( 'test.txt', function( file ) { 
-  console.log( file + ' has changed');
-});
-```
-### watcher.watchDir() function
-
-Watches for changes to the given directory and calls the function provided
-when the directory changes. It works by calling watchFile/watchDir for each
-file/subdirectory.
-
-#### Parameters
- 
- * Dir - the file to watch (can be a file or directory)
- * Callback - The callback to invoke when the directory has changed. 
-              The callback takes the changed file as a parameter. 
-              For each change inside the directory the callback will also 
-              be called.
-
-#### Example
-
-```javascript
-var watcher = require('watcher');
-watcher.watchDir( 'players/_ial', function( dir ) { 
-  console.log( dir + ' has changed');
-});
-```
-### watcher.unwatchFile() function
-
-Removes a file from the watch list.
-
-#### Example
-```javascript
-var watcher = require('watcher');
-watcher.unwatchFile('test.txt');
-```
-
-### watcher.unwatchDir() function
-
-Removes a directory from the watch list and all files inside the directory
-are also "unwatched"
-
-#### Example
-```javascript
-var watcher = require('watcher');
-watcher.unwatchDir ('players/_ial');
-```
-Would cause also 
-```javascript
-watcher.unwatchFile (file);
-```
-for each file inside directory (and unwatchDir for each directory inside it)
 
 ## Example Plugin #1 - A simple extension to Minecraft.
 
