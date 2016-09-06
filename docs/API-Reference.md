@@ -15,7 +15,7 @@ Walter Higgins
 ## Table of Contents
  * [Items module](#items-module)
    * [Usage](#usage)
- * [Testing123](#testanchor)
+ * [Testing123](#testing123)
 
 ## Items module
 The Items module provides a suite of functions - one for each possible item.
