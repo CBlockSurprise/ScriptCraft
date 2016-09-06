@@ -15,7 +15,7 @@ Walter Higgins
 ## Table of Contents
  * [Items module](#items-module)
    * [Usage](#usage)
- * [Testing123](#testing123)
+ * [Test Anchor](#test-anchor)
 
 ## Items module
 The Items module provides a suite of functions - one for each possible item.
@@ -561,6 +561,5 @@ The following functions are provided:
  * yellowGlassPane()
  * yellowStainedClay()
  * zombieHead()
- * 
- * 
- * Testing123
+ 
+## Testing123
