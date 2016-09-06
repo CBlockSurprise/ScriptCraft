@@ -290,41 +290,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [utils.players() function](#utilsplayers-function)
    * [utils.playerNames() function](#utilsplayernames-function)
    * [utils.stat() function](#utilsstat-function)
- * [Example Plugin #1 - A simple extension to Minecraft.](#example-plugin-1---a-simple-extension-to-minecraft)
-   * [Usage:](#usage-5)
- * [Example Plugin #2 - Making extensions available for all players.](#example-plugin-2---making-extensions-available-for-all-players)
-   * [Usage:](#usage-6)
- * [Example Plugin #3 - Limiting use of commands to operators only.](#example-plugin-3---limiting-use-of-commands-to-operators-only)
-   * [Usage:](#usage-7)
- * [Example Plugin #4 - Using parameters in commands.](#example-plugin-4---using-parameters-in-commands)
-   * [Usage:](#usage-8)
- * [Example Plugin #5 - Re-use - Using your own and others modules.](#example-plugin-5---re-use---using-your-own-and-others-modules)
-   * [Usage:](#usage-9)
- * [Example Plugin #6 - Re-use - Using 'utils' to get Player objects.](#example-plugin-6---re-use---using-utils-to-get-player-objects)
-   * [Usage:](#usage-10)
- * [Example Plugin #7 - Listening for events, Greet players when they join the game.](#example-plugin-7---listening-for-events-greet-players-when-they-join-the-game)
- * [Arrows Plugin](#arrows-plugin)
-   * [Usage:](#usage-11)
- * [Spawn Plugin](#spawn-plugin)
-   * [Usage](#usage-12)
- * [alias Plugin](#alias-plugin)
-   * [Examples](#examples-2)
- * [Commando Plugin](#commando-plugin)
-   * [Description](#description)
-   * [Example hi-command.js](#example-hi-commandjs)
-   * [Example - timeofday-command.js](#example---timeofday-commandjs)
-   * [Caveats](#caveats)
- * [homes Plugin](#homes-plugin)
-   * [Basic options](#basic-options)
-   * [Social options](#social-options)
-   * [Administration options](#administration-options)
- * [NumberGuess mini-game:](#numberguess-mini-game)
-   * [Description](#description-1)
-   * [Example](#example-3)
- * [Cow Clicker Mini-Game](#cow-clicker-mini-game)
-   * [How to Play](#how-to-play)
-   * [Rules](#rules)
-   * [Gameplay Mechanics](#gameplay-mechanics)
  * [Items module](#items-module)
    * [Usage](#usage-13)
  * [Entities module](#entities-module)
@@ -3904,526 +3869,6 @@ This function also contains values for each possible stat so you can get at stat
     var JUMPSTAT = utils.stat.JUMP; // Accessing the value
     var jumpCount = player.getStat ( JUMPSTAT ); // canary-specific code
 
-## Example Plugin #1 - A simple extension to Minecraft.
-
-A simple minecraft plugin. The most basic module.
-
-### Usage: 
-
-At the in-game prompt type ...
-  
-    /js hello(self)
-
-... and a message `Hello {player-name}` will appear (where
-  {player-name} is replaced by your own name).
-  
-This example demonstrates the basics of adding new functionality which
-is only usable by server operators or users with the
-scriptcraft.evaluate permission. By default, only ops are granted this
-permission.
-  
-The `hello` function below is only usable by players with the scriptcraft.evaluate 
-permission since it relies on the `/js` command to execute.
-
-    exports.hello = function(player){
-        echo( player, 'Hello ' + player.name);
-    };
-
-## Example Plugin #2 - Making extensions available for all players.
-
-A simple minecraft plugin. Commands for other players.
-
-### Usage: 
-
-At the in-game prompt type ...
-  
-    /jsp hello
-
-... and a message `Hello {player-name}` will appear (where {player-name} is 
-replaced by your own name).
-  
-This example demonstrates the basics of adding new functionality
-which is usable all players or those with the scriptcraft.proxy
-permission.  By default, all players are granted this permission.
-  
-This differs from example 1 in that a new 'jsp ' command extension
-is defined. Since all players can use the `jsp` command, all players
-can use the new extension. Unlike the previous example, the `jsp hello` 
-command does not evaluate javascript code so this command is much more secure.
-
-    command('hello', function (parameters, player) {
-        echo( player, 'Hello ' + player.name);
-    });
-
-## Example Plugin #3 - Limiting use of commands to operators only.
-
-A simple minecraft plugin. Commands for operators only.
-
-### Usage: 
-
-At the in-game prompt type ...
-  
-    /jsp op-hello
-
-... and a message `Hello {player-name}` will appear (where {player-name} is 
-replaced by your own name).
-  
-This example demonstrates the basics of adding new functionality
-which is usable all players or those with the scriptcraft.proxy
-permission. By default, all players are granted this permission. In
-this command though, the function checks to see if the player is an
-operator and if they aren't will return immediately.
- 
-This differs from example 2 in that the function will only print a
-message for operators.
-
-    command('op-hello', function (parameters, player) {
-        if ( !isOp(player) ){
-          echo( player, 'Only operators can do this.');
-          return;
-        }
-        echo( player, 'Hello ' + player.name);
-    });
-## Example Plugin #4 - Using parameters in commands.
-
-A simple minecraft plugin. Handling parameters.
-
-### Usage: 
-
-At the in-game prompt type ...
-  
-    /jsp hello-params Hi
-    /jsp hello-params Saludos 
-    /jsp hello-params Greetings
-
-... and a message `Hi {player-name}` or `Saludos {player-name}` etc
-will appear (where {player-name} is replaced by your own name).
-  
-This example demonstrates adding and using parameters in commands.
-  
-This differs from example 3 in that the greeting can be changed from
-a fixed 'Hello ' to anything you like by passing a parameter.
-
-    command( 'hello-params', function ( parameters, player ) {
-      var salutation = parameters[0] ;
-      echo( player, salutation + ' ' + player.name );
-    });
-
-## Example Plugin #5 - Re-use - Using your own and others modules.
-
-A simple minecraft plugin. Using Modules.
-
-### Usage: 
-
-At the in-game prompt type ...
-  
-    /jsp hello-module
-
-... and a message `Hello {player-name}` will appear (where {player-name} is 
-replaced by your own name).
-  
-This example demonstrates the use of modules. In
-example-1-hello-module.js we created a new javascript module. In
-this example, we use that module...
-
- * We load the module using the `require()` function. Because this
-   module and the module we require are n the same directory, we
-   specify `'./example-1-hello-module'` as the path (when loading a
-   module from the same directory, `./` at the start of the path
-   indicates that the file should be searched for in the same
-   directory.
-
- * We assign the loaded module to a variable (`greetings`) and then
-   use the module's `hello` method to display the message. 
-
-Source Code...
-
-    var greetings = require('./example-1-hello-module');
-    command( 'hello-module', function( parameters, player ) {
-      greetings.hello( player );
-    });
-
-## Example Plugin #6 - Re-use - Using 'utils' to get Player objects.
-
-A simple minecraft plugin. Finding players by name.
-
-### Usage: 
-
-At the in-game prompt type ...
-  
-    /jsp hello-byname {player-name}
-
-... substituting {player-name} with the name of a player currently
-online and a message `Hello ...` will be sent to the named
-player.
-  
-This example builds on example-5 and also introduces a new concept -
-use of shared modules. That is : modules which are not specific to
-any one plugin or set of plugins but which can be used by all
-plugins. Shared modules should be placed in the
-`scriptcraft/modules` directory.
-  
- * The utils module is used. Because the 'utils' module is
-   located in the modules folder we don't need to specify an exact
-   path, just 'utils' will do. 
- 
- * The `utils.player()` function is used to obtain a player object
-   matching the player name. Once a player object is obtained, a
-   message is sent to that player.
-
-Source Code ...
-
-    var utils = require('utils');
-    var greetings = require('./example-1-hello-module');
-
-    command( 'hello-byname', function( parameters, sender ) {
-      var playerName = parameters[0];
-      var recipient = utils.player( playerName );
-      if ( recipient ) {
-        greetings.hello( recipient );
-      } else {
-        echo( sender, 'Player ' + playerName + ' not found.' );
-      }
-    });
-
-## Example Plugin #7 - Listening for events, Greet players when they join the game.
-
-A simple event-driven minecraft plugin. How to handle Events.
-
-This example demonstrates event-driven programming. The code below
-will display the version of ScriptCraft every time an operator joins
-the game. This module is notable from previous modules for the
-following reasons...
-
- 1. It does not export any functions or variables. That's fine. Not
-    all modules need export stuff. Code in this module will be
-    executed when the module is first loaded. Because it is in the
-    `/scriptcraft/plugins` directory, it will be loaded automatically
-    when the server starts up.
-
- 2. It uses ScriptCraft's `events` module to add a new *Event
-    Handler*. An *Event Handler* is a function that gets
-    called whenever a particular *event* happens in the game. The
-    function defined below will only be executed whenever a player
-    joins the game. This style of program is sometimes refered to as
-    *Event-Driven Programming*.
-
-Adding new *Event Handlers* in ScriptCraft is relatively easy. Use one
-of the `events` module's functions to add a new event handler. The
-events module has many functions - one for each type of event. Each
-function takes a single parameter:
-
- * The event handling function (also sometimes refered to as a
-   'callback'). In ScriptCraft, this function takes a single
-   parameter, an event object. All of the information about the event
-   is in the event object.
-
-In the example below, if a player joins the server and is an operator,
-then the ScriptCraft plugin information will be displayed to that
-player.
-
-```javascript
-function onJoin( event ){
-  if ( isOp(event.player) ) {
-    echo( event.player, 'Welcome to ' + __plugin );
-  }
-}
-events.connection( onJoin );
-```
-First the onJoin() function is defined, this is our event handler -
-the function we wish to be called every time some new player joins the
-game. Then we hook up - or register - that function using the
-events.connection() function. The events.connection function is the
-function responsible for adding new *connection* event handlers - that
-is - functions which should be invoked when there's a new *connection*
-event in the game. A new *connection* event is fired whenever a player
-joins the game. There are many other types of events you can handle in
-Minecraft. You can see [a full list of events here][cmEvtList].
-
-[cmEvtList]: #events-helper-module-canary-version
-## Arrows Plugin
-
-The arrows mod adds fancy arrows to the game. Arrows which ... 
-
- * Launch fireworks.
- * Explode on impact. 
- * Force Lightning to strike where they land.
- * Teleport the player to the landing spot.
- * Spawn Trees at the landing spot.
-
-### Usage: 
-
-  * `/js arrows.firework(self)` - A firework launches where the the arrow lands.
-  * `/js arrows.lightning(self)` - lightning strikes where the arrow lands.
-  * `/js arrows.teleport(self)` - makes player teleport to where arrow has landed.
-  * `/js arrows.flourish(self)` - makes a tree grow where the arrow lands.
-  * `/js arrows.explosive(self)` - makes arrows explode.
-  * `/js arrows.normal(self)` sets arrow type to normal.
-  * `/js arrows.sign(self)` turns a targeted sign into an Arrows menu
-
-All of the above functions can take an optional player object or name
-as a parameter. For example: `/js arrows.explosive('player23')` makes
-player23's arrows explosive.
- 
-## Spawn Plugin
-
-Allows in-game operators to easily spawn creatures at current location.
-
-### Usage
-
-    /jsp spawn cow
-    /jsp spawn sheep
-    /jsp spawn wolf
-
-This command supports TAB completion so to see a list of possible
-entitities, type `/jsp spawn ' at the in-game command prompt, then
-press TAB. Visit
-<https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html> (CanaryMod)
-or <http://docs.visualillusionsent.net/CanaryLib/1.0.0/net/canarymod/api/entity/EntityType.html> (Bukkit)
-
-for a list of possible entities (creatures) which can be spawned.
-
-## alias Plugin
-
-The alias module lets players and server admins create their own
-per-player or global custom in-game command aliases.
-
-### Examples
-
-To set a command alias which is only visible to the current player
-(per-player alias)...
-
-    /jsp alias set cw = time set {1} ; weather {2}
-
-... Creates a new custom command only usable by the player who set
-it called `cw` (short for set Clock and Weather) which when invoked...
-
-    /cw 4000 sun
-
-... will perform the following commands...
-
-    /time set 4000
-    /weather sun
-
-Aliases can use paramters as above. On the right hand side of the `=`, the 
-`{1}` refers to the first parameter provided with the `cw` alias, `{2}`
-refers to the second parameter and so on. So `cw 4000 sun` is converted to 
-`time set 4000` and `weather sun`. 
-
-To set a global command alias usable by all (only operators can create
-such an alias)...
-
-    /jsp alias global stormy = time 18000; weather storm
-
-To remove an alias ...
-
-    /jsp alias remove cw
-
-... removes the 'cw' alias from the appropriate alias map.
-
-To get a list of aliases currently defined...
-
-    /jsp alias list
-
-To get help on the `jsp alias` command:
-
-    /jsp alias help
-
-Aliases can be used at the in-game prompt by players or in the server
-console.  Aliases will not be able to avail of command autocompletion
-(pressing the TAB key will have no effect).
-
-## Commando Plugin
-
-### Description
-
-commando is a plugin which can be used to add completely new commands
-to Minecraft.  Normally ScriptCraft only allows for provision of new
-commands as extensions to the jsp command. For example, to create a
-new simple command for use by all players...
-
-    /js command('hi', function(args,player){ echo( player, 'Hi ' + player.name); });
-  
-... then players can use this command by typing...
-
-    /jsp hi
-
-... A couple of ScriptCraft users have asked for the ability to take
-this a step further and allow the global command namespace to be
-populated so that when a developer creates a new command using the
-'command' function, then the command is added to the global command
-namespace so that players can use it simply like this...
-
-    /hi
-
-... There are good reasons why ScriptCraft's core `command()` function
-does not do this. Polluting the global namespace with commands would
-make ScriptCraft a bad citizen in that Plugins should be able to work
-together in the same server and - as much as possible - not step on
-each others' toes. The CraftBukkit team have very good reasons for
-forcing Plugins to declare their commands in the plugin.yml
-configuration file. It makes approving plugins easier and ensures that
-craftbukkit plugins behave well together. While it is possible to
-override other plugins' commands, the CraftBukkit team do not
-recommend this. However, as ScriptCraft users have suggested, it
-should be at the discretion of server administrators as to when
-overriding or adding new commands to the global namespace is good.
-
-So this is where `commando()` comes in. It uses the exact same
-signature as the core `command()` function but will also make the
-command accessible without the `jsp` prefix so instead of having to
-type `/jsp hi` for the above command example, players simply type
-`/hi` . This functionality is provided as a plugin rather than as part
-of the ScriptCraft core.
-
-### Example hi-command.js
-
-    var commando = require('../commando');
-    commando('hi', function(args,player){
-       echo( player, 'Hi ' + player.name);
-    });
-
-...Displays a greeting to any player who issues the `/hi` command.
-
-### Example - timeofday-command.js 
-
-    var times = {Dawn: 0, Midday: 6000, Dusk: 12000, Midnight:18000};
-    commando('timeofday', function(params,player){
-           player.location.world.setTime(times[params[0]]);
-       },
-       ['Dawn','Midday','Dusk','Midnight']);
-
-... changes the time of day using a new `/timeofday` command (options are Dawn, Midday, Dusk, Midnight)
-
-### Caveats
-
-Since commands registered using commando are really just appendages to
-the `/jsp` command and are not actually registered globally (it just
-looks like that to the player), you won't be able to avail of tab
-completion for the command itself or its parameters (unless you go the
-traditional route of adding the `jsp` prefix). This plugin uses the
-[PlayerCommandPreprocessEvent][pcppevt] which allows plugins to
-intercepts all commands and inject their own commands instead. If
-anyone reading this knows of a better way to programmatically add new
-global commands for a plugin, please let me know.
-
-[pcppevt]: http://jd.bukkit.org/dev/apidocs/org/bukkit/event/player/PlayerCommandPreprocessEvent.html
-
-## homes Plugin
-
-The homes plugin lets players set a location as home and return to the
-location, invite other players to their home and also visit other
-player's homes.
-
-This module is a good example of how to create a javascript-based
-minecraft mod which provides...
-
- * A programmatic interface (API) and 
- * A command extension which uses that API to provide new functionality for players.
-
-The module uses the `plugin()` function to specify an object and
-methods, and the `command()` function to expose functionality to
-players through a new `jsp home` command. This module also
-demonstrates how to enable autocompletion for custom commands (to see
-this in action, at the in-game prompt or server console prompt type
-`jsp home ` then press the TAB key - you should see a list of further
-possible options).
-
-The `jsp home` command has the following options...
-
-### Basic options
-
- * `/jsp home set` Will set your current location as your
-   'home' location to which you can return at any time using the ...
-
- * `/jsp home` ..command will return you to your home, if you have set one.
-
- * `/jsp home {player}` Will take you to the home of {player} (where 
-   {player} is the name of the player whose home you wish to visit.
-
- * `/jsp home delete` Deletes your home location from the location
-   database. This does not actually remove the home from the world or
-   change the world in any way. This command is completely
-   non-destructive and cannot be used for griefing. No blocks will be
-   destroyed by this command.
-
-### Social options
-The following options allow players to open their homes to all or some
-players, invite players to their home and see a list of homes they can
-visit.
-
- * `/jsp home list` Lists home which you can visit.
- * `/jsp home ilist` Lists players who can visit your home.
- * `/jsp home invite {player}` Invites the named player to your home.
- * `/jsp home uninvite {player}` Uninvites (revokes invitation) the named player to your home.
- * `/jsp home public` Opens your home to all players (all players can visit your home).
- * `/jsp home private` Makes your home private (no longer visitable by all).
-
-### Administration options
-The following administration options can only be used by server operators...
-
- * `/jsp home listall` List all of the homes
- * `/jsp home clear {player}` Removes the player's home
-   location. Again, this command does not destroy any structures in
-   the world, it simply removes the location from the database. No
-   blocks are destroyed by this command.
-
-## NumberGuess mini-game: 
-
-### Description
-This is a very simple number guessing game. Minecraft will ask you to
-guess a number between 1 and 10 and you will tell you if you're too
-hight or too low when you guess wrong. The purpose of this mini-game
-code is to demonstrate use of Bukkit's Conversation API.
-
-### Example
-    
-    /js Game_NumberGuess.start(self)
-
-Once the game begins, guess a number by typing the `/` character
-followed by a number between 1 and 10.
-
-## Cow Clicker Mini-Game
-
-### How to Play
-
-At the in-game prompt type `jsp cowclicker` to start or stop
-playing. Right-Click on Cows to score points. No points for killing
-cows (hint: use the same keyboard keys you'd use for opening doors).
-
-Every time you click a cow your score increases by 1 point. Your score
-is displayed in a side-bar along the right edge of of the screen.
-
-![cow clicker](img/cowclicker.png)
-
-### Rules
-
- * You can join and leave the Cow Clicker game at any time by typing
-   `/jsp cowclicker` at the in-game prompt.
-
- * Once you leave the game, your score is reset to zero.
-
- * When you disconnect from the server, your score will be reset to zero.
-
-### Gameplay Mechanics
-
-This is meant as a trivially simple use of the [Bukkit Scoreboard
-API][bukscore]. There are many things you'll want to consider when constructing
-your own mini-game...
-
- * Is the game itself a long-lived game - that is - should players and
-   scores be persisted (stored) between server restarts?  
-
- * What should happen when a player quits the server - should this also be
-   understood as quitting the mini-game?
-
- * What should happen when a player who was previously playing the
-   mini-game, joins the server - should they automatically resume the
-   mini-game?
-
-[bukscore]: http://jd.bukkit.org/beta/apidocs/org/bukkit/scoreboard/package-summary.html
-
-
 ## Items module
 The Items module provides a suite of functions - one for each possible item.
 See https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/api/inventory/ItemType.html for a list of possible items
@@ -4975,84 +4420,81 @@ The Entities module provides a suite of functions - one for each possible entity
 
 ### Usage
 
-    entities.zombie(); // returns a canaryMod/Bukkit EntityType.ZOMBIE enum value
-    entities.zombie( mob ); // compares the entity's type to a zombie, returns true if mob type is zombie, false otherwise
-    entities.player( self ); // at the in-game prompt this should return true (compares self to a player entity type)
-    entities.rabbit( self ); // at the in-game prompt this should return false (compares self to a rabbit entity type)
+    entities.zombie      // returns a Bukkit EntityType.ZOMBIE enum value
 
 The following functions are provided:
 
- * area_effect_cloud()
- * armor_stand()
- * arrow()
- * bat()
- * blaze()
- * boat()
- * cave_spider()
- * chicken()
- * complex_part()
- * cow()
- * creeper()
- * dragon_fireball()
- * dropped_item()
- * egg()
- * ender_crystal()
- * ender_dragon()
- * ender_pearl()
- * ender_signal()
- * enderman()
- * endermite()
- * experience_orb()
- * falling_block()
- * fireball()
- * firework()
- * fishing_hook()
- * ghast()
- * giant()
- * guardian()
- * horse()
- * iron_golem()
- * item_frame()
- * leash_hitch()
- * lightning()
- * lingering_potion()
- * magma_cube()
- * minecart()
- * minecart_chest()
- * minecart_command()
- * minecart_furnace()
- * minecart_hopper()
- * minecart_mob_spawner()
- * minecart_tnt()
- * mushroom_cow()
- * ocelot()
- * painting()
- * pig()
- * pig_zombie()
- * player()
- * primed_tnt()
- * rabbit()
- * sheep()
- * shulker()
- * shulker_bullet()
- * silverfish()
- * skeleton()
- * slime()
- * small_fireball()
- * snowball()
- * snowman()
- * spectral_arrow()
- * spider()
- * splash_potion()
- * squid()
- * thrown_exp_bottle()
- * tipped_arrow()
- * unknown()
- * villager()
- * weather()
- * witch()
- * wither()
- * wither_skull()
- * wolf()
- * zombie()
+ * area_effect_cloud
+ * armor_stand
+ * arrow
+ * bat
+ * blaze
+ * boat
+ * cave_spider
+ * chicken
+ * complex_part
+ * cow
+ * creeper
+ * dragon_fireball
+ * dropped_item
+ * egg
+ * ender_crystal
+ * ender_dragon
+ * ender_pearl
+ * ender_signal
+ * enderman
+ * endermite
+ * experience_orb
+ * falling_block
+ * fireball
+ * firework
+ * fishing_hook
+ * ghast
+ * giant
+ * guardian
+ * horse
+ * iron_golem
+ * item_frame
+ * leash_hitch
+ * lightning
+ * lingering_potion
+ * magma_cube
+ * minecart
+ * minecart_chest
+ * minecart_command
+ * minecart_furnace
+ * minecart_hopper
+ * minecart_mob_spawner
+ * minecart_tnt
+ * mushroom_cow
+ * ocelot
+ * painting
+ * pig
+ * pig_zombie
+ * player
+ * primed_tnt
+ * rabbit
+ * sheep
+ * shulker
+ * shulker_bullet
+ * silverfish
+ * skeleton
+ * slime
+ * small_fireball
+ * snowball
+ * snowman
+ * spectral_arrow
+ * spider
+ * splash_potion
+ * squid
+ * thrown_exp_bottle
+ * tipped_arrow
+ * unknown
+ * villager
+ * weather
+ * witch
+ * wither
+ * wither_skull
+ * wolf
+ * zombie
 
