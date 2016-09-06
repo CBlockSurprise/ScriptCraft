@@ -18,7 +18,7 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [setInterval() function](#setinterval-function)
    * [clearInterval() function](#clearinterval-function)
    * [isOp() function](#isop-function)
- * [events Module](#events-module)
+ * [Events](#events)
    * [events.weatherChange()](#eventsweatherchange-1)
    * [events.lightningStrike()](#eventslightningstrike-1)
    * [events.thunderChange()](#eventsthunderchange)
@@ -398,7 +398,7 @@ This function mimics the [setInterval()](http://www.w3schools.com/jsref/met_win_
 
 A scriptcraft implementation of [clearInterval()](http://www.w3schools.com/jsref/met_win_clearinterval.asp).
 
-## events Module
+## Events
 
 Events are how the server tells your plugin that something has happened in the world. Bukkit defines many events, in multiple categories; e.g. player actions (player logged in, player clicked a block, player died, player respawned...), block events (block placed, block broken, block's neighbour changed...), entity events (a mob targeted you, a creeper exploded...), world-wide events (a world loaded or unloaded, a chunk loaded or unloaded), and many more.
 
