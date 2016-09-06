@@ -188,9 +188,11 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [events.chunkPopulate()](#eventschunkpopulate)
    * [events.portalCreate()](#eventsportalcreate-1)
    * [events.chunkLoad()](#eventschunkload)
+ * [String Colors](#string-colors)
  * [Items Module](#items-module)
  * [Entities Module](#entities-module)
  * [Blocks Module](#blocks-module)
+ * [Recipes Module](#the-recipes-module)
  * [Fireworks Module](#fireworks-module)
  * [Inventory Module](#inventory-module)
  * [Drone Module](#drone-module)
@@ -247,28 +249,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [Drone.rainbow() method](#dronerainbow-method)
    * [Drone.spiral_stairs() method](#dronespiral_stairs-method)
    * [Drone.temple() method](#dronetemple-method)
- * [Classroom Plugin](#classroom-plugin)
-   * [jsp classroom command](#jsp-classroom-command)
-   * [classroom.allowScripting() function](#classroomallowscripting-function)
- * [Asynchronous Input Module](#asynchronous-input-module)
- * [Lightning module](#lightning-module)
-   * [Usage](#usage-3)
- * [The recipes module](#the-recipes-module)
-   * [Example](#example-1)
- * [Http Module](#http-module)
-   * [http.request() function](#httprequest-function)
- * [sc-mqtt module](#sc-mqtt-module)
-   * [Usage](#usage-4)
- * [Signs Module](#signs-module)
-   * [signs.menu() function](#signsmenu-function)
-   * [signs.getTargetedBy() function](#signsgettargetedby-function)
- * [The slash Module](#the-slash-module)
-   * [The slash() function](#the-slash-function)
- * [Sounds Module](#sounds-module)
-   * [Usage (Bukkit) :](#usage-bukkit-)
- * [Teleport Module](#teleport-module)
-   * [Parameters](#parameters)
-   * [Example](#example-2)
  * [Utilities Module](#utilities-module)
    * [utils.player() function](#utilsplayer-function)
    * [utils.world( worldName ) function](#utilsworld-worldname--function)
@@ -287,7 +267,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [utils.array() function](#utilsarray-function)
    * [utils.players() function](#utilsplayers-function)
    * [utils.playerNames() function](#utilsplayernames-function)
-   * [utils.stat() function](#utilsstat-function)
 
 ## Global Variables
 
@@ -1715,6 +1694,46 @@ events.blockBreak(onBlockBreak);
 
  * callback - A function which is called whenever the [world.ChunkLoadEvent event](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/world/ChunkLoadEvent.html) is fired
 
+## String Colors
+-----------------------
+The following chat-formatting methods are added to the javascript String class..
+
+    * aqua()
+    * black()
+    * blue()
+    * bold()
+    * brightgreen()
+    * darkaqua()
+    * darkblue()
+    * darkgray()
+    * darkgreen()
+    * purple()
+    * darkpurple()
+    * darkred()
+    * gold()
+    * gray()
+    * green()
+    * italic()
+    * lightpurple()
+    * indigo()
+    * green()
+    * red()
+    * pink()
+    * yellow()
+    * white()
+    * strike()
+    * random()
+    * magic()
+    * underline()
+    * reset()
+
+Example
+-------
+
+    /js var boldGoldText = "Hello World".bold().gold();
+    /js echo(self, boldGoldText );
+
+<p style="color:gold;font-weight:bold">Hello World</p>    
 
 ## Items module
 The Items module provides a suite of functions - one for each possible item.
@@ -2364,6 +2383,33 @@ which is an array of the 7 colors of the rainbow (or closest
 approximations).
 
 The blocks module is globally exported by the Drone module.
+
+## Recipes Module
+
+The Recipes module provides convenience functions for adding and removing recipes
+from the game.
+
+### Example
+To add an EnderBow to the game (assumes there's an enchanted Item variable called enderBow)...
+
+    var recipes = require('recipes');
+    var items = require('items');
+    ...
+    var enderBowRecipe = recipes.create( {
+      result: enderBow,
+      ingredients: {
+        E: items.enderPearl(1),
+        S: items.stick(1),
+        W: items.string(1)
+      },
+      shape: [ 'ESW',
+               'SEW',
+               'ESW' ]
+    } );
+    // add to server
+    var addedRecipe = server.addRecipe( enderBowRecipe );
+    // to remove...
+    server.removeRemove( addedRecipe );
 
 ## Fireworks Module
 
@@ -3612,532 +3658,6 @@ d.temple();
 ```
 ![temple example](img/templeex1.png)
 
-## Classroom Plugin
-
-The `classroom` object contains a couple of utility functions for use
-in a classroom setting. The goal of these functions is to make it
-easier for tutors to facilitate ScriptCraft for use by students in a
-classroom environment. Although granting ScriptCraft access to
-students on a shared server is potentially risky (Students can
-potentially abuse it), it is slighlty less risky than granting
-operator privileges to each student. (Enterprising students will
-quickly realise how to grant themselves and others operator privileges
-once they have access to ScriptCraft).
-
-The goal of this module is not so much to enforce restrictions
-(security or otherwise) but to make it easier for tutors to setup a
-shared server so students can learn Javascript. When scripting is
-turned on, every player who joins the server will have a dedicated
-directory into which they can save scripts. All scripts in such
-directories are automatically watched and loaded into a global
-variable named after the player.
-
-So for example, if player 'walterh' joins the server, a `walterh`
-global variable is created. If a file `greet.js` with the following
-content is dropped into the `scriptcraft/players/walterh`
-directory...
-
-```javascript
-exports.hi = function( player ){
-  echo( player, 'Hi ' + player.name);
-};
-```
-
-... then it can be invoked like this: `/js walterh.hi( self )` . This
-lets every player/student create their own functions without having
-naming collisions.
-
-It's strongly recommended that the
-`scriptcraft/players/` directory is shared so that
-others can connect to it and drop .js files into their student
-directories. On Ubuntu, select the folder in Nautilus (the default
-file browser) then right-click and choose *Sharing Options*, check the
-*Share this folder* checkbox and the *Allow others to create and
-delete files* and *Guest access* checkboxes. Click *Create Share*
-button to close the sharing options dialog. Students can then access
-the shared folder as follows...
-
- * Windows:   Open Explorer, Go to \\{serverAddress}\players\
- * Macintosh: Open Finder,   Go to smb://{serverAddress}/players/
- * Linux:     Open Nautilus, Go to smb://{serverAddress}/players/
-
-... where {serverAddress} is the ip address of the server (this is
-displayed to whoever invokes the classroom.allowScripting() function.)
-
-### jsp classroom command
-The `jsp classroom` command makes it easy for tutors to turn on or off
-classroom mode. This command can only be used by server operators. To
-turn on classroom mode (enable scripting for all players):
-
-    jsp classroom on
-
-To turn off classroom mode (disable scripting for all players):
-
-    jsp classroom off
-
-The `jsp classroom` command is provided as an easier way to turn on or
-off classroom mode. This should be used in preference to the
-classroom.allowScripting() function which is provided only for
-programmatically enabling or disabling classroom mode.
-
-### classroom.allowScripting() function
-
-Allow or disallow anyone who connects to the server (or is already
-connected) to use ScriptCraft. This function is preferable to granting 'ops' privileges 
-to every student in a Minecraft classroom environment.
-
-Whenever any file is added/edited or removed from any of the players/
-directories the contents are automatically reloaded. This is to
-facilitate quick turnaround time for students getting to grips with
-Javascript.
-
-#### Parameters
-
- * canScript : true or false
-
-#### Example
-
-To allow all players (and any players who connect to the server) to
-use the `js` and `jsp` commands...
-
-    /js classroom.allowScripting( true, self )
-
-To disallow scripting (and prevent players who join the server from using the commands)...
-
-    /js classroom.allowScripting( false, self )
-
-Only ops users can run the classroom.allowScripting() function - this is so that students 
-don't try to bar themselves and each other from scripting.
-
-## Asynchronous Input Module
-
-The `input` module provides a simple way to prompt players for input at the 
-in-game prompt. In Javascript browser environments the `prompt()` function provides
-a way to block execution and ask the user for input. Execution is blocked until the user
-provides input using the modal dialog and clicks OK. Unfortunately Minecraft provides no 
-equivalent modal dialog which can be used to gather player text input. The only way to gather text 
-input from the player in Minecraft is to do so asynchronously. That is - a prompt message can be 
-sent to the player but the player is not obliged to provide input immediately, nor does the program
-execution block until the player does so.
-
-So ScriptCraft has no `prompt()` implementation because `prompt()` is a synchronous function and 
-Minecraft's API provides no equivalent functions or classes which can be used to implement this synchronously. 
-The Minecraft API does however have a 'Conversation' API which allows for prompting of the player and asynchronously gathering text input from the player. 
-
-This new `input()` function is best illustrated by example. The following code is for a number-guessing game:
-
-```javascript
-var input = require('input');
-exports.numberguess = function(player){
-  var randomNumber = Math.ceil(Math.random() * 10);
-  input( player, 'Think of a number between 1 and 10 (q to quit)', function( guess, guesser, repeat ) {
-    if ( guess == 'q'){
-      return;
-    }
-    if ( +guess !== randomNumber ) { 
-      if (+guess < randomNumber ) {
-        echo( guesser, 'Too low - guess again');
-      }
-      if (+guess > randomNumber ) {
-        echo( guesser, 'Too high - guess again');
-      }
-      repeat();
-    } else {
-      echo( guesser, 'You guessed correctly');
-    }
-  });
-};
-```
-
-The `input()` function takes 3 parameters, the player, a prompt message and a callback which will be invoked when the player has entered some text at the in-game command prompt. 
-The callback is bound to an object which has the following properties:
-
- * sender : The player who input the text
- * value : The value of the text which has been input.
- * message: The message prompt.
- * repeat: A function which when invoked will repeat the original prompt. (this is for flow control)
-
-The callback function as well as being bound to an object with the above properties (so you can use this.value inside your callback to get the value which has just been input), can also take the following parameters (in exact order):
-
- * value
- * sender
- * repeat
-
-The `value` parameter will be the same as `this.value`, the `repeat` parameter will be the same as `this.repeat` and so on.
-
-## Lightning module
-
-Causes a bolt of lightning to strike.
-
-### Usage
-```javascript
-// strike lightning wherever a player's arrow lands
-var lightning = require('lightning');
-events.projectileHit( function( event ){
-  if ( entities.arrow( event.projectile ) // it's an arrow
-       && entities.player( event.projectile.owner ) // it was shot by a player
-     ) {
-    lightning( event.projectile ); // strike lightning at the arrow location
-  }
-});
-```
-
-## The recipes module
-
-The Recipes module provides convenience functions for adding and removing recipes
-from the game.
-
-### Example
-To add an EnderBow to the game (assumes there's an enchanted Item variable called enderBow)...
-
-    var recipes = require('recipes');
-    var items = require('items');
-    ...
-    var enderBowRecipe = recipes.create( {
-      result: enderBow,
-      ingredients: {
-        E: items.enderPearl(1),
-        S: items.stick(1),
-        W: items.string(1)
-      },
-      shape: [ 'ESW',
-               'SEW',
-               'ESW' ]
-    } );
-    // add to server
-    var addedRecipe = server.addRecipe( enderBowRecipe );
-    // to remove...
-    server.removeRemove( addedRecipe );
-
-## Http Module
-
-For handling http requests. Not to be confused with the more robust
-and functional 'http' module bundled with Node.js.
-
-### http.request() function
-
-The http.request() function will fetch a web address asynchronously (on a
-separate thread)and pass the URL's response to a callback function
-which will be executed synchronously (on the main thread).  In this
-way, http.request() can be used to fetch web content without blocking the
-main thread of execution.
-
-#### Parameters
-
- * request: The request details either a plain URL e.g. "http://scriptcraft.js/sample.json" or an object with the following properties...
-
-   - url: The URL of the request.
-   - method: Should be one of the standard HTTP methods, GET, POST, PUT, DELETE (defaults to GET).
-   - params: A Javascript object with name-value pairs. This is for supplying parameters to the server.
-
- * callback: The function to be called when the Web request has completed. This function takes the following parameters...
-   - responseCode: The numeric response code from the server. If the server did not respond with 200 OK then the response parameter will be undefined.
-   - response: A string (if the response is of type text) or object containing the HTTP response body.
-
-#### Example
-
-The following example illustrates how to use http.request to make a request to a JSON web service and evaluate its response...
-
-```javascript
-var jsResponse;
-var http = require('request');
-http.request('http://scriptcraftjs.org/sample.json',function(responseCode, responseBody){
-  jsResponse = JSON.parse( responseBody );
-});
-```
-The following example illustrates a more complex use-case POSTing parameters to a CGI process on a server...
-
-```javascript
-var http = require('http');
-http.request( {
-    url: 'http://pixenate.com/pixenate/pxn8.pl',
-    method: 'POST',
-    params: {script: '[]'}
-  },
-  function( responseCode, responseBody ) {
-    var jsObj = JSON.parse( responseBody );
-  });
-```
-
-## sc-mqtt module
-
-This module provides a simple way to communicate with devices (such as Arduino)
-using the popular lightweight [MQTT protocol][mqtt].
-
-### Usage
-
-This module can only be used if the separate `sc-mqtt.jar` file is
-present in the CraftBukkit classpath. To use this module, you should
-...
-
- 1. Download sc-mqtt.jar from <http://scriptcraftjs.org/download/extras/>
- 2. Save the file to the same directory where craftbukkit.jar resides.
- 3. Create a new batch file (windows-only) called
-    craftbukkit-sc-mqtt.bat and edit it to include the following
-    command...
-
-    ```sh
-    java -classpath sc-mqtt.jar;craftbukkit.jar org.bukkit.craftbukkit.Main
-    ```
-
-    If you're using Mac OS, create a new craftbukkit-sc-mqtt.command
-    file and edit it (using TextWrangler or another text editor) ...
-
-    ```sh
-    java -classpath sc-mqtt.jar:craftbukkit.jar org.bukkit.craftbukkit.Main
-    ```
-
- 4. Execute the craftbukkit-sc-mqtt batch file / command file to start
-    Craftbukkit. You can now begin using this module to send and receive
-    messages to/from a Net-enabled Arduino or any other device which uses
-    the [MQTT protocol][mqtt]
-  
-    ```javascript
-    var mqtt = require('sc-mqtt');
-    // create a new client
-    var client = mqtt.client( 'tcp://localhost:1883', 'uniqueClientId' );
-    // connect to the broker 
-    client.connect( { keepAliveInterval: 15 } );
-    //  publish a message to the broker
-    client.publish( 'minecraft', 'loaded' );
-    // subscribe to messages on 'arduino' topic 
-    client.subscribe( 'arduino' );
-    //  do something when an incoming message arrives...
-    client.onMessageArrived( function( topic, message ) {
-        console.log( 'Message arrived: topic=' + topic + ', message=' + message );
-    });
-
-    ```
-
-The `sc-mqtt` module provides a very simple minimal wrapper around the
-[Eclipse Paho MQTT Version 3 Client][pahodocs] java-based MQTT
-library.
-
-[pahodocs]: http://pic.dhe.ibm.com/infocenter/wmqv7/v7r5/index.jsp?topic=/com.ibm.mq.javadoc.doc/WMQMQxrClasses/org/eclipse/paho/client/mqttv3/package-summary.html
-[mqtt]: http://mqtt.org/
-
-## Signs Module
-
-The Signs Module can be used by plugin authors to create interactive
-signs - that is - signs which display a list of choices which can be
-changed by interacting (right-clicking) with the sign.
-
-### signs.menu() function
-
-This function is used to construct a new interactive menu on top of an
-existing sign in the game world.
-
-#### Parameters
-
- * Label : A string which will be displayed in the topmost line of the
-   sign. This label is not interactive.  
- * options : An array of strings which can be selected on the sign by 
-   right-clicking/interacting.
- * callback : A function which will be called whenever a player
-   interacts (changes selection) on a sign. This callback in turn
-   takes as its parameter, an object with the following properties...
-
-   * player : The player who interacted with the sign.
-   * sign : The [org.bukkit.block.Sign][buksign] which the player interacted with.
-   * text : The text for the currently selected option on the sign.
-   * number : The index of the currently selected option on the sign.
- 
- * selectedIndex : optional: A number (starting at 0) indicating which
-   of the options should be selected by default. 0 is the default.
-
-#### Returns
-This function does not itself do much. It does however return a
-function which when invoked with a given
-[org.bukkit.block.Sign][buksign] object, will convert that sign into
-an interactive sign.
-
-#### Example: Create a sign which changes the time of day.
-
-##### plugins/signs/time-of-day.js
-   
-```javascript 
-var utils = require('utils'),
-    signs = require('signs');
-
-var onTimeChoice = function(event){
-    var selectedIndex = event.number;
-    // convert to Minecraft time 0 = Dawn, 6000 = midday, 12000 = dusk, 18000 = midnight
-    var time = selectedIndex * 6000; 
-    event.player.location.world.setTime(time);
-};
-
-// signs.menu returns a function which can be called for one or more signs in the game.
-var convertToTimeMenu = signs.menu('Time of Day',
-    ['Dawn', 'Midday', 'Dusk', 'Midnight'],
-    onTimeChoice);
-        
-exports.time_sign = function( player ){
-    var sign = signs.getTargetedBy(player);
-    if ( !sign ) {
-        throw new Error('You must look at a sign');
-    } 
-    convertToTimeMenu(sign);
-};
-```
-
-To use the above function at the in-game prompt, look at an existing
-sign and type...
-
-    /js time_sign(self);
-
-... and the sign you're looking at will become an interactive sign
-which changes the time each time you interact (right-click) with it.
-
-### signs.getTargetedBy() function
-
-This function takes a [org.bukkit.entity.LivingEntity][bukle] as a
-parameter and returns a [org.bukkit.block.Sign][buksign] object which
-the entity has targeted. It is a utility function for use by plugin authors.
-
-#### Example
-
-```javascript 
-var signs = require('signs'),
-    utils = require('utils');
-var player = utils.player('tom1234');
-var sign = signs.getTargetedBy( player );
-if ( !sign ) { 
-    echo( player, 'Not looking at a sign');
-}
-```
-
-[buksign]: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/block/Sign.html
-[bukle]: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/LivingEntity.html
-
-## The slash Module
-
-This module provides a single function which makes it easy to execute
-minecraft commands via javascript.
-
-### The slash() function
-
-This function makes it easy to execute one or more minecraft commands.
-
-#### Parameters
-
- * commands : A String or Array of strings - each string is a command to be executed.
- * sender: The player or server on whose behalf the commands should be executed.
-
-#### Examples
-
-Invoke the `/defaultgamemode creative` command (as server).
-
-```javascript
-var slash = require('slash');
-slash('defaultgamemode creative', server);
-```
-
-Set the time of day to Midday and toggle downfall:
-
-```javascript
-var slash = require('slash');
-slash([
-  'time set 6000',
-  'toggledownfall'
-], server);
-```
-
-## Sounds Module
-
-This module is a simple wrapper around the Bukkit Sound class and provides
-a simpler way to play sounds. All of the org.bukkit.Sound Enum values are attached.
-
-### Usage (Bukkit) :
-
-    var sounds = require('sounds');
-    sounds.play( bukkit.sound.VILLAGER_NO , self, 1, 0); // plays VILLAGER_NO sound at full volume and medium pitch
-    sounds.play( bukkit.sound.VILLAGER_NO , self );       // same as previous statement
-
-The play() function takes either a Location object or any object which has a location.
-The volume parameter is in the range 0 to 1 and the pitch parameter is in the range 0 to 4.    
-
-In addition, a play function is provided for each possible sound using the following rules:
-
-1. The sound is converted from ALL_CAPS_UNDERSCORE to camelCase so for example there is a sounds.villagerNo() function which will play the VILLAGER_NO sound.
-2. Each such function can take 3 parameters: location (which can be either an actual Location object or an object which has a location), volume and pitch
-3. Or... each such function can be called without parameters meaning the sound will be played for all online players to hear.
-
-    sounds.villagerNo(self, 1, 0); // plays VILLAGER_NO sound at full volume and medium pitch at invoker's location
-
-    sounds.villagerNo(); // plays VILLAGER_NO sound for all players online.
-
-These methods are provided for convenience to help beginners explore sounds using TAB completion.
-String class extensions
------------------------
-The following chat-formatting methods are added to the javascript String class..
-
-    * aqua()
-    * black()
-    * blue()
-    * bold()
-    * brightgreen()
-    * darkaqua()
-    * darkblue()
-    * darkgray()
-    * darkgreen()
-    * purple()
-    * darkpurple()
-    * darkred()
-    * gold()
-    * gray()
-    * green()
-    * italic()
-    * lightpurple()
-    * indigo()
-    * green()
-    * red()
-    * pink()
-    * yellow()
-    * white()
-    * strike()
-    * random()
-    * magic()
-    * underline()
-    * reset()
-
-Example
--------
-
-    /js var boldGoldText = "Hello World".bold().gold();
-    /js echo(self, boldGoldText );
-
-<p style="color:gold;font-weight:bold">Hello World</p>    
-
-## Teleport Module
-
-This module provides a function to teleport entities (Players or NPCs). 
-
-### Parameters
-
- * entity - The player or NPC to be teleported. If of type String, then a player with that name will be teleported.
- * destination - The location to which they should be teleported. If not of type Location but is a Player, Block or any
-   object which has a `location` property then that works too. If of type String, then it's assumed that the destination is the player with that name.
-
-### Example 
-
-The following code will teleport each player back to their spawn position.
-
-```javascript
-var teleport = require('teleport'),
-    utils = require('utils'),
-    players = utils.players(), 
-    i = 0;
-for ( ; i < players.length; i++ ) {
-  teleport( players[i], players[i].spawnPosition );
-}
-```
-
-The following code will teleport 'tom' to 'jane's location.
-
-```javascript
-var teleport = require('teleport');
-teleport('tom' , 'jane'); 
-```
 ## Utilities Module
 
 The `utils` module is a storehouse for various useful utility
@@ -4428,63 +3948,3 @@ Any players with a bow will be able to launch fireworks by shooting.
 ### utils.playerNames() function
 
 This function returns a javascript array of player names (as javascript strings)
-
-### utils.stat() function
-
-This function returns a numeric value for a given player statistic.
-
-#### Parameters
-
- * Player - The player object (optional - if only the statistic name parameter is provided then the statistic object is returned)
- * Statistic - A string whose value should be one of the following (CanaryMod) 
-   * ANIMALSBRED 
-   * BOATONECM 
-   * CLIMBONECM 
-   * CROUCHONECM 
-   * DAMAGEDEALT 
-   * DAMAGETAKEN 
-   * DEATHS 
-   * DRIVEONECM 
-   * DROP 
-   * FALLONECM 
-   * FISHCAUGHT 
-   * FLYONECM 
-   * HORSEONECM 
-   * JUMP 
-   * JUNKFISHED 
-   * LEAVEGAME 
-   * MINECARTONECM 
-   * MOBKILLS 
-   * PIGONECM 
-   * PLAYERKILLS 
-   * PLAYONEMINUTE 
-   * SPRINTONECM 
-   * SWIMONECM 
-   * TALKEDTOVILLAGER 
-   * TIMESINCEDEATH 
-   * TRADEDWITHVILLAGER 
-   * TREASUREFISHED 
-   * WALKONECM 
-
-See [CanaryMod's Statistic][cmstat] class for an up-to-date list of possible stat values
-
-[cmstat]: https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/api/statistics/Statistics.html
-
-#### Example 1 Getting stats for a player
-
-    var utils = require('utils');
-    var jumpCount = utils.stat( player, 'jump');
-
-#### Example 2 Getting the JUMP statistic object (which can be used elsewhere)
-
-    var utils = require('utils');
-    var JUMPSTAT = utils.stat('jump');
-    var jumpCount = player.getStat( JUMPSTAT ); // canary-specific code
-
-This function also contains values for each possible stat so you can get at stats like this...
-
-    var utils = require('utils');
-    var JUMPSTAT = utils.stat.JUMP; // Accessing the value
-    var jumpCount = player.getStat ( JUMPSTAT ); // canary-specific code
-
-
