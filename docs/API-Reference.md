@@ -13,17 +13,10 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [events variable](#events-variable)
  * [Global functions](#global-functions)
    * [echo function](#echo-function)
-   * [require() function](#require-function)
-   * [scload() function](#scload-function)
-   * [scsave() function](#scsave-function)
-   * [plugin() function](#plugin-function)
-   * [command() function](#command-function)
    * [setTimeout() function](#settimeout-function)
    * [clearTimeout() function](#cleartimeout-function)
    * [setInterval() function](#setinterval-function)
    * [clearInterval() function](#clearinterval-function)
-   * [refresh() function](#refresh-function)
-   * [addUnloadHandler() function](#addunloadhandler-function)
    * [isOp() function](#isop-function)
  * [events Module](#events-module)
    * [events.on() static method](#eventson-static-method)
@@ -380,169 +373,9 @@ The `echo()` function displays a message on the in-game screen.
 
     /js echo( self, 'Hello World')
 
-For programmers familiar with Javascript web programming, an `alert`
-function is also provided.  `alert` works exactly the same as `echo`
-e.g. `alert( self, 'Hello World')`.
-
-### require() function
-
-ScriptCraft's `require()` function is used to load modules. The `require()` function takes a module name as a parameter and will try to load the named module.
-
-#### Parameters
-
- * modulename - The name of the module to be loaded. Can be one of the following...
-
-   - A relative file path (with or without `.js` suffix)
-   - An absolute file path (with or without `.js` suffix)
-   - A relative directory path (uses node.js rules for directories)
-   - An absolute directory path (uses node.js rules for directories)
-   - A name of the form `'events'` - in which case the `lib` directory and `modules` directories are searched for the module.
-
-#### Return
-
-require() will return the loaded module's exports.
-
-### scload() function 
-
-#### No longer recommended for use by Plugin/Module developers (deprecated)
-
-scload() should only be used to load .json data.
-
-#### Parameters
-
- * filename - The name of the file to load.
- * warnOnFileNotFound (optional - default: false) - warn if the file was not found.
-
-#### Returns
-
-scload() will return the result of the last statement evaluated in the file.
-
-#### Example
-
-    scload("myFile.js"); // loads a javascript file and evaluates it.
-
-    var myData = scload("myData.json"); // loads a javascript file and evaluates it - eval'd contents are returned.
-
-##### myData.json contents...
-
-    { players: {
-        walterh: {
-          h: ["jsp home {1}"],
-          sunny:["time set 0",
-                 "weather clear"]
-        }
-      }
-    }
-
-### scsave() function
-
-The scsave() function saves an in-memory javascript object to a
-specified file. Under the hood, scsave() uses JSON (specifically
-json2.js) to save the object. There will usually be no need to call
-this function directly - If you want to have a javascript object
-automatically loaded at startup and saved on shutdown then use the
-`persist()` module. The `persist()` module uses scsave and scload
-under the hood.  Any in-memory object saved using the `scsave()`
-function can later be restored using the `scload()` function.
-
-#### Parameters
-
- * objectToSave : The object you want to save.
- * filename : The name of the file you want to save it to.
-
-#### Example
-
-```javascript
-var myObject = { name: 'John Doe',
-                 aliases: ['John Ray', 'John Mee'],
-                 date_of_birth: '1982/01/31' };
-scsave(myObject, 'johndoe.json');
-```
-
-##### johndoe.json contents...
-
-    { "name": "John Doe", 
-      "aliases": ["John Ray", "John Mee"], 
-      "date_of_birth": "1982/01/31" 
-    };
-
-### plugin() function
-
-#### Update April 2015 
-The `plugin()` function is deprecated. Please refer to [Anatomy of a
-ScriptCraft Plugin][anatomy] for an up-to-date step-by-step guide to
-creating a plugin which uses persistence (loading and saving data).
-
-#### Deprecated
-The `plugin()` function should be used to declare a javascript module
-whose state you want to have managed by ScriptCraft - that is - a
-Module whose state will be loaded at start up and saved at shut down.
-A plugin is just a regular javascript object whose state is managed by
-ScriptCraft.  The only member of the plugin which whose persistence is
-managed by Scriptcraft is `store` - this special member will be
-automatically saved at shutdown and loaded at startup by
-ScriptCraft. This makes it easier to write plugins which need to
-persist data.
-
-#### Parameters
- 
- * pluginName (String) : The name of the plugin - this becomes a global variable.
- * pluginDefinition (Object) : The various functions and members of the plugin object.
- * isPersistent (boolean - optional) : Specifies whether or not the
-   plugin/object state should be loaded and saved by ScriptCraft.
-
-#### Example
-
-See chat/color.js for an example of a simple plugin - one which lets
-players choose a default chat color. See also [Anatomy of a
-ScriptCraft Plugin][anatomy].
- 
-[anatomy]: ./Anatomy-of-a-Plugin.md
-
-### command() function
-
-The `command()` function is used to expose javascript functions for use by non-operators (regular players). Only operators should be allowed use raw javascript using the `/js ` command because it is too powerful for use by regular players and can be easily abused. However, the `/jsp ` command lets you (the operator / server administrator / plugin author) safely expose javascript functions for use by players.
-
-#### Parameters
- 
- * commandFunction: The named javascript function which will be invoked when the command is invoked by a player. The name of the function will be used as the command name so name this function accordingly. The callback function in turn takes 2 parameters...
-
-   * params : An Array of type String - the list of parameters passed to the command.
-   * sender : The [CommandSender][bukcs] object that invoked the command (this is usually a Player object but can be a Block ([BlockCommandSender][bukbcs]).
-
- * options (Array|Function - optional) : An array of command options/parameters which the player can supply (It's useful to supply an array so that Tab-Completion works for the `/jsp ` commands. If a function is supplied instead of an array then the function will be invoked at TAB-completion time and should return an array of strings.
- * intercepts (boolean - optional) : Indicates whether this command can intercept Tab-Completion of the `/jsp ` command - advanced usage - see alias/alias.js for example.
-
-#### Example
-
-    // javascript code
-    function boo( params, sender) {
-        echo( sender, params[0] );
-    }
-    command( boo );
-    
-    # in-game execution
-    /jsp boo Hi!
-    > Hi!
-
-To use a callback for options (TAB-Completion) ...
-
-    var utils = require('utils');
-    function boo( params, sender ) {
-       var receiver = server.getPlayer( params[0] );
-       if ( receiver ){
-          echo( receiver, sender.name + ' says boo!');
-       }
-    }
-    command( boo, utils.playerNames );
-
-See chat/colors.js or alias/alias.js or homes/homes.js for more examples of how to use the `command()` function.
-
 ### setTimeout() function
 
-This function mimics the setTimeout() function used in browser-based javascript. However, the function will only accept a function reference, not a string of javascript code.  Where setTimeout() in the browser returns a numeric value which can be subsequently passed to clearTimeout(), This implementation returns an object which can be subsequently passed to ScriptCraft's own clearTimeout() implementation.
-
-If Node.js supports setTimeout() then it's probably good for ScriptCraft to support it too.
+This function mimics the [setTimeout()](http://www.w3schools.com/jsref/met_win_settimeout.asp) function used in browser-based javascript. However, the function will only accept a function reference, not a string of javascript code.  Where setTimeout() in the browser returns a numeric value which can be subsequently passed to clearTimeout(), this implementation returns an object which can be subsequently passed to ScriptCraft's own clearTimeout() implementation.
 
 #### Example
 
@@ -558,137 +391,15 @@ setTimeout( function() {
 
 ### clearTimeout() function
 
-A scriptcraft implementation of clearTimeout().
+A scriptcraft implementation of [clearTimeout()](http://www.w3schools.com/jsref/met_win_cleartimeout.asp).
 
 ### setInterval() function
 
-This function mimics the setInterval() function used in browser-based javascript. However, the function will only accept a function reference, not a string of javascript code.  Where setInterval() in the browser returns a numeric value which can be subsequently passed to clearInterval(), This implementation returns an object which can be subsequently passed to ScriptCraft's own clearInterval() implementation.
+This function mimics the [setInterval()](http://www.w3schools.com/jsref/met_win_setinterval.asp) function used in browser-based javascript. However, the function will only accept a function reference, not a string of javascript code.  Where setInterval() in the browser returns a numeric value which can be subsequently passed to clearInterval(), this implementation returns an object which can be subsequently passed to ScriptCraft's own clearInterval() implementation.
 
 ### clearInterval() function
 
-A scriptcraft implementation of clearInterval().
-
-### refresh() function
-
-The refresh() function can be used to only reload the ScriptCraft plugin (it's like the `reload` command except it only reloads ScriptCraft). The refresh() function will ...
-
-1. Disable the ScriptCraft plugin.
-2. Unload all event listeners associated with the ScriptCraft plugin.
-3. Cancel all timed tasks (created by `setInterval` & `setTimeout`)
-3. Enable the ScriptCraft plugin.
-
-... refresh() can be used during development to reload only scriptcraft javascript files.
-See [issue #69][issue69] for more information.
-
-By default, if `self` is defined at runtime, it checks, whether `self` is server operator, otherwise fails with message. This behavivor can be modified using `skipOpCheck` parameter (useful, if you are doing some custom premission checks before calling this function).
-
-#### Parameters
-
- * skipOpCheck (boolean - optional) : If true, the function won't check if `self` is server operator.
-
-[issue69]: https://github.com/walterhiggins/ScriptCraft/issues/69
-
-### addUnloadHandler() function
-
-The addUnloadHandler() function takes a callback function as a parameter. The callback will be called when the ScriptCraft plugin is unloaded (usually as a result of a a `reload` command or server shutdown).
-
-This function provides a way for ScriptCraft modules to do any required cleanup/housekeeping just prior to the ScriptCraft Plugin unloading.
-
-### isOp() function
-
-This function takes a single parameter and returns true if it's an operator or has operator-level privileges. 
-
-## require - Node.js-style module loading in ScriptCraft
-
-Node.js is a server-side javascript environment with an excellent
-module loading system based on CommonJS. Modules in Node.js are really
-simple. Each module is in its own javascript file and all variables
-and functions within the file are private to that file/module only.
-There is a very concise explanation of CommonJS modules at...
-
-[http://wiki.commonjs.org/wiki/Modules/1.1.1.][cjsmodules]
-
-Node.js also has good documentation on [Modules][njsmod].
-
-If you want to export a variable or function you use the module.export
-property.
-
-For example imagine you have 3 files program.js, inc.js  and math.js ...
-
-### math.js
-
-```javascript
-exports.add = function(a,b){
-    return a + b;
-}
-```
-
-### inc.js
-
-```javascript
-var math = require('./math');
-exports.increment = function(n){
-    return math.add(n, 1);
-}
-```
-
-### program.js
-
-```javascript
-var inc = require('./inc').increment;
-var a = 7;
-a = inc(a);
-print(a);
-```
-
-You can see from the above sample code that programs can use modules
-and modules themeselves can use other modules. Modules have full
-control over what functions and properties they want to provide to
-others.
-
-### Important
-
-Although ScriptCraft now supports Node.js style modules, it does not
-support node modules. Node.js and Rhino are two very different
-Javascript environments. ScriptCraft uses Rhino Javascript, not
-Node.js. Standard Node.js modules such as `'fs'` are not available in ScriptCraft.
-
-Modules can be loaded using relative or absolute paths. Per the CommonJS
-module specification, the '.js' suffix is optional.
-
-[cjsmodules]: http://wiki.commonjs.org/wiki/Modules/1.1.1.
-
-### module name resolution
-
-When resolving module names to file paths, ScriptCraft uses the following rules...
-
- 1. if the module does not begin with './' or '/' then ...
-
-    1.1 Look in the 'scriptcraft/lib' directory. If it's not there then...
-    1.2 Look in the 'scriptcraft/modules' directory. If it's not there then 
-        Throw an Error.
-
- 2. If the module begins with './' or '/' then ...
-    
-    2.1 if the module begins with './' then it's treated as a file path. File paths are 
-        always relative to the module from which the require() call is being made.
-
-    2.2 If the module begins with '/' then it's treated as an absolute path.
-
-    If the module does not have a '.js' suffix, and a file with the same name and a .js sufix exists, 
-    then the file will be loaded.
-
- 3. If the module name resolves to a directory then...
-    
-    3.1 look for a package.json file in the directory and load the `main` property e.g.
-    
-    // package.json located in './some-library/'
-    {
-      "main": './some-lib.js',
-      "name": 'some-library'
-    }
-    
-    3.2 if no package.json file exists then look for an index.js file in the directory
+A scriptcraft implementation of [clearInterval()](http://www.w3schools.com/jsref/met_win_clearinterval.asp).
 
 ## events Module
 
