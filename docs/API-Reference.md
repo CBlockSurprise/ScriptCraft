@@ -21,7 +21,6 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
  * [events Module](#events-module)
    * [events.on() static method](#eventson-static-method)
  * [Events Helper Module](#events-helper-module)
-   * [Usage](#usage-1)
    * [events.weatherChange()](#eventsweatherchange-1)
    * [events.lightningStrike()](#eventslightningstrike-1)
    * [events.thunderChange()](#eventsthunderchange)
@@ -403,99 +402,6 @@ A scriptcraft implementation of [clearInterval()](http://www.w3schools.com/jsref
 
 ## events Module
 
-The Events module provides a thin wrapper around CanaryMod's or
-Bukkit's Event-handling API.  The Java-based CanaryMod and Bukkit
-Events APIs make use of Java Annotations which are not available in
-Javascript, so this module provides a simple way to listen to
-minecraft events in javascript.
-
-### events.on() static method
-
-This method is used to register event listeners. This method is called by all of the Event Helper methods. 
-The `events` object has functions for registering listeners for each type of event. For example, you can register a block-break listener using events.on:
-
-```javascript
-events.on( Packages.net.canarymod.hook.player.BlockDestroyHook, function( evt, cancel ) { 
-  echo(evt.player, evt.player.name + ' broke a block!');
-} );
-```
-
-or you can (and probably should) use the more succinct:
-
-```javascript
-events.blockDestroy( function( evt, cancel ) { 
-  echo(evt.player, evt.player.name + ' broke a block!');
-} );
-```
-
-The events.on method can be used to register standard CanaryMod/Bukkit
-events and can also be used to register non-standard events - that is
-- events provided by plugins.
-
-#### Parameters
-
- * eventType - A Java class. See the [CanaryMod Hook API][cmEvtApi] or [Bukkit Event API][buk] for details of the many event types.  
-
- * callback - A function which will be called whenever the event
-   fires. The callback in turn takes 2 parameters: 
-   
-   - event : the event  fired
-   - cancel : a function which if invoked will cancel the  event - not all event types are cancelable; this function only cancels cancelable events).
-
- * priority (optional - default: "CRITICAL" for CanaryMod or "HIGHEST" for Bukkit) - 
-   The priority the listener/callback takes over other listeners to the same event. 
-   Possible values for CanaryMod are "CRITICAL", "HIGH", "LOW", "NORMAL" and "PASSIVE".
-   For an explanation of what the different CanaryMod Hook priorities 
-   mean, refer to CanaryMod's [Hook Priority class][cmPriority]. 
-   Possible values for Bukkit are "HIGH", "HIGHEST", "LOW", "LOWEST", "NORMAL", "MONITOR". 
-   For an explanation of what the different Bukkit Event priorities 
-   mean, refer to bukkit's [Event API Reference][buk2]. 
-
-#### Returns
-
-An object which can be used to unregister the listener. 
-
-#### Example:
-
-The following code will print a message on screen every time a block is broken in the game
-
-```javascript
-events.on( Packages.net.canarymod.hook.player.BlockDestroyHook, function( evt, cancel ) { 
-  echo(evt.player, evt.player.name + ' broke a block!');
-} );
-```
-
-To handle an event only once and unregister from further events...
-
-```javascript    
-events.on( Packages.net.canarymod.hook.player.BlockDestroyHook, function( evt, cancel ) { 
-  echo( evt.player, evt.player.name + ' broke a block!');
-  this.unregister();
-} );
-```
-
-The `this` keyword when used inside the callback function refers to
-the Listener object created by ScriptCraft. It has 2 methods
-`unregister()` which can be used to stop listening and `cancel()`
-which can be used to cancel the current event. The object returned by
-`events.on()` only has the `unregister()` method, the `cancel()`
-method is only available from within the event handling function.
-
-To unregister a listener *outside* of the listener function...
-
-```javascript    
-var myBlockBreakListener = events.on( Packages.net.canarymod.hook.player.BlockDestroyHook, function( evt ) { ... } );
-...
-myBlockBreakListener.unregister();
-```
-
-[buk2]: http://wiki.bukkit.org/Event_API_Reference
-[buk]: http://jd.bukkit.org/dev/apidocs/index.html?org/bukkit/event/Event.html
-[cmEvtApi]: https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/hook/Hook.html
-[cmPriority]: https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/plugin/Priority.html
-
-## Events Helper Module
-
 Events are how the server tells your plugin that something has happened in the world. Bukkit defines many events, in multiple categories; e.g. player actions (player logged in, player clicked a block, player died, player respawned...), block events (block placed, block broken, block's neighbour changed...), entity events (a mob targeted you, a creeper exploded...), world-wide events (a world loaded or unloaded, a chunk loaded or unloaded), and many more.
 
 If we want our plugin to do something specific when one of these events occurs, we need to **register a callback function for that event**. This will cause the function we registered to be called by the server whenever the specified event occurs.
@@ -503,6 +409,10 @@ If we want our plugin to do something specific when one of these events occurs, 
 ### Usage
 
 ```javascript
+/*  This will register the function onBlockBreak() to be called
+    whenever a BlockBreakEvent occurs, resulting in the message
+    "You broke a block!" being sent to the player that broke a block
+*/
 var onBlockBreak = function(event) {
     echo(event.player, "You broke a block!"); 
 };
