@@ -7,11 +7,11 @@ Original content by [Walter Higgins](https://github.com/walterhiggins)
 Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.com)
 
 ## Table of Contents
- * [Global variables](#global-variables)
+ * [Global Variables](#global-variables)
    * [server variable](#server-variable)
    * [self variable](#self-variable)
    * [events variable](#events-variable)
- * [Global functions](#global-functions)
+ * [Global Functions](#global-functions)
    * [echo function](#echo-function)
    * [setTimeout() function](#settimeout-function)
    * [clearTimeout() function](#cleartimeout-function)
@@ -20,7 +20,7 @@ Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.co
    * [isOp() function](#isop-function)
  * [events Module](#events-module)
    * [events.on() static method](#eventson-static-method)
- * [Events Helper Module](#events-helper-module-bukkit-version)
+ * [Events Helper Module](#events-helper-module)
    * [Usage](#usage-1)
    * [events.weatherChange()](#eventsweatherchange-1)
    * [events.lightningStrike()](#eventslightningstrike-1)
@@ -361,7 +361,7 @@ only exists in the context of the in-game or server command prompts.
 ### events variable
 The events object is used to add new event handlers to Minecraft.
 
-## Global functions
+## Global Functions
 
 ScripCraft provides some global functions which can be used by all plugins/modules...
 
