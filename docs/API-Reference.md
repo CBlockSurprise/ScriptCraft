@@ -15,7 +15,8 @@ Walter Higgins
 ## Table of Contents
  * [Items module](#items-module)
    * [Usage](#usage)
-/*********************
+ * [Testing123](#testanchor)
+
 ## Items module
 The Items module provides a suite of functions - one for each possible item.
 See https://ci.visualillusionsent.net/job/CanaryLib/javadoc/net/canarymod/api/inventory/ItemType.html for a list of possible items
@@ -560,5 +561,6 @@ The following functions are provided:
  * yellowGlassPane()
  * yellowStainedClay()
  * zombieHead()
-
-***/
+ * 
+ * 
+ * * Testing123
