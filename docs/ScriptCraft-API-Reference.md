@@ -2144,6 +2144,7 @@ The entity module provides easy access to all of the entities in Minecraft.
     entity.zombie      // refers to the org.bukkit.entity.ZOMBIE interface
 
 Possible entities:
+
 For a more detailed description of the entities, click [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/package-summary.html)
 
   * ageable	
