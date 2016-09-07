@@ -32,6 +32,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Inventory Module](#inventory-module)
  * [Action Module](#action-module)
  * [BlockFace Module](#blockface-module)
+ * [Bukkit Module](#bukkit-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -2399,6 +2400,42 @@ bannerData.facingDirection = blockFace.south;
 bannerState.update();
 ```
 
+## Bukkit Module
+
+The bukkit module provides functions that are executed server-wide.
+
+### bukkit.broadcastMessage()
+
+The `bukkit.broadcastMessage()` function can be used to broadcast a message to all players on the server.
+
+#### Parameters
+
+  * message: the message you want to send (string)
+
+#### Example
+
+```javascript
+// sends the message "Welcome to the server!" to all players on the server
+bukkit.broadcastMessage("Welcome to the server!");
+```
+
+### bukkit.consoleCommand()
+
+The `bukkit.consoleCommand()` function can be used to execute a command as if it were sent from the server's console.
+
+NOTE: **Be careful when sending commands to the server, it will do anything you ask it to!**
+
+#### Parameters
+
+  * command: the command you want to execute (string)
+
+#### Example
+
+```javascript
+// executes the command "time set 0" as if we typed "/time set 0" in game as OP or into the server console directly
+bukkit.consoleCommand("time set 0");
+```
+
 ## Drone Module
 
 The Drone object can be used to build things in Minecraft using JavaScript!
@@ -2542,7 +2579,7 @@ Drones can be created in any of the following ways...
 
 the box() method is a convenience method for building things. (For the more performance-oriented method - see cuboid)
 
-#### parameters
+#### Parameters
 
  * b - the block id - e.g. 6 for an oak sapling or '6:2' for a birch sapling. Alternatively you can use any one of the `blocks` values e.g. `blocks.sapling.birch`
  * w (optional - default 1) - the width of the structure 
