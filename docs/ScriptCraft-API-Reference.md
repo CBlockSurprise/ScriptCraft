@@ -1741,6 +1741,7 @@ echo(self, "Hello Minecraft!".aqua());
 ## Items Module
 
 The items module provides a function for each possible item in Minecraft
+
 See https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html for a list of possible items
 
 ### Usage
@@ -1753,6 +1754,7 @@ Items with names that are longer than one word are written in [camelCase](https:
 ### Example
 
 If we want an item with the type `ACACIA_FENCE_GATE` we would write `items.acaciaFenceGate()`
+
 
 The following functions are provided:
 
