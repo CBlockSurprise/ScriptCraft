@@ -31,6 +31,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Fireworks Module](#fireworks-module)
  * [Inventory Module](#inventory-module)
  * [Action Module](#action-module)
+ * [BlockFace Module](#blockface-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -2330,7 +2331,7 @@ The inventory module exposes a single function which when passed a player or NPC
 
 The action module can be used to reference the 5 different action types players can perform.
 
-## Usage
+### Usage
 
 ```javascript
 action.leftClickAir       // refers to org.bukkit.event.block.Action.LEFT_CLICK_AIR
@@ -2338,13 +2339,13 @@ action.leftClickAir       // refers to org.bukkit.event.block.Action.LEFT_CLICK_
 
 Possible actions:
 
-* leftClickAir
-* leftClickBlock
-* rightClickAir
-* rightClickBlock
-* physical                      <--- physical action occurs when a player steps on a pressure plate
+  * leftClickAir
+  * leftClickBlock
+  * rightClickAir
+  * rightClickBlock
+  * physical                      <--- physical action occurs when a player steps on a pressure plate
 
-## Example
+### Example
 
 ```javascript
 // Sends player a message if they right-click on a block
@@ -2354,6 +2355,48 @@ var onPlayerInteract = function(event) {
   }
 }
 events.playerInteract(onPlayerInteract);
+```
+
+## BlockFace Module
+
+The BlockFace module can be used to reference the different possible directions a block can be facing (for blocks like stairs and armor stands)
+
+### Usage
+
+```javascript
+blockFace.south         // refers to org.bukkit.block.BlockFace.SOUTH
+```
+
+Possible directions:
+
+  * down
+  * east
+  * eastNorthEast
+  * eastSouthEast
+  * north
+  * northEast
+  * northNorthEast
+  * northNorthWest
+  * northWest
+  * self
+  * south
+  * southEast
+  * southSouthEast
+  * southSouthWest
+  * southWest
+  * up
+  * west
+  * westNorthWest
+  * westSouthWest
+
+### Example
+
+```javascript
+// sets the direction bannerBlock is facing to "south"
+// bannerBlock is a standing banner block
+var bannerData = bannerBlock.state.data;
+bannerData.facingDirection = blockFace.south;
+bannerState.update();
 ```
 
 ## Drone Module
