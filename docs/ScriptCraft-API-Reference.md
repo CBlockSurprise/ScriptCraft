@@ -36,6 +36,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
    * [bukkit.broadcastMessage()](#bukkitbroadcastmessage)
    * [bukkit.consoleCommand()](#bukkitconsolecommand) 
  * [Color Module](#color-module)
+ * [DamageCause Module](#damagecause-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -2509,6 +2510,81 @@ bootsMeta.color = color.red;
 boots.itemMeta = bootsMeta;
 player.equipment.boots = boots;
 ```
+
+## DamageCause Module
+
+Provides access to all possible causes of damage in `org.bukkit.event.entity.EntityDamageEvent.DamageCause` that could result in an EntityDamageEvent being fired.
+
+### Usage
+```javascript
+damageCause.fall                   // returns enum org.bukkit.event.entity.EntityDamageEvent.DamageCause.FALL
+```
+
+Possible damage causes:
+
+  * blockExplosion
+  	* Damage caused by being in the area when a block explodes.
+  * contact
+  	* Damage caused when an entity contacts a block such as a Cactus.
+  * custom
+  	* Custom damage.
+  * dragonBreath
+  	* Damage caused by a dragon breathing fire.
+  * drowning
+  	* Damage caused by running out of air while in water
+  * entityAttack
+  	* Damage caused when an entity attacks another entity.
+  * entityExplosion
+  	* Damage caused by being in the area when an entity, such as a Creeper, explodes.
+  * fall
+  	* Damage caused when an entity falls a distance greater than 3 blocks
+  * fallingBlock
+  	* Damage caused by being hit by a falling block which deals damage
+  * fire
+  	* Damage caused by direct exposure to fire
+  * fireTick
+  	* Damage caused due to burns caused by fire
+  * flyIntoWall
+  	* Damage caused when an entity runs into a wall.
+  * hotFloor
+  	* Damage caused when an entity steps on Material.MAGMA.
+  * lava
+  	* Damage caused by direct exposure to lava
+  * lightning
+  	* Damage caused by being struck by lightning
+  * magic
+  	* Damage caused by being hit by a damage potion or spell
+  * melting
+  	* Damage caused due to a snowman melting
+  * poison
+  	* Damage caused due to an ongoing poison effect
+  * projectile
+  	* Damage caused when attacked by a projectile.
+  * starvation
+  	* Damage caused by starving due to having an empty hunger bar
+  * suffocation
+  	* Damage caused by being put in a block
+  * suicide
+  	* Damage caused by committing suicide using the command "/kill"
+  * thorns
+  	* Damage caused in retaliation to another attack by the Thorns enchantment.
+  * void
+  	* Damage caused by falling into the void
+  * wither
+  	* Damage caused by Wither potion effect
+
+### Example
+
+```javascript
+// prevents entities from taking falling damage
+var onEntityDamage = function(event) {
+  if (event.cause == damageCause.fall) {
+    event.cancelled = true;
+  }
+}
+events.entityDamage(onEntityDamage);
+```
+
 
 ## Drone Module
 
