@@ -1702,10 +1702,15 @@ See https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html for a list
 
 Items with names that are longer than one word are written in [camelCase](https://en.wikipedia.org/wiki/CamelCase) which means the first word is lowercase and each subsquent word is capitalized, with all spaces removed.
 
-### Example
-
 If we want an item with the type `ACACIA_FENCE_GATE` we would write `items.acaciaFenceGate()`
 
+### Example
+
+```javascript
+// adds 5 baked potatoes to the inventory of "player"
+inventory(player).add(items.bakedPotato(5));
+player.updateInventory();
+```
 
 The following functions are provided:
 
@@ -2137,15 +2142,15 @@ The following functions are provided:
 
 ## Entity Module
 
-The entity module provides easy access to all of the entities in Minecraft.
+The entity module provides easy access to all of the entity interfaces in Minecraft.  Entities are any non-voxel objects that can exist in a world, including all players, monsters, projectiles, etc.
+
+For a description of the entities, click [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/package-summary.html)
 
 ### Usage
 
     entity.zombie      // refers to the org.bukkit.entity.ZOMBIE interface
 
 Possible entities:
-
-For a more detailed description of the entities, click [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/package-summary.html)
 
   * ageable	
   * ambient	
