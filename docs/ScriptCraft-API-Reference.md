@@ -33,6 +33,8 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Action Module](#action-module)
  * [BlockFace Module](#blockface-module)
  * [Bukkit Module](#bukkit-module)
+   * [bukkit.broadcastMessage()](#bukkitbroadcastmessage)
+   * [bukkit.consoleCommand()](#bukkitconsolecommand)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
