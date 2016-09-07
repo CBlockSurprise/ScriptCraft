@@ -1691,7 +1691,7 @@ Adding this line to the top of a plugin file will give you access to all ScriptC
 
 ## Items Module
 
-The items module provides a function for each possible item in Minecraft
+The `items` module exports a factory function for each item material in Minecraft that returns an `ItemStack`. The functions take one argument, `numItems`, that determines how many of the given item will be in the returned ItemStack. `numItems` has a default value of `1`.
 
 See https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html for a list of possible items
 
