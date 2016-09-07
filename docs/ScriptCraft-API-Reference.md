@@ -25,7 +25,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [String Colors](#string-colors)
  * [Module Loading](#module-loading)
  * [Items Module](#items-module)
- * [Entities Module](#entities-module)
+ * [Entity Module](#entity-module)
  * [Blocks Module](#blocks-module)
  * [Recipes Module](#recipes-module)
  * [Fireworks Module](#fireworks-module)
@@ -2135,14 +2135,15 @@ The following functions are provided:
 * yellowFlower()
 
 
-## Entities module
-The Entities module provides a suite of functions - one for each possible entity type.
+## Entity Module
+
+The entity module provides easy access to all of the entities in Minecraft.
 
 ### Usage
 
-    entities.zombie      // returns a Bukkit EntityType.ZOMBIE enum value
+    entity.zombie      // returns a Bukkit EntityType.ZOMBIE enum value
 
-The following functions are provided:
+Possible entities:
 
  * area_effect_cloud
  * armor_stand
