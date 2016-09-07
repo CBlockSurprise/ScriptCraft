@@ -19,10 +19,11 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
    * [clearTimeout() function](#cleartimeout-function)
    * [setInterval() function](#setinterval-function)
    * [clearInterval() function](#clearinterval-function)
- * [Events](#events) 
+ * [Events](#events)
   * [Registering Events](#registering-events)
   * [List of Events](#list-of-events)
  * [String Colors](#string-colors)
+ * [Module Loading](#module-loading)
  * [Items Module](#items-module)
  * [Entities Module](#entities-module)
  * [Blocks Module](#blocks-module)
@@ -1674,6 +1675,14 @@ Example
 echo(self, "Hello Minecraft!".aqua());
 ```
 ![Hello Minecraft!](https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/004/661/original/temp1450223230.png)
+
+## Module Loading
+
+If we are writing a plugin that relies on functions provided by ScriptCraft modules, we need to load them into our plugin.js file.  We can import all of the modules at once by loading `master.js` as shown:
+
+`load("scriptcraft/modules/bukkit/master.js");`
+
+Adding this line to the top of a plugin file will give you access to all ScriptCraft modules.
 
 ## Items Module
 
