@@ -27,14 +27,15 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Items Module](#items-module)
  * [Entities Module](#entities-module)
  * [Blocks Module](#blocks-module)
- * [Recipes Module](#the-recipes-module)
+ * [Recipes Module](#recipes-module)
  * [Fireworks Module](#fireworks-module)
  * [Inventory Module](#inventory-module)
  * [Action Module](#action-module)
  * [BlockFace Module](#blockface-module)
  * [Bukkit Module](#bukkit-module)
    * [bukkit.broadcastMessage()](#bukkitbroadcastmessage)
-   * [bukkit.consoleCommand()](#bukkitconsolecommand)
+   * [bukkit.consoleCommand()](#bukkitconsolecommand) 
+ * [Color Module](#color-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -2438,6 +2439,17 @@ NOTE: **Be careful when sending commands to the server, it will do anything you 
 // or "time set 0" into the server console directly
 bukkit.consoleCommand("time set 0");
 ```
+
+## Color Module
+
+Provides access to all possible colors in `org.bukkit.Color`
+
+NOTE: The "color" module is not to be confused with the "dyeColor" module.  The "dyeColor" module is used for coloring cloth and dyes, whereas the "color" module is used for coloring things like leather armor.
+
+### Usage
+
+
+
 
 ## Drone Module
 
