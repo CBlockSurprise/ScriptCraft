@@ -2434,7 +2434,8 @@ NOTE: **Be careful when sending commands to the server, it will do anything you 
 #### Example
 
 ```javascript
-// executes the command "time set 0" as if we typed "/time set 0" in game as OP or into the server console directly
+// executes the command "time set 0" as if we typed "/time set 0" in game as OP
+// or "time set 0" into the server console directly
 bukkit.consoleCommand("time set 0");
 ```
 
