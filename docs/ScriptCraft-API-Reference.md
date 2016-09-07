@@ -6,7 +6,7 @@ Original content by [Walter Higgins](https://github.com/walterhiggins)
 
 Additions and modifications by Aaron Powell @ [MVCode](https://www.mvcodeclub.com)
 
-NOTE: **Work in Progress**
+NOTE: **Work in Progress -- some information may be incorrect or incomplete**
 
 ## Table of Contents
  * [Global Variables](#global-variables)
