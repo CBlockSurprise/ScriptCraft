@@ -34,23 +34,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
  * [Utilities Module](#utilities-module)
-   * [utils.player() function](#utilsplayer-function)
-   * [utils.world( worldName ) function](#utilsworld-worldname--function)
-   * [utils.blockAt( Location ) function](#utilsblockat-location--function)
-   * [utils.locationToJSON() function](#utilslocationtojson-function)
-   * [utils.locationToString() function](#utilslocationtostring-function)
-   * [utils.locationFromJSON() function](#utilslocationfromjson-function)
-   * [utils.getPlayerPos() function](#utilsgetplayerpos-function)
-   * [utils.getMousePos() function](#utilsgetmousepos-function)
-   * [utils.foreach() function](#utilsforeach-function)
-   * [utils.nicely() function](#utilsnicely-function)
-   * [utils.time( world ) function](#utilstime-world--function)
-   * [utils.time24( world ) function](#utilstime24-world--function)
-   * [utils.find() function](#utilsfind-function)
-   * [utils.serverAddress() function](#utilsserveraddress-function)
-   * [utils.array() function](#utilsarray-function)
-   * [utils.players() function](#utilsplayers-function)
-   * [utils.playerNames() function](#utilsplayernames-function)
+   * [Utility Methods](#utility-methods)
 
 ## Global Variables
 
@@ -3711,6 +3695,26 @@ d.temple();
 The `utils` module is a storehouse for various useful utility
 functions which can be used by plugin and module authors. It contains
 miscellaneous utility functions and classes to help with programming.
+
+## Utility Methods
+
+ * [utils.player() function](#utilsplayer-function)
+ * [utils.world( worldName ) function](#utilsworld-worldname--function)
+ * [utils.blockAt( Location ) function](#utilsblockat-location--function)
+ * [utils.locationToJSON() function](#utilslocationtojson-function)
+ * [utils.locationToString() function](#utilslocationtostring-function)
+ * [utils.locationFromJSON() function](#utilslocationfromjson-function)
+ * [utils.getPlayerPos() function](#utilsgetplayerpos-function)
+ * [utils.getMousePos() function](#utilsgetmousepos-function)
+ * [utils.foreach() function](#utilsforeach-function)
+ * [utils.nicely() function](#utilsnicely-function)
+ * [utils.time( world ) function](#utilstime-world--function)
+ * [utils.time24( world ) function](#utilstime24-world--function)
+ * [utils.find() function](#utilsfind-function)
+ * [utils.serverAddress() function](#utilsserveraddress-function)
+ * [utils.array() function](#utilsarray-function)
+ * [utils.players() function](#utilsplayers-function)
+ * [utils.playerNames() function](#utilsplayernames-function)
 
 ### utils.player() function
 
