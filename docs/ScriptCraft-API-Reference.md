@@ -2447,9 +2447,40 @@ Provides access to all possible colors in `org.bukkit.Color`
 NOTE: The "color" module is not to be confused with the "dyeColor" module.  The "dyeColor" module is used for coloring cloth and dyes, whereas the "color" module is used for coloring things like leather armor.
 
 ### Usage
+```javascript
+color.red                   // references org.bukkit.Color.RED
+```
 
+Possible colors:
 
+  * aqua
+  * black
+  * blue
+  * fuchsia
+  * gray
+  * green
+  * lime
+  * maroon
+  * navy
+  * olive
+  * orange
+  * purple
+  * red
+  * silver
+  * teal
+  * white
+  * yellow
 
+### Example
+
+```javascript
+// Sets the color of a pair of leather boots to red and gives them to "player"
+var boots = items.leatherBoots(1);
+var bootsMeta = boots.itemMeta;
+bootsMeta.color = color.red;
+boots.itemMeta = bootsMeta;
+player.equipment.boots = boots;
+```
 
 ## Drone Module
 
