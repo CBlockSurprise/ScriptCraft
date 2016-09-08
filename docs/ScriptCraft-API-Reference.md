@@ -38,6 +38,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Color Module](#color-module)
  * [DyeColor Module](#dyecolor-module)
  * [DamageCause Module](#damagecause-module)
+ * [Effect Module](#effect-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
