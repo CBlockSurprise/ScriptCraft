@@ -36,6 +36,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
    * [bukkit.broadcastMessage()](#bukkitbroadcastmessage)
    * [bukkit.consoleCommand()](#bukkitconsolecommand) 
  * [Color Module](#color-module)
+ * [DyeColor Module](#dyecolor-module)
  * [DamageCause Module](#damagecause-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
@@ -2473,7 +2474,7 @@ bukkit.consoleCommand("time set 0");
 
 Provides access to all possible colors in `org.bukkit.Color`
 
-NOTE: The "color" module is not to be confused with the "dyeColor" module.  The "dyeColor" module is used for coloring cloth and dyes, whereas the "color" module is used for coloring things like leather armor.
+NOTE: The "color" module is not to be confused with the "dyeColor" module.  The "dyeColor" module is used for coloring dyes, cloth, and banners whereas the "color" module is used for coloring things like leather armor.
 
 ### Usage
 ```javascript
@@ -2509,6 +2510,46 @@ var bootsMeta = boots.itemMeta;
 bootsMeta.color = color.red;
 boots.itemMeta = bootsMeta;
 player.equipment.boots = boots;
+```
+
+## DyeColor Module
+
+Provides access to all possible colors in `org.bukkit.DyeColor`
+
+NOTE: The "dyeColor" module is not to be confused with the "color" module.  The "dyeColor" module is used for coloring dyes, cloth, and banners whereas the "color" module is used for coloring things like leather armor.
+
+### Usage
+```javascript
+dyeColor.blue                   // references org.bukkit.DyeColor.BLUE
+```
+
+Possible dye colors:
+
+  * black
+  * blue
+  * brown
+  * cyan
+  * gray
+  * green
+  * lightblue
+  * lime
+  * magenta
+  * orange
+  * pink
+  * purple
+  * red
+  * silver
+  * white
+  * yellow
+
+### Example
+
+```javascript
+// sets the dyeColor of bannerBlock to blue
+// bannerBlock is a standing banner block
+var bannerState = bannerBlock.state;
+bannerState.baseColor = dyeColor.blue;
+bannerState.update();
 ```
 
 ## DamageCause Module
