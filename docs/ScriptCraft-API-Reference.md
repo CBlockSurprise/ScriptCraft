@@ -2287,50 +2287,70 @@ Possible entities:
 
 ## Blocks Module
 
-You hate having to lookup [Data Values][dv] when you use ScriptCraft's
-Drone() functions. So do I.  So I created this blocks object which is
-a helper object for use in construction.
+The `blocks` module provides easy access to all block types without having to use their [data values](http://minecraft.gamepedia.com/Data_values/Block_IDs).
+
+### Usage
+
+```javascript
+blocks.oak
+blocks.wool.green
+```
 
 ### Examples
 
-    box( blocks.oak ); // creates a single oak wood block
-    box( blocks.sand, 3, 2, 1 ); // creates a block of sand 3 wide x 2 high x 1 long
-    box( blocks.wool.green, 2 ); // creates a block of green wool 2 blocks wide
+```javascript
+box( blocks.oak ); // creates a single oak wood block
+box( blocks.sand, 3, 2, 1 ); // creates a block of sand 3 wide x 2 high x 1 long
+box( blocks.wool.green, 2 ); // creates a block of green wool 2 blocks wide
+```
 
-Color aliased properties that were a direct descendant of the blocks
-object are no longer used to avoid confusion with carpet and stained
-clay blocks. In addition, there's a convenience array `blocks.rainbow`
-which is an array of the 7 colors of the rainbow (or closest
+There is also convenience array `blocks.rainbow` which is an array of the 7 colors of the rainbow (or closest
 approximations).
 
 The blocks module is globally exported by the Drone module.
 
 ## Recipes Module
 
-The Recipes module provides convenience functions for adding and removing recipes
-from the game.
+The Recipes module provides convenience functions for adding and removing recipes from the game.
+
+The `recipes.add()` function takes an object with 3 keys as a parameter:
+
+* result: 	ItemStack the recipe will create
+* ingredients: 	Object with key-value pairs denoting the letter that will represent each type of ingredient in the "shape"
+* shape: 	Array that defines the shape of the recipe in the crafting table.  It **must be** an array of 3 strings each with 3 characters, representing the 9 spaces in the crafting table.  The first element is the top row, the second the middle row, and the third is the bottom row.  Use spaces to represent empty slots in the table.
+
+### Usage
+
+```javascript
+recipes.add(
+{
+    result: resultItem,
+    ingredients: {X: ingredientItem1, Y: ingedientItem2},
+    shape: [" Y ", "YXY", " Y "]
+});
+```
 
 ### Example
-To add an EnderBow to the game (assumes there's an enchanted Item variable called enderBow)...
 
-    var recipes = require('recipes');
-    var items = require('items');
-    ...
-    var enderBowRecipe = recipes.create( {
-      result: enderBow,
-      ingredients: {
-        E: items.enderPearl(1),
-        S: items.stick(1),
-        W: items.string(1)
-      },
-      shape: [ 'ESW',
-               'SEW',
-               'ESW' ]
-    } );
-    // add to server
-    var addedRecipe = server.addRecipe( enderBowRecipe );
-    // to remove...
-    server.removeRemove( addedRecipe );
+```javascript
+// Adds a recipe that can be used to craft a custom bow 
+// called the "Bow of Exploding" using a bow and TNT
+var bow = items.bow(1);
+var tnt = items.tnt(1);
+var explodeBow = items.bow(1);
+
+var explodeBowMeta = explodeBow.itemMeta;
+explodeBowMeta.displayName = "Bow of Exploding";
+explodeBowMeta.lore = ["Excite. Very boom."];
+explodeBow.itemMeta = explodeBowMeta;
+
+recipes.add(
+{
+    result: explodeBow,
+    ingredients: {B: bow, T: tnt},
+    shape: ["   ", "TB ", "   "]
+});
+```
 
 ## Fireworks Module
 
