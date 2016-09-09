@@ -2174,7 +2174,20 @@ entity.zombie      // refers to the org.bukkit.entity.ZOMBIE interface
 
 ### Example
 
- --- needs example ---
+```javascript
+// launches a witherSkull projectile if the player right-clicks the air while holding a bone
+var onPlayerInteract = function(event) {
+	if (event.action == action.rightClickAir) {
+		var player = event.player;
+		if (player.itemInHand.type.equals(material.bone)) {
+		  var skull = player.launchProjectile(entity.witherSkull.class);
+			skull.shooter = player;
+			skull.velocity = player.location.direction.multiply(1.8);
+		}
+	}
+};
+events.playerInteract(onPlayerInteract);
+```
 
 Possible entities:
 
