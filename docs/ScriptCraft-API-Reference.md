@@ -2849,7 +2849,7 @@ Possible effects:
 
 ## Enchantment Module
 
-Provides access to all enchantments in Minecraft that can be applied to equipment.  Use the `addEnchant()` function to apply the enchantment to an item's ItemMeta. [Spigot JavaDocs: ItemMeta.addEnchant()](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/meta/ItemMeta.html#addEnchant(org.bukkit.enchantments.Enchantment,%20int,%20boolean)
+Provides access to all enchantments in Minecraft that can be applied to equipment.  Use the `addEnchant()` function to apply the enchantment to an item's ItemMeta. [Spigot JavaDocs: ItemMeta.addEnchant()](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/meta/ItemMeta.html#addEnchant(org.bukkit.enchantments.Enchantment,%20int,%20boolean))
 
 ### Usage
 
