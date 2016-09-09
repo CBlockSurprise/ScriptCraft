@@ -2633,6 +2633,8 @@ events.entityDamage(onEntityDamage);
 
 Effects are sent to players' clients by the server and add visuals and/or sounds to the game.  The `effect` module provides access to all effect enums in `org.bukkit.Effect`.  [Spigot JavaDocs: Effect](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html)
 
+Use the `playEffect()` function to display the effects, as shown in the example below.
+
 ### Usage
 ```javascript
 effect.enderSignal                // returns enum org.bukkit.Effect.ENDER_SIGNAL
@@ -2640,12 +2642,176 @@ effect.enderSignal                // returns enum org.bukkit.Effect.ENDER_SIGNAL
 
 Possible effects:
 
-  * insert list
+  * anvilBreak
+  	* The sound played when an anvil breaks
+  * anvilLand
+  	* The sound played when an anvil lands after falling
+  * anvilUse
+  	* The sound played when an anvil is used
+  * batTakeoff
+  	* Sound played by a bat taking off
+  * blazeShoot
+  	* Sound of blaze firing.
+  * bowFire
+  	* Sound of a bow firing.
+  * brewingStandBrew
+  	* The sound played by brewing stands when brewing
+  * chorusFlowerDeath
+  	* The sound played when a chorus flower dies
+  * chorusFlowerGrow
+  	* The sound played when a chorus flower grows
+  * click1
+  	* A click sound.
+  * click2
+  	* An alternate click sound.
+  * cloud
+  	* A puff of white smoke
+  * colouredDust
+  	* Multicolored dust particles
+  * crit
+  	* Critical hit particles
+  * doorClose
+  	* Sound of a door closing.
+  * doorToggle
+  	* Sound of a door opening.
+  * dragonBreath
+  	* The sound/particles used by the enderdragon's breath attack.
+  * endGatewaySpawn
+  	* The sound/particles caused by a end gateway spawning
+  * enderSignal
+  	* An ender eye signal; a visual effect.
+  * enderdragonGrowl
+  	* The sound of an enderdragon growling
+  * enderdragonShoot
+  	* Sound of an enderdragon firing
+  * endereyeLaunch
+  	* The sound played when launching an endereye
+  * explosion
+  	* Explosion particles
+  * explosionHuge
+  	* The biggest explosion particle effect
+  * explosionLarge
+  	* A larger version of the explode particle
+  * extinguish
+  	* Sound of fire being extinguished.
+  * fenceGateClose
+  	* Sound of a door closing.
+  * fenceGateToggle
+  	* Sound of a door opening.
+  * fireworkShoot
+  	* The sound played when launching a firework
+  * fireworksSpark
+  	* The spark that comes off a fireworks
+  * flame
+  	* Fire particles
+  * flyingGlyph
+  	* The symbols that fly towards the enchantment table
+  * footstep
+  	* A small gray square
+  * ghastShoot
+  	* Sound of ghast firing.
+  * ghastShriek
+  	* Sound of ghast shrieking.
+  * happyVillager
+  	* The particle that appears when trading with a villager
+  * heart
+  	* The particle that appears when breading animals
+  * instantSpell
+  	* A puff of white stars
+  * ironDoorClose
+  	* Sound of a door closing.
+  * ironDoorToggle
+  	* Sound of a door opening.
+  * ironTrapdoorClose
+  	* Sound of a door closing.
+  * ironTrapdoorToggle
+  	* Sound of a door opening.
+  * itemBreak
+  	* The particles generated when a tool breaks.
+  * largeSmoke
+  	* The smoke particles that appears on blazes, minecarts with furnaces and fire
+  * lavaPop
+  	* The particles that pop out of lava
+  * lavadrip
+  	* The lava drip particle that appears on blocks under lava
+  * magicCrit
+  	* Blue critical hit particles
+  * mobspawnerFlames
+  	* The flames seen on a mobspawner; a visual effect.
+  * note
+  	* The note that appears above note blocks
+  * particleSmoke
+  	* Smoke particles
+  * portal
+  	* The particles shown at nether portals
+  * portalTravel
+  	* The sound played when traveling through a portal
+  * potionBreak
+  	* Visual effect of a splash potion breaking.
+  * potionSwirl
+  	* Multicolored potion effect particles
+  * potionSwirlTransparent
+  	* Multicolored potion effect particles that are slightly transparent
+  * recordPlay
+  	* A song from a record.
+  * slime
+  	* The particle shown when a slime jumps
+  * smallSmoke
+  	* Small gray particles
+  * smoke
+  	* A visual smoke effect.
+  * snowShovel
+  	* White particles
+  * snowballBreak
+  	* Snowball breaking
+  * spell
+  	* A puff of white potion swirls
+  * splash
+  	* Water particles
+  * stepSound
+  	* Sound of a block breaking.
+  * tileBreak
+  	* The particles generated while breaking a block.
+  * tileDust
+  	* The particles generated while sprinting a block This particle requires a Material and data value so that the client can select the correct texture.
+  * trapdoorClose
+  	* Sound of a trapdoor closing.
+  * trapdoorToggle
+  	* Sound of a trapdoor opening.
+  * villagerPlantGrow
+  	* Particles displayed when a villager grows a plant, data is the number of particles
+  * villagerThundercloud
+  	* The particle that appears when hitting a villager
+  * voidFog
+  	* Small gray particles
+  * waterdrip
+  	* The water drip particle that appears on blocks under water
+  * witchMagic
+  	* A puff of purple particles
+  * witherBreakBlock
+  	* The sound played when a wither breaks a block
+  * witherShoot
+  	* Sound of a wither shooting
+  * zombieChewIronDoor
+  	* Sound of zombies chewing on iron doors.
+  * zombieChewWoodenDoor
+  	* Sound of zombies chewing on wooden doors.
+  * zombieConvertedVillager
+  	* The sound played when a villager is converted by a zombie
+  * zombieDestroyDoor
+  	* Sound of zombies destroying a door.
+  * zombieInfect
+  	* The sound played when a zombie infects a target
 
 ### Example
 
 ```javascript
-examples
+// Displays the "mobspawnerFlames" visual effect when the player moves
+var onPlayerMove = function(event) {
+    var player = event.player;
+    player.playEffect(player.location, effect.mobspawnerFlames, 5);
+};
+events.playerMove(onPlayerMove);
 ```
 
 
