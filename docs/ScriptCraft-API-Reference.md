@@ -28,7 +28,6 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Entity Module](#entity-module)
  * [Blocks Module](#blocks-module)
  * [Recipes Module](#recipes-module)
- * [Fireworks Module](#fireworks-module)
  * [Inventory Module](#inventory-module)
  * [Action Module](#action-module)
  * [BlockFace Module](#blockface-module)
@@ -2352,44 +2351,13 @@ recipes.add(
 });
 ```
 
-## Fireworks Module
-
-The fireworks module makes it easy to create fireworks using
-ScriptCraft.  The module has a single function `firework` which takes
-a `org.bukkit.Location` as its 1 and only parameter.
-
-### Examples
-
-The module also extends the `Drone` object adding a `firework` method
-so that fireworks can be created as a part of a Drone chain. For
-Example....
-
-    /js firework()
-
-... creates a single firework, while ....
-
-    /js firework().fwd(3).times(5) 
-
-... creates 5 fireworks in a row. Fireworks have also been added as a
-possible option for the `arrow` module. To have a firework launch
-where an arrow strikes...
-
-    /js arrows.firework()
-
-To call the fireworks.firework() function directly, you must provide a
-location. For example...
-
-    /js var fireworks = require('fireworks');
-    /js fireworks.firework( self.location );
-
-![firework example](img/firework.png)
-
 ## Inventory Module
-This module provides functions to add items to, remove items from and check the 
-contents of a player or NPC's inventory. 
+
+This module provides functions to add items to, remove items from and check the contents of a player or NPC's inventory. 
 
 ### Usage
-The inventory module is best used in conjunction with the items module. See below for examples of usage.
+
+The inventory module is best used in conjunction with the items module.
 
 ```javascript
 // gives every player a cookie and a baked potato
@@ -2400,16 +2368,14 @@ utils.players(function(player){
 });
 
 // give a player 6 cookies then take away 4 of them
-
 inventory(player)
   .add( items.cookie(6) )
   .remove ( items.cookie(4) )
 
 // check if a player has any cookies
-
 var hasCookies = inventory(player).contains( items.cookie(1) );
-
 ```
+
 The inventory module exposes a single function which when passed a player or NPC will return an object with 3 methods:
     *NOTE: all methods expect a parameter of the type `org.bukkit.inventory.ItemStack`
             so use the `items` module to construct items to pass into these methods
@@ -2417,6 +2383,19 @@ The inventory module exposes a single function which when passed a player or NPC
 * add : Adds items to the inventory
 * remove : removes items from the inventory
 * contains : checks to see if there is the specified type and amount of item in the inventory
+
+### Example
+
+```javascript
+// When a player throws a snowball, adds a new one to their inventory
+var onSnowballThrow = function(event) {
+  if (isSnowball(event.entity)) {
+    var player = event.entity.shooter;
+    inventory(player).add(items.snowBall(1));
+  }
+};
+events.projectileLaunch(onSnowballThrow);
+```
 
 ## Action Module
 
