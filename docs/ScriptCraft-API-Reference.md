@@ -2847,6 +2847,40 @@ Possible effects:
   * zombieInfect
   	* The sound played when a zombie infects a target
 
+## Enchantment Module
+
+description
+
+### Usage
+
+```javascript
+usage
+```
+
+### Example
+
+```javascript
+// example
+```
+
+List of enchantments:
+
+## EntityTypeCheck Module
+
+Provides a set of functions that can be used to check if an entity is of a certain type.
+
+### Usage
+
+```javascript
+isChicken(entity)			// returns "true" if "entity" is a chicken
+```
+
+### Example
+
+```javascript
+// example
+```
+
 ## Drone Module
 
 The Drone object can be used to build things in Minecraft using JavaScript!
