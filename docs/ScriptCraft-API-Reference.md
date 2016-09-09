@@ -2849,18 +2849,22 @@ Possible effects:
 
 ## Enchantment Module
 
-description
+Provides access to all enchantments in Minecraft that can be applied to equipment.  Use the `addEnchant()` function to apply the enchantment to an item's ItemMeta.
 
 ### Usage
 
 ```javascript
-usage
+enchantment.durability				// returns the Field org.bukkit.enchantments.Enchantment.DURABILITY
 ```
 
 ### Example
 
 ```javascript
-// example
+// adds the "durability" enchantment to the "sword"
+var sword = items.diamondSword();
+var swordMeta = sword.itemMeta;
+swordMeta.addEnchant(enchantment.durability, 1, true);
+sword.itemMeta = swordMeta;
 ```
 
 List of enchantments:
