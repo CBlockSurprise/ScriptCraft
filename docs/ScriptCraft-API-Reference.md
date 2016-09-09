@@ -2407,14 +2407,6 @@ The action module can be used to reference the 5 different action types players 
 action.leftClickAir       // refers to org.bukkit.event.block.Action.LEFT_CLICK_AIR
 ```
 
-Possible actions:
-
-  * leftClickAir
-  * leftClickBlock
-  * rightClickAir
-  * rightClickBlock
-  * physical                      <--- physical action occurs when a player steps on a pressure plate
-
 ### Example
 
 ```javascript
@@ -2427,6 +2419,14 @@ var onPlayerInteract = function(event) {
 events.playerInteract(onPlayerInteract);
 ```
 
+Possible actions:
+
+  * leftClickAir
+  * leftClickBlock
+  * rightClickAir
+  * rightClickBlock
+  * physical                      <--- physical action occurs when a player steps on a pressure plate
+
 ## BlockFace Module
 
 The BlockFace module can be used to reference the different possible directions a block can be facing (for blocks like stairs and armor stands)
@@ -2435,6 +2435,16 @@ The BlockFace module can be used to reference the different possible directions 
 
 ```javascript
 blockFace.south         // refers to org.bukkit.block.BlockFace.SOUTH
+```
+
+### Example
+
+```javascript
+// sets the direction bannerBlock is facing to "south"
+// bannerBlock is a standing banner block
+var bannerData = bannerBlock.state.data;
+bannerData.facingDirection = blockFace.south;
+bannerState.update();
 ```
 
 Possible directions:
@@ -2458,16 +2468,6 @@ Possible directions:
   * west
   * westNorthWest
   * westSouthWest
-
-### Example
-
-```javascript
-// sets the direction bannerBlock is facing to "south"
-// bannerBlock is a standing banner block
-var bannerData = bannerBlock.state.data;
-bannerData.facingDirection = blockFace.south;
-bannerState.update();
-```
 
 ## Bukkit Module
 
@@ -2517,6 +2517,17 @@ NOTE: The "color" module is not to be confused with the "dyeColor" module.  The 
 color.red                   // references org.bukkit.Color.RED
 ```
 
+### Example
+
+```javascript
+// Sets the color of a pair of leather boots to red and gives them to "player"
+var boots = items.leatherBoots(1);
+var bootsMeta = boots.itemMeta;
+bootsMeta.color = color.red;
+boots.itemMeta = bootsMeta;
+player.equipment.boots = boots;
+```
+
 Possible colors:
 
   * aqua
@@ -2537,17 +2548,6 @@ Possible colors:
   * white
   * yellow
 
-### Example
-
-```javascript
-// Sets the color of a pair of leather boots to red and gives them to "player"
-var boots = items.leatherBoots(1);
-var bootsMeta = boots.itemMeta;
-bootsMeta.color = color.red;
-boots.itemMeta = bootsMeta;
-player.equipment.boots = boots;
-```
-
 ## DyeColor Module
 
 Provides access to all possible colors in `org.bukkit.DyeColor`
@@ -2557,6 +2557,16 @@ NOTE: The "dyeColor" module is not to be confused with the "color" module.  The 
 ### Usage
 ```javascript
 dyeColor.blue                   // references org.bukkit.DyeColor.BLUE
+```
+
+### Example
+
+```javascript
+// sets the dyeColor of bannerBlock to blue
+// bannerBlock is a standing banner block
+var bannerState = bannerBlock.state;
+bannerState.baseColor = dyeColor.blue;
+bannerState.update();
 ```
 
 Possible dye colors:
@@ -2578,16 +2588,6 @@ Possible dye colors:
   * white
   * yellow
 
-### Example
-
-```javascript
-// sets the dyeColor of bannerBlock to blue
-// bannerBlock is a standing banner block
-var bannerState = bannerBlock.state;
-bannerState.baseColor = dyeColor.blue;
-bannerState.update();
-```
-
 ## DamageCause Module
 
 Provides access to all possible causes of damage in `org.bukkit.event.entity.EntityDamageEvent.DamageCause` that could result in an EntityDamageEvent being fired.
@@ -2595,6 +2595,18 @@ Provides access to all possible causes of damage in `org.bukkit.event.entity.Ent
 ### Usage
 ```javascript
 damageCause.fall                   // returns enum org.bukkit.event.entity.EntityDamageEvent.DamageCause.FALL
+```
+
+### Example
+
+```javascript
+// prevents entities from taking falling damage
+var onEntityDamage = function(event) {
+  if (event.cause == damageCause.fall) {
+    event.cancelled = true;
+  }
+}
+events.entityDamage(onEntityDamage);
 ```
 
 Possible damage causes:
@@ -2650,18 +2662,6 @@ Possible damage causes:
   * wither
   	* Damage caused by Wither potion effect
 
-### Example
-
-```javascript
-// prevents entities from taking falling damage
-var onEntityDamage = function(event) {
-  if (event.cause == damageCause.fall) {
-    event.cancelled = true;
-  }
-}
-events.entityDamage(onEntityDamage);
-```
-
 ## Effect Module
 
 Effects are sent to players' clients by the server and add visuals and/or sounds to the game.  The `effect` module provides access to all effect enums in `org.bukkit.Effect`.  [Spigot JavaDocs: Effect](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html)
@@ -2671,6 +2671,17 @@ Use the `playEffect()` function to display the effects, as shown in the example 
 ### Usage
 ```javascript
 effect.enderSignal                // returns enum org.bukkit.Effect.ENDER_SIGNAL
+```
+
+### Example
+
+```javascript
+// Displays the "mobspawnerFlames" visual effect when the player moves
+var onPlayerMove = function(event) {
+    var player = event.player;
+    player.playEffect(player.location, effect.mobspawnerFlames, 5);
+};
+events.playerMove(onPlayerMove);
 ```
 
 Possible effects:
@@ -2835,18 +2846,6 @@ Possible effects:
   	* Sound of zombies destroying a door.
   * zombieInfect
   	* The sound played when a zombie infects a target
-
-### Example
-
-```javascript
-// Displays the "mobspawnerFlames" visual effect when the player moves
-var onPlayerMove = function(event) {
-    var player = event.player;
-    player.playEffect(player.location, effect.mobspawnerFlames, 5);
-};
-events.playerMove(onPlayerMove);
-```
-
 
 ## Drone Module
 
