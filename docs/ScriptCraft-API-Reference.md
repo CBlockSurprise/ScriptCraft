@@ -40,6 +40,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [DamageCause Module](#damagecause-module)
  * [Effect Module](#effect-module)
  * [Enchantment Module](#enchantment-module)
+ * [EntityTypeCheck Module](#entitytypecheck-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
