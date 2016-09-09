@@ -2869,60 +2869,60 @@ sword.itemMeta = swordMeta;
 
 List of enchantments:
 
-	* arrowDamage
-		* Provides extra damage when shooting arrows from bows
-	* arrowFire
-		* Sets entities on fire when hit by arrows shot from a bow
-	* arrowInfinite
-		* Provides infinite arrows when shooting a bow
-	* arrowKnockback
-		* Provides a knockback when an entity is hit by an arrow from a bow
-	* damageAll
-		* Increases damage against all targets
-	* damageArthropods
-		* Increases damage against arthropod targets
-	* damageUndead
-		* Increases damage against undead targets
-	* depthStrider
-		* Increases walking speed while in water
-	* digSpeed
-		* Increases the rate at which you mine/dig
-	* durability
-		* Decreases the rate at which a tool looses durability
-	* fireAspect
-		* When attacking a target, has a chance to set them on fire
-	* frostWalker
-		* Freezes any still water adjacent to ice / frost which player is walking on
-	* knockback
-		* All damage to other targets will knock them back when hit
-	* lootBonusBlocks
-		* Provides a chance of gaining extra loot when destroying blocks
-	* lootBonusMobs
-		* Provides a chance of gaining extra loot when killing monsters
-	* luck
-		* Decreases odds of catching worthless junk
-	* lure
-		* Increases rate of fish biting your hook
-	* mending
-		* Allows mending the item using experience orbs
-	* oxygen
-		* Decreases the rate of air loss whilst underwater
-	* protectionEnvironmental
-		* Provides protection against environmental damage
-	* protectionExplosions
-		* Provides protection against explosive damage
-	* protectionFall
-		* Provides protection against fall damage
-	* protectionFire
-		* Provides protection against fire damage
-	* protectionProjectile
-		* Provides protection against projectile damage
-	* silkTouch
-		* Allows blocks to drop themselves instead of fragments (for example, stone instead of cobblestone)
-	* thorns
-		* Damages the attacker
-	* waterWorker
-		* Increases the speed at which a player may mine underwater
+  * arrowDamage
+	* Provides extra damage when shooting arrows from bows
+  * arrowFire
+	* Sets entities on fire when hit by arrows shot from a bow
+  * arrowInfinite
+	* Provides infinite arrows when shooting a bow
+  * arrowKnockback
+	* Provides a knockback when an entity is hit by an arrow from a bow
+  * damageAll
+	* Increases damage against all targets
+  * damageArthropods
+	* Increases damage against arthropod targets
+  * damageUndead
+	* Increases damage against undead targets
+  * depthStrider
+	* Increases walking speed while in water
+  * digSpeed
+	* Increases the rate at which you mine/dig
+  * durability
+	* Decreases the rate at which a tool looses durability
+  * fireAspect
+	* When attacking a target, has a chance to set them on fire
+  * frostWalker
+	* Freezes any still water adjacent to ice / frost which player is walking on
+  * knockback
+	* All damage to other targets will knock them back when hit
+  * lootBonusBlocks
+	* Provides a chance of gaining extra loot when destroying blocks
+  * lootBonusMobs
+	* Provides a chance of gaining extra loot when killing monsters
+  * luck
+	* Decreases odds of catching worthless junk
+  * lure
+	* Increases rate of fish biting your hook
+  * mending
+	* Allows mending the item using experience orbs
+  * oxygen
+	* Decreases the rate of air loss whilst underwater
+  * protectionEnvironmental
+	* Provides protection against environmental damage
+  * protectionExplosions
+	* Provides protection against explosive damage
+  * protectionFall
+	* Provides protection against fall damage
+  * protectionFire
+	* Provides protection against fire damage
+  * protectionProjectile
+	* Provides protection against projectile damage
+  * silkTouch
+	* Allows blocks to drop themselves instead of fragments (for example, stone instead of cobblestone)
+  * thorns
+	* Damages the attacker
+  * waterWorker
+	* Increases the speed at which a player may mine underwater
 
 
 ## EntityTypeCheck Module
