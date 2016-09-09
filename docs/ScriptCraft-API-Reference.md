@@ -2629,6 +2629,25 @@ var onEntityDamage = function(event) {
 events.entityDamage(onEntityDamage);
 ```
 
+## Effect Module
+
+Effects are sent to players' clients by the server and add visuals and/or sounds to the game.  The `effect` module provides access to all effect enums in `org.bukkit.Effect`.  [Spigot JavaDocs: Effect](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html)
+
+### Usage
+```javascript
+effect.enderSignal                // returns enum org.bukkit.Effect.ENDER_SIGNAL
+```
+
+Possible effects:
+
+  * insert list
+
+### Example
+
+```javascript
+examples
+```
+
 
 ## Drone Module
 
