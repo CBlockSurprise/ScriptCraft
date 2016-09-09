@@ -2927,7 +2927,7 @@ List of enchantments:
 
 ## EntityTypeCheck Module
 
-Provides a set of functions that can be used to check if an entity is of a certain type.
+Provides a set of functions that can be used to check if an entity is of a certain type.  For a list of all entity types in Minecraft, refer to [Spigot JavaDocs: EntityType](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html)
 
 ### Usage
 
@@ -2938,7 +2938,17 @@ isChicken(entity)			// returns "true" if "entity" is a chicken
 ### Example
 
 ```javascript
-// example
+// when a projectile hits something check to see if it is an "Arrow"
+// if it is, create an explosion where it landed
+function onProjectileHit(event) {
+  var projectile = event.entity;
+  var world = projectile.world;
+  if (isArrow(projectile)) {
+    projectile.remove();
+    world.createExplosion(projectile.location, 5);
+  }
+}
+events.projectileHit(onProjectileHit);
 ```
 
 ## Drone Module
