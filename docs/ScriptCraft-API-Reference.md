@@ -49,26 +49,29 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
 
 ## Global Variables
 
-There are a few special javascript variables available in ScriptCraft
+There are a few special javascript variables provided by ScriptCraft that can be accessed in all plugins.
 
 ### server variable
+
 The Minecraft Server object
 
 ### self variable
+
 The current player. (Note - this value should not be used in multi-threaded scripts or event-handling code - it's not thread-safe). This variable is only safe to use at the in-game prompt and should *never* be used in modules. For example you can use it here...
 
-    /js console.log(self.name)
+```javascript
+/js console.log(self.name)
+```
 
-... but not in any javascript module you create yourself or in any
-event handling code. `self` is a temporary short-lived variable which
-only exists in the context of the in-game or server command prompts.
+... but not in any event handling code. `self` is a temporary short-lived variable which only exists in the context of the in-game or server command prompts.
 
 ### events variable
-The events object is used to add new event handlers to Minecraft.
+
+The `events` object is used to add new event handlers to Minecraft.
 
 ## Global Functions
 
-ScripCraft provides some global functions which can be used by all plugins/modules...
+ScripCraft provides some global functions which can be used by all plugins.
 
 ### echo function
 
@@ -76,7 +79,9 @@ The `echo()` function displays a message on the in-game screen.
 
 #### Example
 
-    /js echo( self, 'Hello World')
+```javascript
+/js echo( self, 'Hello World')
+```
 
 ### setTimeout() function
 
@@ -1649,7 +1654,9 @@ events.blockBreak(onBlockBreak);
 
 If we are writing a plugin that relies on functions provided by ScriptCraft modules, we need to load them into our plugin.js file.  We can import all of the modules at once by loading `master.js` as shown:
 
-`load("scriptcraft/modules/bukkit/master.js");`
+```javascript
+load("scriptcraft/modules/bukkit/master.js");
+```
 
 Adding this line to the top of a plugin file will give you access to all ScriptCraft modules.
 
