@@ -41,6 +41,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Enchantment Module](#enchantment-module)
  * [EntityTypeCheck Module](#entitytypecheck-module)
  * [EntityType Module](#entitytype-module)
+ * [File Module](#file-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
