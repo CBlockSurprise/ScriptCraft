@@ -2954,7 +2954,13 @@ events.projectileHit(onProjectileHit);
 
 ## EntityType Module
 
-The entityType module provides access to all of the EntityType enums in `org.bukkit.entity.EntityType`. [Spigot JavaDocs: EntityType](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html)
+The entityType module provides access to all of the EntityType enums in `org.bukkit.entity.EntityType`.
+
+[Spigot JavaDocs: EntityType](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html)
+
+Often used as a parameter of methods like `World.spawnEntity()` to specify the type of entity that should be spawned.
+
+[Spigot JavaDocs: World.spawnEntity()](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.html#spawnEntity(org.bukkit.Location,%20org.bukkit.entity.EntityType))
 
 ### Usage
 
@@ -2965,7 +2971,16 @@ entityType.chicken				// returns the enum org.bukkit.entity.EntityType.CHICKEN
 ### Example
 
 ```javascript
-// example
+// spawns a "chicken" entity at the target location
+// when the player right-clicks on a block
+var world = server.worlds.get(0);
+var onPlayerInteract = function(event) {
+  if (event.action == action.rightClickBlock) {
+    var clickedBlockLoc = event.clickedBlock.location;
+    world.spawnEntity(clickedBlockLoc, entityType.chicken);
+  }
+}
+events.playerInteract(onPlayerInteract);
 ```
 
 ## Drone Module
