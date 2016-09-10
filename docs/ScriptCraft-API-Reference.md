@@ -40,6 +40,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Effect Module](#effect-module)
  * [Enchantment Module](#enchantment-module)
  * [EntityTypeCheck Module](#entitytypecheck-module)
+ * [EntityType Module](#entitytype-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -2949,6 +2950,22 @@ function onProjectileHit(event) {
   }
 }
 events.projectileHit(onProjectileHit);
+```
+
+## EntityType Module
+
+The entityType module provides access to all of the EntityType enums in `org.bukkit.entity.EntityType`. [Spigot JavaDocs: EntityType](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html)
+
+### Usage
+
+```javascript
+entityType.chicken				// returns the enum org.bukkit.entity.EntityType.CHICKEN
+```
+
+### Example
+
+```javascript
+// example
 ```
 
 ## Drone Module
