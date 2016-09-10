@@ -2984,6 +2984,22 @@ var onPlayerInteract = function(event) {
 events.playerInteract(onPlayerInteract);
 ```
 
+## File Module
+
+description
+
+### Usage
+
+```javascript
+// usage
+```
+
+### Example
+
+```javascript
+// example
+```
+
 ## Drone Module
 
 The Drone object can be used to build things in Minecraft using JavaScript!
