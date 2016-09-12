@@ -3270,12 +3270,21 @@ teleport(player, targetLoc);
 
 ## NewPotionEffect Module
 
-desc
+The `newPotionEffect` module provides a function `newPotionEffect()` that can be used to construct an `org.bukkit.potion.PotionEffect` when you want to apply an effect to a player or custom mob using the `LivingEntity.addPotionEffect()` function.
+
+[Spigot JavaDocs: LivingEntity.addPotionEffect()](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/LivingEntity.html#addPotionEffect(org.bukkit.potion.PotionEffect))
+
+### Parameters
+
+type: 		(string) the type of potion effect
+duration:	(int, "max") the duration of the effect in seconds (or "max" for maximum duration
+strength:	(int) the power level of the effect
 
 ### Usage
 
 ```javascript
-// usage
+var potionEffect = newPotionEffect("speed", "max", 3);
+player.addPotionEffect(potionEffect);
 ```
 
 ### Example
