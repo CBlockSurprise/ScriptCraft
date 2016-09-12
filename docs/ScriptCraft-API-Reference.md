@@ -2988,16 +2988,120 @@ events.playerInteract(onPlayerInteract);
 
 The `file` module provides functions for reading and writing persistent JSON data to files so that plugins that require it can maintain their state across server restarts or reloads.
 
-### Usage
+### file.load()
+
+Returns a string containing all text in the data file loaded.
+
+#### Parameters
+
+filename: string specifying the name of the file to load data from
+
+#### Usage
 
 ```javascript
-// usage
+var rawData = file.load("data-file.json");
+```
+
+### file.write()
+
+Saves the desired JSON data (as a string) to a file with the specified name.
+
+#### Parameters
+
+filename: string specifying the name of the file to write data to
+data: stringifyed JSON data to be written to the file
+
+#### Usage
+
+```javascript
+file.write("data-file.json", '{"data": []}');
 ```
 
 ### Example
 
 ```javascript
-// example
+exports.setWarp = function(label) {
+
+    var rawData;
+    var data;
+    var warpLocations;
+
+    try {
+        rawData = file.load("warping-data.json");
+        data = JSON.parse(rawData);
+        warpLocations = data[0].warpLocations;
+        if (Object.keys(warpLocations).length === 0) {
+            warpLocations = [];
+        }
+    }
+    catch(err) {
+        file.write("warping-data.json", '{"warpLocations": []}');
+        warpLocations = [];
+    }
+
+    if (typeof(label) != "string") {
+        echo("Usage: /js setWarp(<label>);".red());
+        return;
+    } else if (label == "list") {
+        echo("Cannot store a location with the name 'list'".red());
+        return;
+    }
+
+    warpLocations.push( {
+                            "label":    label,
+                            "x":        self.location.x,
+                            "y":        self.location.y,
+                            "z":        self.location.z,
+                            "pitch":    self.location.pitch,
+                            "yaw":      self.location.yaw
+                        });
+
+    data = {"warpLocations": warpLocations};
+    var toSave = JSON.stringify(data);
+    file.write("warping-data.json", toSave);
+
+    echo("Warp location of ".green() + label.yellow() + " has been set!".green());
+};
+
+exports.warp = function(label) {
+
+    var rawData;
+    var data;
+    var warpLocations;
+
+    try {
+        rawData = file.load("warping-data.json");
+        data = JSON.parse(rawData);
+        warpLocations = data[0].warpLocations;
+    }
+    catch(err) {
+        file.write("warping-data.json", '{"warpLocations": []}');
+        warpLocations = [];
+    }
+
+    var warpLabels = [];
+    for (var i = 0; i < warpLocations.length; i++) {
+        warpLabels[i] = warpLocations[i].label;
+    }
+    if (typeof(label) != "string") {
+        echo("Usage: /js warp(<label>);   --or--   /js warp('list');".red());
+        return;
+    } else if (warpLabels.indexOf(label) == -1) {
+        echo("The warp location for ".red() + label.yellow() + " has not been set!".red());
+        return;
+    }
+    var warpData = {};
+    for (var j = 0; j < warpLocations.length; j++) {
+        if (warpLocations[j].label == label) {
+            warpData = warpLocations[j];
+        }
+    }
+    var loc = location(self.world, warpData.x, warpData.y, warpData.z);
+    loc.yaw = warpData.yaw;
+    loc.pitch = warpData.pitch;
+    self.teleport(loc);
+    echo("Teleported player to ".green() + label.yellow() + "!".green());
+};
 ```
 
 ## Drone Module
