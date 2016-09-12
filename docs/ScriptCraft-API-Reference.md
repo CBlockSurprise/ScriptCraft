@@ -3181,10 +3181,10 @@ player.gameMode = gameMode.survival;		// sets the game mode of "player" to "surv
 
 List of game modes:
 
-	* survival
-	* creative
-	* spectator
-	* adventure
+  * survival
+  * creative
+  * spectator
+  * adventure
 
 ## Drone Module
 
