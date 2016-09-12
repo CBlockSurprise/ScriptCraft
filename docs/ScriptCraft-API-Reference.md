@@ -3189,12 +3189,19 @@ List of game modes:
 
 ## ItemFlag Module
 
-desc
+The `itemFlag` module provides access to all of [item flags](#https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html) that can be added to the ItemMeta of an ItemStack.  These flags are used to prevent certain attributes of the item from being displayed without removing their functionality.
+
+Can be used with the [`ItemMeta.addItemFlags()`](#https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html#addItemFlags(org.bukkit.inventory.ItemFlag...)) function to add the desired item flag to an ItemStack.
 
 ### Usage
 
 ```javascript
-// usage
+// hides the durability enchant from displaying on the sword's tooltip
+var sword = items.diamondSword();
+var swordMeta = sword.itemMeta;
+swordMeta.addEnchant(enchantment.durability, 1, true);
+swordMeta.addItemFlags(itemFlag.hideEnchants);
+sword.itemMeta = swordMeta;
 ```
 
 ### Example
