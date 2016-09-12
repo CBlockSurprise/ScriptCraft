@@ -3191,7 +3191,9 @@ List of game modes:
 
 The `itemFlag` module provides access to all of [item flags](#https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html) that can be added to the ItemMeta of an ItemStack.  These flags are used to prevent certain attributes of the item from being displayed without removing their functionality.
 
-Can be used with the [`ItemMeta.addItemFlags()`](#https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html#addItemFlags(org.bukkit.inventory.ItemFlag...)) function to add the desired item flag to an ItemStack.
+Can be used with the `ItemMeta.addItemFlags()` function to add the desired item flag to an ItemStack.
+
+[Spigot JavaDocs: addItemFlags()](#(#https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html#addItemFlags(org.bukkit.inventory.ItemFlag...))
 
 ### Usage
 
