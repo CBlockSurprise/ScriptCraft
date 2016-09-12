@@ -43,6 +43,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [EntityType Module](#entitytype-module)
  * [File Module](#file-module)
  * [FireworkEffect Module](#fireworkeffect-module)
+ * [GameMode Module](#gamemode-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -3162,6 +3163,28 @@ var onPlayerInteract = function(event) {
 events.playerInteract(onPlayerInteract);
 ```
 
+## GameMode Module
+
+Provies easy reference to each possible game mode.
+
+### Usage
+
+```javascript
+player.gameMode = gameMode.survival;		// sets the game mode of "player" to "survival"
+```
+
+### Example
+
+```javascript
+// needs example
+```
+
+List of game modes:
+
+	* survival
+	* creative
+	* spectator
+	* adventure
 
 ## Drone Module
 
