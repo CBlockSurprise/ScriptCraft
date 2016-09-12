@@ -3277,7 +3277,9 @@ The `newPotionEffect` module provides a function `newPotionEffect()` that can be
 ### Parameters
 
 type: 		(string) the type of potion effect
+
 duration:	(int, "max") the duration of the effect in seconds (or "max" for maximum duration
+
 strength:	(int) the power level of the effect
 
 ### Usage
