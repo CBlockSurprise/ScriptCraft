@@ -45,6 +45,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [FireworkEffect Module](#fireworkeffect-module)
  * [GameMode Module](#gamemode-module)
  * [ItemFlag Module](#itemflag-module)
+ * [Location Module](#location-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -3227,6 +3228,39 @@ List of item flags:
   * hideUnbreakable
 	* Setting to show/hide the unbreakable State
 
+## Location Module
+
+The `location` module provides a constructor function `location()` that returns an `org.bukkit.Location`.  This can be useful when you need to reference a location in the world based on coordinates (e.g. when spawning entities or teleporting).
+
+### Parameters
+
+world: 	(World) the location is in
+x: 	(int, float) x position of location
+y: 	(int, float) y position of location
+z: 	(int, float) z position of location
+pitch:	OPTIONAL - (int, float) horizonatal camera position for player
+yaw:	OPTIONAL - (int, float) vertical camera position for player
+
+### Usage
+
+```javascript
+var world = server.worlds.get(0);
+var x = 10;
+var y = 70;
+var z = 10;
+var newLoc = location(world, x, y, z);
+```
+
+### Example
+```javascript
+// teleports the player to the targetLoc
+var world = server.worlds.get(0);
+var x = 10;
+var y = 70;
+var z = 10;
+var targetLoc = location(world, x, y, z);
+teleport(player, targetLoc);
+```
 
 ## Drone Module
 
