@@ -2986,7 +2986,7 @@ events.playerInteract(onPlayerInteract);
 
 ## File Module
 
-description
+The `file` module provides functions for reading and writing persistent JSON data to files so that plugins that require it can maintain their state across server restarts or reloads.
 
 ### Usage
 
