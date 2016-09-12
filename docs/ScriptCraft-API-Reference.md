@@ -42,6 +42,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [EntityTypeCheck Module](#entitytypecheck-module)
  * [EntityType Module](#entitytype-module)
  * [File Module](#file-module)
+ * [FireworkEffect Module](#fireworkeffect-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -3104,6 +3105,63 @@ exports.warp = function(label) {
     echo("Teleported player to ".green() + label.yellow() + "!".green());
 };
 ```
+
+## FireworkEffect Module
+
+Provides access to all firework effect types as well as a the `setFireworkEffect()` function which can be used to set the properties of a firework when launching it from a plugin.
+
+### Usage
+
+```javascript
+fireworkEffect.type.burst		// refers to org.bukkit.FireworkEffect.Type.BURST
+```
+
+```javascript
+var firework = location.world.spawnEntity(location, entityType.firework);
+var properties = {
+	                "flicker":      false,
+	                "mainColor":    color.red,
+	                "fadeColor":    color.blue,
+	                "fireworkType": fireworkEffect.type.burst,
+	                "trail":        true,
+	                "power":        2
+                 };
+fireworkEffect.setFireworkEffect(firework, properties);
+```
+
+### Example
+
+```javascript
+// lauches a firework when the player right-clicks while holding
+// a firework charge.  The firework effect is specified in "properties"
+var launchFirework = function(location) {
+    
+    var firework = location.world.spawnEntity(location, entityType.firework);
+    
+    var properties = {
+                        "flicker":      false,
+                        "mainColor":    color.red,
+                        "fadeColor":    color.blue,
+                        "fireworkType": fireworkEffect.type.burst,
+                        "trail":        true,
+                        "power":        2
+                    };
+                    
+    fireworkEffect.setFireworkEffect(firework, properties);
+};
+
+var onPlayerInteract = function(event) {
+    if (event.action === action.rightClickAir) {
+        var player = event.player;
+        var location = player.location;
+        if (player.itemInHand.type.equals(material.fireworkCharge)) {
+            launchFirework(location);
+        }
+    }
+};
+events.playerInteract(onPlayerInteract);
+```
+
 
 ## Drone Module
 
