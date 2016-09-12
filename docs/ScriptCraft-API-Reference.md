@@ -3193,7 +3193,7 @@ The `itemFlag` module provides access to all of [item flags](#https://hub.spigot
 
 Can be used with the `ItemMeta.addItemFlags()` function to add the desired item flag to an ItemStack.
 
-[Spigot JavaDocs: addItemFlags()](#https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html#addItemFlags(org.bukkit.inventory.ItemFlag...))
+[Spigot JavaDocs: ItemMeta.addItemFlags()](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/meta/ItemMeta.html#addItemFlags(org.bukkit.inventory.ItemFlag...))
 
 ### Usage
 
