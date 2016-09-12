@@ -3198,6 +3198,12 @@ Can be used with the `ItemMeta.addItemFlags()` function to add the desired item 
 ### Usage
 
 ```javascript
+itemFlag.hideEnchants				// refers to org.bukkit.inventory.ItemFlag.HIDE_ENCHANTS
+```
+
+### Example
+
+```javascript
 // hides the durability enchant from displaying on the sword's tooltip
 var sword = items.diamondSword();
 var swordMeta = sword.itemMeta;
@@ -3206,11 +3212,10 @@ swordMeta.addItemFlags(itemFlag.hideEnchants);
 sword.itemMeta = swordMeta;
 ```
 
-### Example
+List of item flags:
 
-```javascript
-// example
-```
+
+
 
 ## Drone Module
 
