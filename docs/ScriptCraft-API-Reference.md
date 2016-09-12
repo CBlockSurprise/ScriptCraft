@@ -44,6 +44,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [File Module](#file-module)
  * [FireworkEffect Module](#fireworkeffect-module)
  * [GameMode Module](#gamemode-module)
+ * [ItemFlag Module](#itemflag-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -3185,6 +3186,22 @@ List of game modes:
   * creative
   * spectator
   * adventure
+
+## ItemFlag Module
+
+desc
+
+### Usage
+
+```javascript
+// usage
+```
+
+### Example
+
+```javascript
+// example
+```
 
 ## Drone Module
 
