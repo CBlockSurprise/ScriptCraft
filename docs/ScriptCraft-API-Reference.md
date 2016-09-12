@@ -3214,7 +3214,18 @@ sword.itemMeta = swordMeta;
 
 List of item flags:
 
-
+  * hideAttributes
+	* Setting to show/hide Attributes like Damage
+  * hideDestroys
+	* Setting to show/hide what the ItemStack can break/destroy
+  * hideEnchants
+	* Setting to show/hide enchants
+  * hidePlacedOn
+	* Setting to show/hide where this ItemStack can be build/placed on
+  * hidePotionEffects
+	* Setting to show/hide potion effects on this ItemStack
+  * hideUnbreakable
+	* Setting to show/hide the unbreakable State
 
 
 ## Drone Module
