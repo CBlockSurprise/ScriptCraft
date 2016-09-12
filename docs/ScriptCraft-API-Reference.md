@@ -46,6 +46,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [GameMode Module](#gamemode-module)
  * [ItemFlag Module](#itemflag-module)
  * [Location Module](#location-module)
+ * [NewPotionEffect Module](#newpotioneffect-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -3266,6 +3267,25 @@ var z = 10;
 var targetLoc = location(world, x, y, z);
 teleport(player, targetLoc);
 ```
+
+## NewPotionEffect Module
+
+desc
+
+### Usage
+
+```javascript
+// usage
+```
+
+### Example
+
+```javascript
+// example
+```
+
+List of potion effects:
+
 
 ## Drone Module
 
