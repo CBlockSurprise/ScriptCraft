@@ -3235,10 +3235,15 @@ The `location` module provides a constructor function `location()` that returns 
 ### Parameters
 
 world: 	(World) the location is in
+
 x: 	(int, float) x position of location
+
 y: 	(int, float) y position of location
+
 z: 	(int, float) z position of location
+
 pitch:	OPTIONAL - (int, float) horizonatal camera position for player
+
 yaw:	OPTIONAL - (int, float) vertical camera position for player
 
 ### Usage
