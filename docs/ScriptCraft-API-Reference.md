@@ -47,6 +47,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [ItemFlag Module](#itemflag-module)
  * [Location Module](#location-module)
  * [NewPotionEffect Module](#newpotioneffect-module)
+ * [Scoreboard Module](#scoreboard-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -3297,6 +3298,22 @@ player.addPotionEffect(potionEffect);
 
 List of potion effects:
 
+
+## Scoreboard Module
+
+desc
+
+### Usage
+
+```javascript
+// usage
+```
+
+### Example
+
+```javascript
+// example
+```
 
 ## Drone Module
 
