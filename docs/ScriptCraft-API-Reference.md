@@ -3323,11 +3323,11 @@ List of potion effects:
 	* Blinds an entity.
   * confusion
 	* Warps vision on the client.
-  * damageResistance
+  * damage_resistance
 	* Decreases damage dealt to an entity.
-  * fastDigging
+  * fast_digging
 	* Increases dig speed.
-  * fireResistance
+  * fire_resistance
 	* Stops fire damage.
   * glowing
 	* Outlines the entity so that it can be seen from afar.
@@ -3335,11 +3335,11 @@ List of potion effects:
 	* Hurts an entity.
   * heal
 	* Heals an entity.
-  * healthBoost
+  * health_boost
 	* Increases the maximum health of an entity.
   * hunger
 	* Increases hunger.
-  * increaseDamage
+  * increase_damage
 	* Increases damage dealt.
   * invisibility
 	* Grants invisibility.
@@ -3349,7 +3349,7 @@ List of potion effects:
 	* Causes the entity to float into the air.
   * luck
 	* Loot table luck.
-  * nightVision
+  * night_vision
 	* Allows an entity to see in the dark.
   * poison
 	* Deals damage to an entity over time.
@@ -3359,13 +3359,13 @@ List of potion effects:
 	* Increases the food level of an entity each tick.
   * slow
 	* Decreases movement speed.
-  * slowDigging
+  * slow_digging
 	* Decreases dig speed.
   * speed
 	* Increases movement speed.
   * unluck
 	* Loot table unluck.
-  * waterBreathing
+  * water_breathing
 	* Allows breathing underwater.
   * weakness
 	* Decreases damage dealt by an entity.
