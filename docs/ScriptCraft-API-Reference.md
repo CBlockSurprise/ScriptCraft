@@ -3293,7 +3293,26 @@ player.addPotionEffect(potionEffect);
 ### Example
 
 ```javascript
-// example
+// When we spawn a skeleton using a spawn egg, give it a custom name
+// and 2 potions effects (speed and strength)
+var onCreatureSpawn = function(event) {
+
+	if (isSkeleton(event.entity) && event.spawnReason == spawnReason.spawnerEgg) {
+
+		var skelly = event.entity;
+
+		skelly.customName = "Skeleton King";
+		skelly.customNameVisible = true;
+		skelly.maxHealth = 200;
+		
+		var skellyEffect1 = newPotionEffect("speed", "max", 5);
+		var skellyEffect2 = newPotionEffect("increase_damage", "max", 10);
+		skelly.addPotionEffect(skellyEffect1);
+		skelly.addPotionEffect(skellyEffect2);
+		
+	}
+};
+events.creatureSpawn(onCreatureSpawn);
 ```
 
 List of potion effects:
