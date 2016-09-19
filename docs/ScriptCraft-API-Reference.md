@@ -3443,6 +3443,57 @@ scoreboard: 	(Scoreboard) The scoreboard to display
 scoreboard.setSB(player, sb);	// sets the scoreboard displayed for "player" to "sb"
 ```
 
+### scoreboard.clearSB()
+
+Clears all values from a given scoreboard.
+
+#### Parameters
+
+scoreboard: 	(Scoreboard) The scoreboard to clear
+
+#### Usage
+
+```javascript
+// usage
+```
+
+### scoreboard.setPlayerScore()
+
+Sets a player's score for a specific display slot.
+
+#### Parameters
+
+player:
+
+scoreboard:
+
+displaySlot: 
+
+score:
+
+#### Usage
+
+```javascript
+// usage
+```
+
+### scoreboard.addPlayerToTeam()
+
+Adds a player to a team.
+
+#### Parameters
+
+player:
+
+team:
+
+#### Usage
+
+```javascript
+// usage
+```
+
+
 ### Example
 
 ```javascript
