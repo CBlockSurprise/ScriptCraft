@@ -3493,11 +3493,74 @@ team:
 // usage
 ```
 
+### scoreboard.addTeamToSB()
+
+Adds team to scoreboard.
+
+#### Parameters
+
+team:
+
+scoreboard:
+
+#### Usage
+
+```javascript
+// usage
+```
+
+### scoreboard.setTeamPrefix()
+
+Sets the prefix to display for members of a team.
+
+#### Parameters
+
+team:
+
+prefix:
+
+#### Usage
+
+```javascript
+// usage
+```
+
+### scoreboard.setTeamDisplayName()
+
+Sets the display name for a team.
+
+#### Parameters
+
+team:
+
+displayName:
+
+#### Usage
+
+```javascript
+// usage
+```
+
+### scoreboard.getTeam()
+
+Returns the team of the given name on the given scoreboard.
+
+#### Parameters
+
+teamName:
+
+scoreboard:
+
+#### Usage
+
+```javascript
+// usage
+```
 
 ### Example
 
 ```javascript
-// example
+// scoreboard example
 ```
 
 ## SpawnReason Module
