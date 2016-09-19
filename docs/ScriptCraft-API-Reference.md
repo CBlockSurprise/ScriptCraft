@@ -3383,6 +3383,8 @@ There are three different types of scoreboards in Minecraft: Sidebar, PlayerList
 
 Sidebar: ![Sidebar Scoreboard](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/556/original/sidebarSB.png)
 
+PlayerList: ![PlayerList Scoreboard](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/557/original/playerlistSB.png)
+
 ### Usage
 
 ```javascript
