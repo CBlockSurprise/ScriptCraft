@@ -3377,7 +3377,7 @@ List of potion effects:
 
 ## Scoreboard Module
 
-The `scoreboard` module provides a suite of functions that can be used to create, modify, and display scoreboards to players on the Minecraft server.  First, create a scoreboard object using `scoreboard.newSB()`.
+The `scoreboard` module provides a suite of functions that can be used to create, modify, and display scoreboards to players on the Minecraft server.  An instance of the scoreboard object can display scores in 1-3 of the available slots.  This means if you want scores displayed in both the sidebar and the player list you don't need two different scoreboards, you can add both to the same scoreboard. To begin, create a scoreboard object using `scoreboard.newSB()`.
 
 There are three different types of scoreboards in Minecraft: sidebar, player_list and below_name.
 
@@ -3393,12 +3393,54 @@ There are three different types of scoreboards in Minecraft: sidebar, player_lis
 
 ![BelowName Scoreboard](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/558/original/belownameSB.png)
 
-### Usage
+### scoreboard.newSB()
+
+Returns a scoreboard object with the specified properties.
+
+#### Parameters
+
+Each parameter is an array of strings of length 1-3. All array lengths must match.
+
+
+displayNames: 	(array of strings) The display names for each scoreboard display slot
+
+objectives: 	(array of strings) Keywords for the objectives to display in each display slot
+
+displaySlot: 	(array of strings) The display slots for each part of the scoreboard
+
+#### Usage
 
 ```javascript
+// scoreboard with only one display slot with the
+// display name "Snowball Hits", showing the value of "hits"
+// in the "sidebar" position
 var sb = scoreboard.newSB(["Snowball Hits"], ["hits"], ["sidebar"]);
-scoreboard.setSB(player, sb);
-scoreboard.setPlayerScore(player, sb, "sidebar", 0);
+```
+
+```javascript
+// scoreboard with all three display slots filled
+// "Snowball Hits" displaying "hits" in the "player_list"
+// "Flag Captures" displaying "captures" in the "sidebar"
+// "Health" displaying "hp" in the "below_name" position
+var sb = scoreboard.newSB(["Snowball Hits", "Flag Captures", "Health"], 
+			  ["hits", "captures", "hp"], 
+			  ["player_list", "sidebar", "below_name"]);
+```
+
+### scoreboard.setSB()
+
+Sets the scoreboard that is being displayed for a specific player.
+
+#### Parameters
+
+player: 	(Player) The player to set the scoreboard for
+
+scoreboard: 	(Scoreboard) The scoreboard to display
+
+#### Usage
+
+```javascript
+scoreboard.setSB(player, sb);	// sets the scoreboard displayed for "player" to "sb"
 ```
 
 ### Example
