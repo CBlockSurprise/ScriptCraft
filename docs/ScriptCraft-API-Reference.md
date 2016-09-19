@@ -3180,7 +3180,12 @@ player.gameMode = gameMode.survival;		// sets the game mode of "player" to "surv
 ### Example
 
 ```javascript
-// needs example
+// sets player gamemode to spectator when they join the server
+var onPlayerJoin = function(event) {
+	var player = event.player;
+	player.gameMode = gameMode.spectator;
+}
+events.playerJoin(onPlayerJoin);
 ```
 
 List of game modes:
