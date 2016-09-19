@@ -3317,6 +3317,61 @@ events.creatureSpawn(onCreatureSpawn);
 
 List of potion effects:
 
+	* absorption
+		* Increases the maximum health of an entity with health that cannot be regenerated, but is refilled every 30 seconds.
+	* blindness
+		* Blinds an entity.
+	* confusion
+		* Warps vision on the client.
+	* damageResistance
+		* Decreases damage dealt to an entity.
+	* fastDigging
+		* Increases dig speed.
+	* fireResistance
+		* Stops fire damage.
+	* glowing
+		* Outlines the entity so that it can be seen from afar.
+	* harm
+		* Hurts an entity.
+	* heal
+		* Heals an entity.
+	* healthBoost
+		* Increases the maximum health of an entity.
+	* hunger
+		* Increases hunger.
+	* increaseDamage
+		* Increases damage dealt.
+	* invisibility
+		* Grants invisibility.
+	* jump
+		* Increases jump height.
+	* levitation
+		* Causes the entity to float into the air.
+	* luck
+		* Loot table luck.
+	* nightVision
+		* Allows an entity to see in the dark.
+	* poison
+		* Deals damage to an entity over time.
+	* regeneration
+		* Regenerates health.
+	* saturation
+		* Increases the food level of an entity each tick.
+	* slow
+		* Decreases movement speed.
+	* slowDigging
+		* Decreases dig speed.
+	* speed
+		* Increases movement speed.
+	* unluck
+		* Loot table unluck.
+	* waterBreathing
+		* Allows breathing underwater.
+	* weakness
+		* Decreases damage dealt by an entity.
+	* wither
+		* Deals damage to an entity over time and gives the health to the shooter.
+
 
 ## Scoreboard Module
 
