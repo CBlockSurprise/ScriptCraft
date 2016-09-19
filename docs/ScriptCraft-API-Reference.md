@@ -3381,9 +3381,7 @@ The `scoreboard` module provides a suite of functions that can be used to create
 
 There are three different types of scoreboards in Minecraft: Sidebar, PlayerList, and BelowName.
 
-Sidebar:
-
-![Sidebar Scoreboard](d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/556/original/sidebarSB.png)
+Sidebar: ![Sidebar Scoreboard](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/556/original/sidebarSB.png)
 
 ### Usage
 
