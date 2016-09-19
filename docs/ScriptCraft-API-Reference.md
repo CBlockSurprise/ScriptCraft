@@ -3379,24 +3379,26 @@ List of potion effects:
 
 The `scoreboard` module provides a suite of functions that can be used to create, modify, and display scoreboards to players on the Minecraft server.
 
-There are three different types of scoreboards in Minecraft: Sidebar, PlayerList, and BelowName.
+There are three different types of scoreboards in Minecraft: sidebar, player_list and below_name.
 
-**Sidebar**
+**sidebar**
 
 ![Sidebar Scoreboard](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/556/original/sidebarSB.png)
 
-**PlayerList**
+**player_list**
 
 ![PlayerList Scoreboard](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/557/original/playerlistSB.png)
 
-*BelowName*
+**below_name**
 
 ![BelowName Scoreboard](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/558/original/belownameSB.png)
 
 ### Usage
 
 ```javascript
-// usage
+var sb = scoreboard.newSB(["Snowball Hits"], ["hits"], ["sidebar"]);
+scoreboard.setSB(player, sb);
+scoreboard.setPlayerScore(player, sb, "sidebar", 0);
 ```
 
 ### Example
