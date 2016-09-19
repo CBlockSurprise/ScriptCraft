@@ -48,6 +48,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [Location Module](#location-module)
  * [NewPotionEffect Module](#newpotioneffect-module)
  * [Scoreboard Module](#scoreboard-module)
+ * [SpawnReason Module](#spawnreason-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -3298,18 +3299,14 @@ player.addPotionEffect(potionEffect);
 ### Example
 
 ```javascript
-// When we spawn a skeleton using a spawn egg, give it a custom name
-// and 2 potions effects (speed and strength)
+// When a skeleton spawns give it
+// 2 potions effects (speed and strength)
 var onCreatureSpawn = function(event) {
 
-	if (isSkeleton(event.entity) && event.spawnReason == spawnReason.spawnerEgg) {
+	if (isSkeleton(event.entity)) {
 
 		var skelly = event.entity;
 
-		skelly.customName = "Skeleton King";
-		skelly.customNameVisible = true;
-		skelly.maxHealth = 200;
-		
 		var skellyEffect1 = newPotionEffect("speed", "max", 5);
 		var skellyEffect2 = newPotionEffect("increase_damage", "max", 10);
 		skelly.addPotionEffect(skellyEffect1);
@@ -3392,6 +3389,34 @@ desc
 
 ```javascript
 // example
+```
+
+## SpawnReason Module
+
+The `spawnReason` module provides access to all of [spawn reasons](#https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html) that could result in an entity spawning into the world.  This is helpful when you want to only modify entities that were generated in a specific way rather than all entities of that type.  For example, you may want to modify cows that spawn from eggs but not all naturally generated cows.
+
+### Usage
+
+```javascript
+spawnReason.spawnerEgg			// refers to org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason.SPAWNER_EGG
+```
+
+### Example
+
+```javascript
+// When we spawn a skeleton using a spawner egg
+// give it a custom name
+var onCreatureSpawn = function(event) {
+
+	if (isSkeleton(event.entity) && event.spawnReason == spawnReason.spawnerEgg) {
+	
+		var skelly = event.entity;
+		skelly.customName = "Skeleton From Spawner Egg";
+		skelly.customNameVisible = true;
+		
+	}
+};
+events.creatureSpawn(onCreatureSpawn);
 ```
 
 ## Drone Module
