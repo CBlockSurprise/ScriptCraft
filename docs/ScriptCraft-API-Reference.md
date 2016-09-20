@@ -3395,7 +3395,7 @@ There are three different types of scoreboards in Minecraft: sidebar, player_lis
 
 ### scoreboard.newSB()
 
-Returns a scoreboard object with the specified properties.
+Returns a scoreboard object with the specified properties.  Need to use `scoreboard.setSB()` before it will be displayed.
 
 #### Parameters
 
