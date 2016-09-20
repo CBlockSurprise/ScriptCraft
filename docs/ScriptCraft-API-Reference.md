@@ -3377,7 +3377,7 @@ List of potion effects:
 
 ## Scoreboard Module
 
-The `scoreboard` module provides a suite of functions that can be used to create, modify, and display scoreboards to players on the Minecraft server.  An instance of the scoreboard object can display scores in 1-3 of the available slots.  This means if you want scores displayed in both the sidebar and the player list you don't need two different scoreboards, you can add both to the same scoreboard. To begin, create a scoreboard object using `scoreboard.newSB()`.
+The `scoreboard` module provides a suite of functions that can be used to create, modify, and display scoreboards to players on the Minecraft server.  An instance of the scoreboard object can display scores in 1-3 of the available slots.  This means if you want scores displayed in both the sidebar and the player list you don't need two different scoreboards, you can add both to the same scoreboard. To begin, create a scoreboard object using `scoreboard.newSB()`...
 
 There are three different types of scoreboards in Minecraft: sidebar, player_list and below_name.
 
