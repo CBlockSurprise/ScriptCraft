@@ -5153,3 +5153,5 @@ This function returns a javascript array of player names (as javascript strings)
 [Spigot JavaDocs](https://hub.spigotmc.org/javadocs/spigot/)
 
 You will quickly find that not everything can be accomplished without looking at the Spigot JavaDocs. For example, to fully understand the possiblities associated with a certain event you must look at the methods that are available for that type of event in Spigot.
+
+Let's say you want to make a plugin that sends a player a message when they hit something with an arrow telling them what they hit. How would you start? Well, the first thing you need to do is find an event that will fire when the player hits something with an arrow. A quick search of the list of possible events should lead you to the ProjectileHit event.
