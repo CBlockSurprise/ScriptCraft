@@ -3440,7 +3440,7 @@ scoreboard: 	(Scoreboard) The scoreboard to display
 #### Usage
 
 ```javascript
-scoreboard.setSB(player, sb);	// sets the scoreboard displayed for "player" to "sb"
+scoreboard.setSB(player, sb);		// sets the scoreboard displayed for "player" to "sb"
 ```
 
 ### scoreboard.clearSB()
@@ -3454,7 +3454,7 @@ scoreboard: 	(Scoreboard) The scoreboard to clear
 #### Usage
 
 ```javascript
-// usage
+scoreboard.clearSB(sb);			// clears the scoreboard "sb"
 ```
 
 ### scoreboard.setPlayerScore()
@@ -3463,18 +3463,18 @@ Sets a player's score for a specific display slot.
 
 #### Parameters
 
-player:
+player:		(Player) The player whose score we want to set
 
-scoreboard:
+scoreboard:	(Scoreboard) The scoreboard we want to modify
 
-displaySlot: 
+displaySlot: 	(string) The display slot we are setting the score for
 
-score:
+score:		(int) The new score to display for the "player" on the "scoreboard" in the given "displaySlot"
 
 #### Usage
 
 ```javascript
-// usage
+scoreboard.setPlayerScore(player, sb, "player_list", 0); 	// Sets the score for "player" to "0" in the "player_list" slot of "sb"
 ```
 
 ### scoreboard.addPlayerToTeam()
