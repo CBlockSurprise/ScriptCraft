@@ -54,6 +54,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
    * [Drone Methods](#drone-methods)
  * [Utilities Module](#utilities-module)
    * [Utility Methods](#utility-methods)
+ * [Using Spigot JavaDocs](#using-spigot-javadocs)
 
 ## Global Variables
 
@@ -5145,3 +5146,10 @@ Any players with a bow will be able to launch fireworks by shooting.
 ### utils.playerNames() function
 
 This function returns a javascript array of player names (as javascript strings)
+
+
+## Using Spigot JavaDocs
+
+[Spigot JavaDocs](https://hub.spigotmc.org/javadocs/spigot/)
+
+You will quickly find that not everything can be accomplished without looking at the Spigot JavaDocs. For example, to fully understand the possiblities associated with a certain event you must look at the methods that are available for that type of event in Spigot.
