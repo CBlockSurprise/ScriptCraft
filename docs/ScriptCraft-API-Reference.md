@@ -3459,7 +3459,7 @@ scoreboard.clearSB(sb);			// clears the scoreboard "sb"
 
 ### scoreboard.setPlayerScore()
 
-Sets a player's score for a specific display slot.
+Sets a player's score for a specific display slot in a scoreboard.
 
 #### Parameters
 
@@ -3477,36 +3477,41 @@ score:		(int) The new score to display for the "player" on the "scoreboard" in t
 scoreboard.setPlayerScore(player, sb, "player_list", 0); 	// Sets the score for "player" to "0" in the "player_list" slot of "sb"
 ```
 
-### scoreboard.addPlayerToTeam()
-
-Adds a player to a team.
-
-#### Parameters
-
-player:
-
-team:
-
-#### Usage
-
-```javascript
-// usage
-```
-
 ### scoreboard.addTeamToSB()
 
 Adds team to scoreboard.
 
 #### Parameters
 
-team:
+team:		(string) The name of the team to add to the scoreboard
 
-scoreboard:
+scoreboard:	(Scoreboard) The scoreboard to add the team to
+
+#### Returns
+
+Returns a Team object. The team can have players added to it and display options customized.
 
 #### Usage
 
 ```javascript
-// usage
+var blueTeam = scoreboard.addTeamToSB("Blue Team", sb);		// Adds team named "Blue Team" to scoreboard and returns a Team
+```
+
+### scoreboard.addPlayerToTeam()
+
+Adds a player to a team.
+
+#### Parameters
+
+player:		(Player) The player to add to the team
+
+team:		(Team) The team to add the player to
+
+#### Usage
+
+```javascript
+// Adds player to blueTeam. "blueTeam" must be a Team object generated using scoreboard.addTeamToSB()
+scoreboard.addPlayerToTeam(player, blueTeam);
 ```
 
 ### scoreboard.setTeamPrefix()
@@ -3515,14 +3520,14 @@ Sets the prefix to display for members of a team.
 
 #### Parameters
 
-team:
+team:		(Team) The team to set the prefix for
 
-prefix:
+prefix:		(string) The prefix you want displayed in front of the names of players on the given team
 
 #### Usage
 
 ```javascript
-// usage
+scoreboard.setTeamPrefix(blueTeam, "BLUE: ".blue());		// Sets team prefix for the blueTeam to "BLUE: " printed in blue text
 ```
 
 ### scoreboard.setTeamDisplayName()
@@ -3531,14 +3536,14 @@ Sets the display name for a team.
 
 #### Parameters
 
-team:
+team:		(Team) The team to set the display name for
 
-displayName:
+displayName:	(string) The desired display name for the given team
 
 #### Usage
 
 ```javascript
-// usage
+scoreboard.setTeamDisplayName(blueTeam, "Blue Bandits".blue());		// Sets display name of blueTeam to "Blue Bandits" in blue text
 ```
 
 ### scoreboard.getTeam()
@@ -3547,14 +3552,18 @@ Returns the team of the given name on the given scoreboard.
 
 #### Parameters
 
-teamName:
+teamName:	(string) The name of the team you want to retrieve the Team object for
 
-scoreboard:
+scoreboard:	(Scoreboard) The scoreboard you want to get the Team from
+
+#### Returns
+
+Returns the Team with the given name from the Scoreboard 
 
 #### Usage
 
 ```javascript
-// usage
+var blueTeam = scoreboard.getTeam("Blue Team", sb);
 ```
 
 ### Example
