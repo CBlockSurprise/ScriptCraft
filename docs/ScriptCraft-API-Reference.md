@@ -5159,3 +5159,31 @@ Let's say you want to make a plugin that sends a player a message when they hit 
 ![ProjectileHitEvent](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/564/original/projectilehitlink.png)
 
 Clicking on this link will take you to the Spigot JavaDocs for the event
+
+Before we continue with the JavaDocs for the ProjectileHitEvent, let's start writing some code:
+
+```javascipt
+var onProjectileHit = function(event) {
+	// executed when a projectile hits something
+}
+events.projectileHit(onProjectileHit);
+```
+
+This code will register the function `onProjectileHit` to be called when a ProjectileHitEvent is fired. As it is written here nothing will happen, but any code you write in place of the comment will be executed whenenever a projectile hits something.
+
+On the ProjectileHitEvent page you will find a section labeled "Method Summary" containing the methods that can be called on a ProjectileHitEvent. Keep in mind that many methods will also be inherited by parent classes. Inherited methods will appear below the class-specific methods within the method summary section.
+
+![ProjectileHitEvent Method Summary](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/565/original/projectilehitmethods.png)
+
+In this example, we are interested in the `getEntity()` method that returns the Entity involved in this event. In this case we know the Entity will be a Projectile (the Projectile class extends the Entity class) because it triggered the ProjectileHitEvent.
+
+We could write `event.getEntity()` to return the Projectile that caused the event to be fired, or we could use the cleaner syntax `event.entity` to accomplish the same thing (thanks to Rhino).
+
+```javascipt
+var onProjectileHit = function(event) {
+	var projectile = event.entity;
+}
+events.projectileHit(onProjectileHit);
+```
+
+Now we have a variable `projectile` that stores the Projectile that caused the ProjectileHitEvent to fire.
