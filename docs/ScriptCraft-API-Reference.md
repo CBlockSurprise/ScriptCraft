@@ -5162,7 +5162,7 @@ Clicking on this link will take you to the Spigot JavaDocs for the event
 
 Before we continue with the JavaDocs for the ProjectileHitEvent, let's start writing some code:
 
-```javascipt
+```javascript
 var onProjectileHit = function(event) {
 	// executed when a projectile hits something
 }
@@ -5179,11 +5179,13 @@ In this example, we are interested in the `getEntity()` method that returns the 
 
 We could write `event.getEntity()` to return the Projectile that caused the event to be fired, or we could use the cleaner syntax `event.entity` to accomplish the same thing (thanks to Rhino).
 
-```javascipt
+```javascript
 var onProjectileHit = function(event) {
 	var projectile = event.entity;
 }
 events.projectileHit(onProjectileHit);
 ```
 
-Now we have a variable `projectile` that stores the Projectile that caused the ProjectileHitEvent to fire.
+Now we have a variable `projectile` that stores the Projectile that caused the ProjectileHitEvent to fire. If we want to get the Entity that fired the projectile, we will have to find the Method Summary in the JavaDocs for the Projectile interface:
+
+![Projectile Interface](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/566/original/projectilemethods.png)
