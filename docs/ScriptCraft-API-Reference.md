@@ -5189,3 +5189,15 @@ events.projectileHit(onProjectileHit);
 Now we have a variable `projectile` that stores the Projectile that caused the ProjectileHitEvent to fire. If we want to get the Entity that fired the projectile, we will have to find the Method Summary in the JavaDocs for the Projectile interface:
 
 ![Projectile Interface](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/566/original/projectilemethods.png)
+
+To get the player that fired the projectile we can use the `Projectile.getShooter()` method as shown here using Rhino syntax:
+
+```javascript
+var onProjectileHit = function(event) {
+	var projectile = event.entity;
+	var shooter = projectile.shooter;
+}
+events.projectileHit(onProjectileHit);
+```
+
+Now we have the `shooter` variable storing the player that shot the projectile that caused the ProjectileHitEvent.
