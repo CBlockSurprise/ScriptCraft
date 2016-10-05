@@ -5213,4 +5213,16 @@ var onProjectileHit = function(event) {
 events.projectileHit(onProjectileHit);
 ```
 
-To find the object in the world that was hit by the projectile, we must refer again to the JavaDocs for the Projectile interface to see what methods are available to us. Looking through the list of methods in the method summary we find that the method `Projectile.getLocation()` is available as it is inherited from the Entity class.
+To find the object in the world that was hit by the projectile, we must refer again to the JavaDocs for the Projectile interface to see what methods are available to us. Looking through the list of methods in the method summary we find that the method `Projectile.getLocation()` is available as it is inherited from the Entity class. This will only get us the location of the projectile, but it is a necessary step towards finding what it collided with:
+
+```javascript
+var onProjectileHit = function(event) {
+	var projectile = event.entity;
+	var shooter = projectile.shooter;
+	var projectileLocation = projectile.location;
+	echo(shooter, "You hit something!");
+}
+events.projectileHit(onProjectileHit);
+```
+
+Now that we have the Location of the projectile, we must look at the [JavaDocs for the Location class](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html) to see what methods can be used on it.
