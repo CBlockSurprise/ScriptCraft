@@ -5154,7 +5154,7 @@ This function returns a javascript array of player names (as javascript strings)
 
 You will quickly find that not everything can be accomplished without looking at the Spigot JavaDocs. For example, to fully understand the possiblities associated with a certain event you must look at the methods that are available for that type of event in Spigot.
 
-Let's say you want to make a plugin that sends a player a message when they hit something with an arrow telling them what they hit. How would you start? Well, the first thing you need to do is find an event that will fire when the player hits something with an arrow. A quick search of the list of possible events should lead you to the ProjectileHit event:
+Let's say you want to make a plugin that sends a player a message when they hit a block with an arrow telling them what type of block they hit. How would you start? Well, the first thing you need to do is find an event that will fire when the player hits something with an arrow. A quick search of the list of possible events should lead you to the ProjectileHit event:
 
 ![ProjectileHitEvent](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/564/original/projectilehitlink.png)
 
@@ -5225,4 +5225,35 @@ var onProjectileHit = function(event) {
 events.projectileHit(onProjectileHit);
 ```
 
-Now that we have the Location of the projectile, we must look at the [JavaDocs for the Location class](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html) to see what methods can be used on it.
+Now that we have the Location of the projectile, we must look at the [JavaDocs for the Location class](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html) to see what methods can be used on it. After a quick look at the method summary we can see that there is a method `Location.getBlock()` which returns the Block at the given Location. 
+
+It is important to note here that this is not the only option. There are methods we could use that take a Location as a parameter such as `World.getBlockAt(Location loc)` which would accomplish the same thing, but require us to create a reference to the current World. Generally speaking if you do not see a method in the class you are working with that accomplishes what you need you can google something like "how to get block from location spigot" to find the proper method to use.
+
+In this example we have the method we need though, so we can get the Block that was hit from the Location of the projectile using `projectileLocation.block`:
+
+```javascript
+var onProjectileHit = function(event) {
+	var projectile = event.entity;
+	var shooter = projectile.shooter;
+	var projectileLocation = projectile.location;
+	var blockHit = projectileLocation.block;
+	echo(shooter, "You hit something!");
+}
+events.projectileHit(onProjectileHit);
+```
+
+Now we simply need to get the type of the Block that was hit. A quick look at the [JavaDocs for the Block class](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Block.html) will reveal the `Block.getType()` method that returns the Material of the Block.
+
+```javascript
+var onProjectileHit = function(event) {
+	var projectile = event.entity;
+	var shooter = projectile.shooter;
+	var projectileLocation = projectile.location;
+	var blockHit = projectileLocation.block;
+	var blockType = blockHit.type;
+	echo(shooter, "You hit " + blockType);
+}
+events.projectileHit(onProjectileHit);
+```
+
+Let's test it out and see what happens.
