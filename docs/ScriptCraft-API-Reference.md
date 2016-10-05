@@ -5179,6 +5179,8 @@ In this example, we are interested in the `getEntity()` method that returns the 
 
 We could write `event.getEntity()` to return the Projectile that caused the event to be fired, or we could use the cleaner syntax `event.entity` to accomplish the same thing (thanks to Rhino).
 
+When using Rhino JavaScript there is a special syntax available for methods that begin with "get" or "set". If you are trying access a property using a method such as `event.getEntity()` you can access that property using the syntax `event.entity`. If you are trying to set the value of a property using a method such as `event.setCancelled(true)` you can use the syntax `event.cancelled = true`.
+
 ```javascript
 var onProjectileHit = function(event) {
 	var projectile = event.entity;
@@ -5200,4 +5202,15 @@ var onProjectileHit = function(event) {
 events.projectileHit(onProjectileHit);
 ```
 
-Now we have the `shooter` variable storing the player that shot the projectile that caused the ProjectileHitEvent.
+We now have the `shooter` variable storing the player that shot the projectile that caused the ProjectileHitEvent. Now that we have a way to reference the player that fired the projectile, we have the ability to send them a message. We will use the `echo(player, message)` function to do this. This code will send the message "You hit something!" to the player, but it won't yet tell them the specific thing they hit.
+
+```javascript
+var onProjectileHit = function(event) {
+	var projectile = event.entity;
+	var shooter = projectile.shooter;
+	echo(shooter, "You hit something!");
+}
+events.projectileHit(onProjectileHit);
+```
+
+To find the object in the world that was hit by the projectile, we must refer again to the JavaDocs for the Projectile interface to see what methods are available to us. Looking through the list of methods in the method summary we find that the method `Projectile.getLocation()` is available as it is inherited from the Entity class.
