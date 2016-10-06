@@ -5236,7 +5236,7 @@ var onProjectileHit = function(event) {
 	var projectile = event.entity;
 	var shooter = projectile.shooter;
 	var projectileLocation = projectile.location;
-	var blockHit = projectileLocation.block;
+	var hitBlock = projectileLocation.block;
 	echo(shooter, "You hit something!");
 }
 events.projectileHit(onProjectileHit);
@@ -5249,11 +5249,35 @@ var onProjectileHit = function(event) {
 	var projectile = event.entity;
 	var shooter = projectile.shooter;
 	var projectileLocation = projectile.location;
-	var blockHit = projectileLocation.block;
-	var blockType = blockHit.type;
+	var hitBlock = projectileLocation.block;
+	var blockType = hitBlock.type;
 	echo(shooter, "You hit " + blockType);
 }
 events.projectileHit(onProjectileHit);
 ```
 
-Let's test it out and see what happens.
+Let's test it out and see what happens:
+
+![Hit Air](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/567/original/hitair.png)
+
+Oops! It says we hit AIR! This is because it is getting the block at the precise location of the arrow, which is always going to be inside an AIR block since it stops when it collides with a solid block.
+
+To get the block that was actually struck by the arrow we will need to take into account its velocity. We can get the velocity of the projectile using `projectile.velocity`. Then we need to add the velocity of the arrow to the arrow's current location. To do this we will use the `Location.add(x, y, z)` method. Our updated code will look like this:
+
+```javascript
+var onProjectileHit = function(event) {
+	var projectile = event.entity;
+	var shooter = projectile.shooter;
+	var projectileLocation = projectile.location;
+	var projectileVelocity = projectile.velocity;
+	var hitBlockLoc = projectileLocation.add(projectileVelocity.x, projectileVelocity.y, projectileVelocity.z);
+	var hitBlock = hitBlockLoc.block;
+	var blockType = hitBlock.type;
+	echo(shooter, "You hit " + blockType);
+}
+events.projectileHit(onProjectileHit);
+```
+
+The result:
+
+![Finished Plugin Demo](http://d14nx13ylsx7x8.cloudfront.net/comfy/cms/files/files/000/000/568/original/testingdemoplugin.png)
