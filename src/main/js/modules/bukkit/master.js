@@ -27,3 +27,4 @@ var file = require('file');
 var spawnReason = require('spawn-reason');
 var particle = require('particle');
 var equipmentSlot = require('equipment-slot');
+var vector = require('vector');
