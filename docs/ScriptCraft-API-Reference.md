@@ -49,6 +49,9 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [NewPotionEffect Module](#newpotioneffect-module)
  * [Scoreboard Module](#scoreboard-module)
  * [SpawnReason Module](#spawnreason-module)
+ * [Particle Module](#particle-module)
+ * [EquipmentSlot Module](#equipmentslot-module)
+ * [Vector Module](#vector-module)
  * [Drone Module](#drone-module)
    * [Constructing a Drone Object](#constructing-a-drone-object)
    * [Drone Methods](#drone-methods)
@@ -3605,6 +3608,46 @@ var onCreatureSpawn = function(event) {
 };
 events.creatureSpawn(onCreatureSpawn);
 ```
+
+## Particle Module
+
+The `particle` module provides access to all of [particle types](#https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) that can be used in Minecraft. This is useful when you are trying to add particle effects to plugins when certain things happen, such as a spell being cast.
+
+The `World.spawnParticle()` function will often be used to spawn the desired particle into the world at a specific location.
+
+[Spigot JavaDocs: World.spawnParticle()](#https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.html#spawnParticle(org.bukkit.Particle,%20org.bukkit.Location,%20int,%20double,%20double,%20double,%20double))
+
+### Usage
+
+```javascript
+var world = server.worlds.get(0);
+var loc = location(50,50,50);
+world.spawnParticle(particle.spell, loc, 10);    // spawns *10* *spell* particles at *loc* in *world*
+```
+
+### Example
+
+```javascript
+var onEntityDamageByEntity = function(event) {
+  if (!isPlayer(event.damager)) { return; }
+  
+  var player = event.damager;
+  var playerLoc = player.location;
+  var playerInv = player.inventory;
+  var playerItem = playerInv.itemInMainHand;
+  var damagedEntity = event.entity;
+  var damagedEntityLoc = damagedEntity.location;
+
+  if (playerItem.equals(magicWand_Vanishing)) {
+    damagedEntity.remove();
+    world.spawnParticle(particle.spell, damagedEntityLoc, 7);
+    event.cancelled = true;
+    return;
+  }
+};
+events.entityDamageByEntity(onEntityDamageByEntity);
+```
+
 
 ## Drone Module
 
