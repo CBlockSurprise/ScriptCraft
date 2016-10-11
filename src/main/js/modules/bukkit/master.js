@@ -25,3 +25,4 @@ var entityType = require('entity-type');
 var fireworkEffect = require('firework-effect');
 var file = require('file');
 var spawnReason = require('spawn-reason');
+var particle = require('particle');
