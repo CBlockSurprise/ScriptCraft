@@ -3611,11 +3611,11 @@ events.creatureSpawn(onCreatureSpawn);
 
 ## Particle Module
 
-The `particle` module provides access to all of [particle types](#https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) that can be used in Minecraft. This is useful when you are trying to add particle effects to plugins when certain things happen, such as a spell being cast.
+The `particle` module provides access to all of [particle types](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html) that can be used in Minecraft. This is useful when you are trying to add particle effects to plugins when certain things happen, such as a spell being cast.
 
 The `World.spawnParticle()` function will often be used to spawn the desired particle into the world at a specific location.
 
-[Spigot JavaDocs: World.spawnParticle()](#https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.html#spawnParticle(org.bukkit.Particle,%20org.bukkit.Location,%20int,%20double,%20double,%20double,%20double))
+[Spigot JavaDocs: World.spawnParticle()](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/World.html#spawnParticle(org.bukkit.Particle,%20org.bukkit.Location,%20int,%20double,%20double,%20double,%20double))
 
 ### Usage
 
@@ -3647,6 +3647,58 @@ var onEntityDamageByEntity = function(event) {
 };
 events.entityDamageByEntity(onEntityDamageByEntity);
 ```
+
+### List of particles
+
+Visual demonstration of particles: (http://minecraft.gamepedia.com/Particles)
+
+  * barrier 
+  * blockCrack 
+  * blockDust 
+  * cloud 
+  * crit 
+  * critMagic 
+  * damageIndicator 
+  * dragonBreath 
+  * dripLava 
+  * dripWater 
+  * enchantmentTable 
+  * endRod 
+  * explosionHuge 
+  * explosionLarge 
+  * explosionNormal 
+  * fallingDust 
+  * fireworksSpark 
+  * flame 
+  * footstep 
+  * heart 
+  * itemCrack 
+  * itemTake 
+  * lava 
+  * mobAppearance 
+  * note 
+  * portal 
+  * redstone 
+  * slime 
+  * smokeLarge 
+  * smokeNormal 
+  * snowShovel 
+  * snowball 
+  * spell 
+  * spellInstant 
+  * spellMob 
+  * spellMobAmbient 
+  * spellWitch 
+  * suspended 
+  * suspendedDepth 
+  * sweepAttack 
+  * townAura 
+  * villagerAngry 
+  * villagerHappy 
+  * waterBubble 
+  * waterDrop 
+  * waterSplash 
+  * waterWake 
 
 
 ## Drone Module
