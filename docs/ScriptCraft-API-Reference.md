@@ -2201,7 +2201,7 @@ var onPlayerInteract = function(event) {
 events.playerInteract(onPlayerInteract);
 ```
 
-Possible entities:
+### List of entities
 
   * ageable	
   * ambient	
@@ -2432,7 +2432,7 @@ var onPlayerInteract = function(event) {
 events.playerInteract(onPlayerInteract);
 ```
 
-Possible actions:
+### Possible actions:
 
   * leftClickAir
   * leftClickBlock
@@ -2460,7 +2460,7 @@ bannerData.facingDirection = blockFace.south;
 bannerState.update();
 ```
 
-Possible directions:
+### Possible BlockFace directions:
 
   * down
   * east
@@ -2546,7 +2546,7 @@ boots.itemMeta = bootsMeta;
 player.equipment.boots = boots;
 ```
 
-Possible colors:
+### List of colors:
 
   * aqua
   * black
@@ -2587,7 +2587,7 @@ bannerState.baseColor = dyeColor.blue;
 bannerState.update();
 ```
 
-Possible dye colors:
+### List of dye colors:
 
   * black
   * blue
@@ -2627,7 +2627,7 @@ var onEntityDamage = function(event) {
 events.entityDamage(onEntityDamage);
 ```
 
-Possible damage causes:
+### List of damage causes:
 
   * blockExplosion
   	* Damage caused by being in the area when a block explodes.
@@ -2702,7 +2702,7 @@ var onPlayerMove = function(event) {
 events.playerMove(onPlayerMove);
 ```
 
-Possible effects:
+### List of effects:
 
   * anvilBreak
   	* The sound played when an anvil breaks
@@ -2885,7 +2885,7 @@ swordMeta.addEnchant(enchantment.durability, 1, true);
 sword.itemMeta = swordMeta;
 ```
 
-List of enchantments:
+### List of enchantments:
 
   * arrowDamage
 	* Provides extra damage when shooting arrows from bows
@@ -3198,7 +3198,7 @@ var onPlayerJoin = function(event) {
 events.playerJoin(onPlayerJoin);
 ```
 
-List of game modes:
+### List of game modes:
 
   * survival
   * creative
@@ -3230,7 +3230,7 @@ swordMeta.addItemFlags(itemFlag.hideEnchants);
 sword.itemMeta = swordMeta;
 ```
 
-List of item flags:
+### List of item flags:
 
   * hideAttributes
 	* Setting to show/hide Attributes like Damage
@@ -3326,7 +3326,7 @@ var onCreatureSpawn = function(event) {
 events.creatureSpawn(onCreatureSpawn);
 ```
 
-List of potion effects:
+### List of potion effects:
 
   * absorption
 	* Increases the maximum health of an entity with health that cannot be regenerated, but is refilled every 30 seconds.
@@ -3583,7 +3583,7 @@ var blueTeam = scoreboard.getTeam("Blue Team", sb);
 
 ## SpawnReason Module
 
-The `spawnReason` module provides access to all of [spawn reasons](#https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html) that could result in an entity spawning into the world.  This is helpful when you want to only modify entities that were generated in a specific way rather than all entities of that type.  For example, you may want to modify cows that spawn from eggs but not all naturally generated cows.
+The `spawnReason` module provides access to all of [spawn reasons](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html) that could result in an entity spawning into the world.  This is helpful when you want to only modify entities that were generated in a specific way rather than all entities of that type.  For example, you may want to modify cows that spawn from eggs but not all naturally generated cows.
 
 ### Usage
 
@@ -3648,7 +3648,7 @@ var onEntityDamageByEntity = function(event) {
 events.entityDamageByEntity(onEntityDamageByEntity);
 ```
 
-### List of particles
+### List of particles:
 
 Visual demonstration of particles: (http://minecraft.gamepedia.com/Particles)
 
