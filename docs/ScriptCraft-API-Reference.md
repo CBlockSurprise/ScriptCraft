@@ -33,7 +33,7 @@ NOTE: **Work in Progress -- some information may be incorrect or incomplete**
  * [BlockFace Module](#blockface-module)
  * [Bukkit Module](#bukkit-module)
    * [bukkit.broadcastMessage()](#bukkitbroadcastmessage)
-   * [bukkit.consoleCommand()](#bukkitconsolecommand) 
+   * [bukkit.dispatchCommand()](#bukkitdispatchcommand) 
  * [Color Module](#color-module)
  * [DyeColor Module](#dyecolor-module)
  * [DamageCause Module](#damagecause-module)
@@ -2171,7 +2171,7 @@ The following functions are provided:
 
 ## Entity Module
 
-The entity module provides easy access to all of the entity interfaces in Minecraft.  Entities are any non-voxel objects that can exist in a world, including all players, monsters, projectiles, etc.
+The `entity` module provides easy access to all of the entity interfaces in Minecraft.  Entities are any non-voxel objects that can exist in a world, including all players, monsters, projectiles, etc.
 
 For a description of the entities, click [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/package-summary.html)
 
@@ -2320,7 +2320,7 @@ The blocks module is globally exported by the Drone module.
 
 ## Recipes Module
 
-The Recipes module provides convenience functions for adding and removing recipes from the game.
+The `recipes` module provides convenience functions for adding and removing recipes from the game.
 
 The `recipes.add()` function takes an object with 3 keys as a parameter:
 
@@ -2367,7 +2367,7 @@ This module provides functions to add items to, remove items from and check the 
 
 ### Usage
 
-The inventory module is best used in conjunction with the items module.
+The `inventory` module is best used in conjunction with the items module.
 
 ```javascript
 // gives every player a cookie and a baked potato
@@ -2409,7 +2409,7 @@ events.projectileLaunch(onSnowballThrow);
 
 ## Action Module
 
-The action module can be used to reference the 5 different action types players can perform.
+The `action` module can be used to reference the 5 different action types players can perform.
 
 ### Usage
 
@@ -2481,7 +2481,7 @@ Possible directions:
 
 ## Bukkit Module
 
-The bukkit module provides functions that are executed server-wide.
+The `bukkit` module provides functions that are executed server-wide.
 
 The full list of functions can be found in the [Method Summary of the Bukkit Class](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Bukkit.html)
 
@@ -2509,6 +2509,7 @@ NOTE: **Be careful when sending commands to the server, it will do anything you 
 #### Parameters
 
   * sender: the sender of the command (CommandSender)
+  
   	NOTE: This will usually be the "console" referenced by `server.consoleSender`
   * command: the command you want to execute (string)
 
