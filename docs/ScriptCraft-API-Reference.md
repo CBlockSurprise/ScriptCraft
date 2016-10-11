@@ -1690,7 +1690,7 @@ echo(self, "Hello Minecraft!".aqua());
 ![Hello Minecraft!](https://d14nx13ylsx7x8.cloudfront.net/lesson_image_blocks/assets/000/004/661/original/temp1450223230.png)
 
 
-The following string formatting methods are available:
+### The following string formatting methods are available:
 
   * aqua()
   * black()
@@ -1744,7 +1744,7 @@ inventory(player).add(items.bakedPotato(5));
 player.updateInventory();
 ```
 
-The following functions are provided:
+### List of item functions
 
   * acaciaDoor()
   * acaciaDoorItem()
