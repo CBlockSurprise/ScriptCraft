@@ -2483,6 +2483,8 @@ Possible directions:
 
 The bukkit module provides functions that are executed server-wide.
 
+The full list of functions can be found in the [Method Summary of the Bukkit Class](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Bukkit.html)
+
 ### bukkit.broadcastMessage()
 
 The `bukkit.broadcastMessage()` function can be used to broadcast a message to all players on the server.
@@ -2498,14 +2500,16 @@ The `bukkit.broadcastMessage()` function can be used to broadcast a message to a
 bukkit.broadcastMessage("Welcome to the server!");
 ```
 
-### bukkit.consoleCommand()
+### bukkit.dispatchCommand()
 
-The `bukkit.consoleCommand()` function can be used to execute a command as if it were sent from the server's console.
+The `bukkit.dispatchCommand()` function can be used to execute a command as if it were sent from the server's console.
 
 NOTE: **Be careful when sending commands to the server, it will do anything you ask it to!**
 
 #### Parameters
 
+  * sender: the sender of the command (CommandSender)
+  	NOTE: This will usually be the "console" referenced by `server.consoleSender`
   * command: the command you want to execute (string)
 
 #### Example
@@ -2513,7 +2517,7 @@ NOTE: **Be careful when sending commands to the server, it will do anything you 
 ```javascript
 // executes the command "time set 0" as if we typed "/time set 0" in game as OP
 // or "time set 0" into the server console directly
-bukkit.consoleCommand("time set 0");
+bukkit.dispatchCommand(server.consoleSender, "time set 0");
 ```
 
 ## Color Module
