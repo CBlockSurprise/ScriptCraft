@@ -26,3 +26,4 @@ var fireworkEffect = require('firework-effect');
 var file = require('file');
 var spawnReason = require('spawn-reason');
 var particle = require('particle');
+var equipmentSlot = require('equipment-slot');
